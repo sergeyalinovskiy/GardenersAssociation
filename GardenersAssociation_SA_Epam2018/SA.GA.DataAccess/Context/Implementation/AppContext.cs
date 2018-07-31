@@ -9,7 +9,7 @@ namespace SA.GA.DataAccess.Context.Implementation
         //private const string _ConnectionName = "SA.GA.DataBase";
 
         //private static string _connectionString = ConfigurationManager.ConnectionStrings[_ConnectionName].ConnectionString;
-
+           //dfsdfsdfsdfsdfs
         public AppContext() :base (new DbContextOptions())
         {
         }
