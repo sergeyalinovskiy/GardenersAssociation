@@ -1,5 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SA.GA.Common.Models;
 using SA.GA.DataAccess.Context;
+using SA.GA.DataAccess.Context.Implementation;
+using SA.GA.DataAccess.Repository;
+using SA.GA.DataAccess.Repository.Implementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

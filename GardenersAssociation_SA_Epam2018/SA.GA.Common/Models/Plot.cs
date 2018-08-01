@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SA.GA.Common.Models
 {
+    [Table("Plot")]
     public class Plot : Entity
     {        
         [Required]
@@ -21,8 +23,13 @@ namespace SA.GA.Common.Models
         [Column("UserId", TypeName = "int")]
         public int UserId { get; set; }
 
-
         [ForeignKey("UserId")]
         public User User { get; set; }
+
+        public virtual ICollection<History> History { get; set; }
+
+        public virtual ICollection<Rate> Rate { get; set; }
+
+
     }
 }

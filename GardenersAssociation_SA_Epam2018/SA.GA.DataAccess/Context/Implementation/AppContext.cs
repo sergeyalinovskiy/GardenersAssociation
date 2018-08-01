@@ -6,11 +6,7 @@ namespace SA.GA.DataAccess.Context.Implementation
 {
     public class AppContext<T> : DbContext, IDbContext<T> where T : class
     {
-        //private const string _ConnectionName = "SA.GA.DataBase";
-
-        //private static string _connectionString = ConfigurationManager.ConnectionStrings[_ConnectionName].ConnectionString;
-           //dfsdfsdfsdfsdfs
-        public AppContext() :base (new DbContextOptions())
+        public AppContext() :base ("ewqew")
         {
         }
 
