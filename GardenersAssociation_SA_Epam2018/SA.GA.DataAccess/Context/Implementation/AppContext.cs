@@ -6,9 +6,17 @@ namespace SA.GA.DataAccess.Context.Implementation
 {
     public class AppContext<T> : DbContext, IDbContext<T> where T : class
     {
-        public AppContext() :base ("ewqew")
+        public AppContext() 
         {
+            Database.EnsureCreated();
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
+        }
+
+
 
         private DbSet<T> EntityTable;
 
