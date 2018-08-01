@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SA.GA.Common.Models;
 using SA.GA.DataAccess.Context;
-using SA.GA.DataAccess.Context.Implementation;
-using SA.GA.DataAccess.Repository;
-using SA.GA.DataAccess.Repository.Implementation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SA.GA.DataAccess.Dependency
+namespace SA.GA.WebApp.ExtentionMethods
 {
-    public class DataAccessDependencyRegistry
+    public static class ServiceProviderExtensions
     {
-        public void ConfigureServices(IServiceCollection services)
+        public static void RegisterDependency(this IServiceCollection services)
         {
             services.AddSingleton<IDbContext<User>, AppContext<User>>();
             services.AddSingleton<IDbContext<Plot>, AppContext<Plot>>();
@@ -18,7 +18,6 @@ namespace SA.GA.DataAccess.Dependency
             services.AddTransient<IRepository<User>, Repository<User>>();
             services.AddTransient<IRepository<Plot>, Repository<Plot>>();
             services.AddTransient<IRepository<Electricity>, Repository<Electricity>>();
-
         }
     }
 }
