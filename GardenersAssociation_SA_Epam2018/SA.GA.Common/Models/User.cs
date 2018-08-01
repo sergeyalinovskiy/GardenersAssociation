@@ -45,12 +45,10 @@
         public bool Status { get; set; }
 
         [Required]
-        [Column("PlotId", TypeName = "int)")]
-        public int PlotId { get; set; }
-
-
-
-        [ForeignKey("PlotId")]
+        [Column("HistoryId", TypeName = "int)")]
+        public int HistoryId { get; set; }
+        
+        [ForeignKey("HistoryId")]
         public Plot Plot { get; set; }
 
     }

@@ -22,9 +22,9 @@ namespace SA.GA.Common.Models
         [Column("RecentTestimony", TypeName = "decimal(10, 2)")]
         public double RecentTestimony { get; set; }
 
-        [Required]
-        [Column("Rate", TypeName = "nvarchar(64)")]
-        public string Rate { get; set; }
+        //[Required]
+        //[Column("Rate", TypeName = "nvarchar(64)")]
+        //public string Rate { get; set; }
 
         [Required]
         [Column("Losses", TypeName = "decimal(10, 2)")]
@@ -43,10 +43,10 @@ namespace SA.GA.Common.Models
         public double Paid { get; set; }
 
         [Required]
-        [Column("UserId", TypeName = "int")]
-        public int UserId { get; set; }
+        [Column("RateId", TypeName = "decimal(10, 2)")]
+        public double RateId { get; set; }
 
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        [ForeignKey("RateId")]
+        public Rate Rate{ get; set; }
     }
 }
