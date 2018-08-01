@@ -18,10 +18,15 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddSingleton<IDbContext<User>, AppContext<User>>();
             services.AddSingleton<IDbContext<Plot>, AppContext<Plot>>();
             services.AddSingleton<IDbContext<Electricity>, AppContext<Electricity>>();
+            services.AddSingleton<IDbContext<History>, AppContext<History>>();
+            services.AddSingleton<IDbContext<Rate>, AppContext<Rate>>();
+
 
             services.AddTransient<IRepository<User>, Repository<User>>();
             services.AddTransient<IRepository<Plot>, Repository<Plot>>();
             services.AddTransient<IRepository<Electricity>, Repository<Electricity>>();
+            services.AddTransient<IRepository<Rate>, Repository<Rate>>();
+
         }
     }
 }
