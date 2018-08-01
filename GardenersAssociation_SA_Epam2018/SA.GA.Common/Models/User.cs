@@ -1,5 +1,6 @@
 ﻿namespace SA.GA.Common.Models
 {
+    using System.Collections.Generic;
     #region
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -44,12 +45,14 @@
         [Column("Status", TypeName = "bit)")]
         public bool Status { get; set; }
 
-        [Required]
-        [Column("HistoryId", TypeName = "int)")]
-        public int HistoryId { get; set; }
-        
-        [ForeignKey("HistoryId")]
-        public Plot Plot { get; set; }
+        //[Required]
+        //[Column("HistoryId", TypeName = "int)")]
+        //public int HistoryId { get; set; }
+
+        //[ForeignKey("HistoryId")]
+        //public Plot Plot { get; set; }
+
+        public ICollection<History> History { get; set; }
 
     }
 }

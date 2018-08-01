@@ -26,10 +26,13 @@ namespace SA.GA.Common.Models
         [ForeignKey("UserId")]
         public User User { get; set; }
 
-        public virtual ICollection<History> History { get; set; }
+        [Required]
+        [Column("UserId", TypeName = "int")]
+        public int ElectricityId { get; set; }
 
-        public virtual ICollection<Rate> Rate { get; set; }
+        [ForeignKey("ElectricityId")]
+        public Electricity Electricity { get; set; }
 
-
+        public ICollection<History> History { get; set; }
     }
 }
