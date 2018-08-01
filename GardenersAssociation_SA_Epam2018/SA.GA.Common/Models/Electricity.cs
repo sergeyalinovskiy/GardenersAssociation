@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SA.GA.Common.Models
@@ -22,10 +23,6 @@ namespace SA.GA.Common.Models
         [Column("RecentTestimony", TypeName = "decimal(10, 2)")]
         public double RecentTestimony { get; set; }
 
-        //[Required]
-        //[Column("Rate", TypeName = "nvarchar(64)")]
-        //public string Rate { get; set; }
-
         [Required]
         [Column("Losses", TypeName = "decimal(10, 2)")]
         public double Losses { get; set; }
@@ -43,10 +40,13 @@ namespace SA.GA.Common.Models
         public double Paid { get; set; }
 
         [Required]
-        [Column("RateId", TypeName = "decimal(10, 2)")]
-        public double RateId { get; set; }
+        [Column("RateId", TypeName = "int")]
+        public int RateId { get; set; }
 
         [ForeignKey("RateId")]
         public Rate Rate{ get; set; }
+
+
+
     }
 }
