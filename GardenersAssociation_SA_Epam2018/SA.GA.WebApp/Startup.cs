@@ -19,8 +19,10 @@ namespace SA.GA.WebApp
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.RegisterDependency();
+
             services.AddMvc();
+            services.RegisterDependency();
+            
         }
                
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -39,6 +41,7 @@ namespace SA.GA.WebApp
             }
 
             app.UseStaticFiles();
+            app.UseDefaultFiles();
 
             app.UseMvc(routes =>
             {

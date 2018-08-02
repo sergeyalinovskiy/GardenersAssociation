@@ -1,16 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SA.GA.Common.Models
+﻿namespace SA.GA.Common.Models
 {
+    #region Usings
+         using System.Collections.Generic;
+         using System.ComponentModel.DataAnnotations;
+         using System.ComponentModel.DataAnnotations.Schema;
+    #endregion
+
     [Table("Plot")]
     public class Plot : Entity
     {        
-        [Required]
-        [Column("AdditionalPlotId", TypeName = "int")]
-        public int AdditionalPlotId { get; set; }
-
+        
         [Required]
         [Column("Area", TypeName = "decimal(10, 2)")]
         public double Area { get; set; }
@@ -27,7 +26,7 @@ namespace SA.GA.Common.Models
         public User User { get; set; }
 
         [Required]
-        [Column("UserId", TypeName = "int")]
+        [Column("ElectricityId", TypeName = "int")]  
         public int ElectricityId { get; set; }
 
         [ForeignKey("ElectricityId")]
