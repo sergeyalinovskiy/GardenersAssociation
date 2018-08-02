@@ -6,19 +6,25 @@ namespace SA.GA.DataAccess.Context.Implementation
 {
     public class AppContext<T> : DbContext, IDbContext<T> where T : class
     {
-        public AppContext() 
+        private DbSet<T> EntityTable;
+
+        public AppContext()
         {
-            Database.EnsureCreated();
+
+        }
+
+        public AppContext(DbContextOptions<AppContext<T>> options) : base(options) 
+        {
+            //Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=SA.GA.DB3;Trusted_Connection=True;");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        { }
 
-
-
-        private DbSet<T> EntityTable;
 
         public bool Create(T item)
         {

@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-
-namespace SA.GA.Common.Models
+﻿namespace SA.GA.Common.Models
 {
+    #region Usings
+        using System;
+        using System.Collections.Generic;
+        using System.ComponentModel.DataAnnotations;
+        using System.ComponentModel.DataAnnotations.Schema;
+    #endregion
+
+    [Table("Rate")]
     public class Rate : Entity
     {
         [Required]
-        [Column("Name", TypeName = "nvarchar(64)")]
+        [Column("Name", TypeName = "nvarchar(128)")]
         public string Name{ get; set; }
         [Required]
         [Column("Value", TypeName = "decimal(10, 2)")]
@@ -17,10 +19,9 @@ namespace SA.GA.Common.Models
         [Required]
         [Column("From", TypeName = "datetime")]
         public DateTime From { get; set; }
-        [Required]
+       
         [Column("To", TypeName = "datetime")]
         public DateTime To { get; set; }
-
 
         public virtual ICollection<Electricity> Electricity { get; set; }
     }

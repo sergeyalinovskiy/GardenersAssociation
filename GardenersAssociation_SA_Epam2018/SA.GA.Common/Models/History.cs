@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-
-namespace SA.GA.Common.Models
+﻿namespace SA.GA.Common.Models
 {
+    #region Usings
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    #endregion
     [Table("History")]
-    public class History
+    public class History: Entity
     {
         [Required]
         [Column("UserId", TypeName = "int")]
@@ -20,7 +19,7 @@ namespace SA.GA.Common.Models
         [Required]
         [Column("From", TypeName = "datetime")]
         public DateTime From { get; set; }
-        [Required]
+        
         [Column("To", TypeName = "datetime")]
         public DateTime To { get; set; }
 

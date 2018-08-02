@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace SA.GA.DataAccess.Context
+﻿namespace SA.GA.DataAccess.Context
 {
+    #region Usings
+        using System.Collections.Generic;
+    #endregion
     public interface IDbContext<T> where T: class
     {
         ICollection<T> GetAll();

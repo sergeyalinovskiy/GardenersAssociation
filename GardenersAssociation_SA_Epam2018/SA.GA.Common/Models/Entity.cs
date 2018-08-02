@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace SA.GA.Common.Models
+﻿namespace SA.GA.Common.Models
 {
+    #region Usings
+    using System.ComponentModel.DataAnnotations;
+    #endregion
     public abstract class Entity
     {
         [Key]

@@ -1,10 +1,10 @@
-﻿using SA.GA.DataAccess.Context;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SA.GA.DataAccess.Repository.Implementation
+﻿namespace SA.GA.DataAccess.Repository.Implementation
 {
+    #region Usings
+        using SA.GA.DataAccess.Context;
+        using System;
+        using System.Collections.Generic;
+    #endregion
     public class Repository<T>: IRepository<T> where T : class
     {
         private readonly IDbContext<T> _context;

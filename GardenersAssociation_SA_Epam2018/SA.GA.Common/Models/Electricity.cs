@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SA.GA.Common.Models
+﻿namespace SA.GA.Common.Models
 {
+    #region Usings
+         using System.Collections.Generic;
+         using System.ComponentModel.DataAnnotations;
+         using System.ComponentModel.DataAnnotations.Schema;
+    #endregion
     [Table("Electricity")]
     public class Electricity : Entity
     {
-        [Required]
+        
         [Column("Year", TypeName = "int")]
         public int Year { get; set; }
 
-        [Required]
         [Column("Mounth", TypeName = "int")]
         public int Mounth { get; set; }
 
@@ -46,7 +46,6 @@ namespace SA.GA.Common.Models
         [ForeignKey("RateId")]
         public Rate Rate{ get; set; }
 
-
-
+        public ICollection<Plot> Plot { get; set; }
     }
 }
