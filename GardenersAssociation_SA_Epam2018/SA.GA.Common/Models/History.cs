@@ -23,10 +23,10 @@
         [Column("To", TypeName = "datetime")]
         public DateTime To { get; set; }
 
-        [ForeignKey("UserId")]
+        [ForeignKey("Id")]
         public User User { get; set; }
 
-        [ForeignKey("PlotId")]
+        [ForeignKey("Id")]
         public Plot Plot { get; set; }
     }
 }

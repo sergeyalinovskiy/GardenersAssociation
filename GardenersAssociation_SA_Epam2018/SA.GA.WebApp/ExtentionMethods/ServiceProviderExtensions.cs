@@ -13,7 +13,7 @@ namespace SA.GA.WebApp.ExtentionMethods
     {
         public static void RegisterDependency(this IServiceCollection services)
         {
-            
+
 
 
             //services.AddTransient<IDbContext<User>, AppContext<User>>();
@@ -30,8 +30,8 @@ namespace SA.GA.WebApp.ExtentionMethods
 
 
 
-
-            var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB4; Trusted_Connection = True;";
+            //var connection2 = @"Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Contoso; Integrated Security = True; Connect Timeout = 30; ";
+            var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB5; Trusted_Connection = True;";
             //services.AddDbContext<AppContext2>(options => options.UseSqlServer(connection));
             services.AddDbContext<AppContext2>(options =>
                 options.UseSqlServer(
