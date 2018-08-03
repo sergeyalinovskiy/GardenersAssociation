@@ -10,8 +10,8 @@ using SA.GA.DataAccess.Context.Implementation;
 namespace SA.GA.WebApp.Migrations
 {
     [DbContext(typeof(AppContext2))]
-    [Migration("20180802173027_mig4")]
-    partial class mig4
+    [Migration("20180803161542_Initial-Migration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,9 +78,7 @@ namespace SA.GA.WebApp.Migrations
 
             modelBuilder.Entity("SA.GA.Common.Models.History", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("Id");
 
                     b.Property<DateTime>("From")
                         .HasColumnName("From")
@@ -99,10 +97,6 @@ namespace SA.GA.WebApp.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PlotId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("History");
                 });
@@ -175,6 +169,7 @@ namespace SA.GA.WebApp.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AdditionalInformation")
+                        .IsRequired()
                         .HasColumnName("AdditionalInformation")
                         .HasColumnType("nvarchar(max)");
 
@@ -200,12 +195,12 @@ namespace SA.GA.WebApp.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnName("Phone")
+                        .HasColumnName("PhoneNumber")
                         .HasColumnType("nvarchar(64)");
 
                     b.Property<bool>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("bit)");
+                        .HasColumnName("UserStatus")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("SuppliedElectricity")
                         .HasColumnName("SuppliedElectricity")
@@ -227,14 +222,14 @@ namespace SA.GA.WebApp.Migrations
             modelBuilder.Entity("SA.GA.Common.Models.History", b =>
                 {
                     b.HasOne("SA.GA.Common.Models.Plot", "Plot")
-                        .WithMany("History")
-                        .HasForeignKey("PlotId")
+                        .WithMany("Historys")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SA.GA.Common.Models.User", "User")
-                        .WithMany("History")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Historys")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("SA.GA.Common.Models.Plot", b =>

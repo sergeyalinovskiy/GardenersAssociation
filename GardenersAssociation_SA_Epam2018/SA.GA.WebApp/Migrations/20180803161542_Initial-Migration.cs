@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SA.GA.WebApp.Migrations
 {
-    public partial class mig3 : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,10 +34,10 @@ namespace SA.GA.WebApp.Migrations
                     LastName = table.Column<string>(type: "nvarchar(64)", nullable: false),
                     MiddleName = table.Column<string>(type: "nvarchar(64)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(128)", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(64)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(64)", nullable: false),
                     SuppliedElectricity = table.Column<bool>(type: "bit", nullable: false),
-                    AdditionalInformation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<bool>(type: "bit)", nullable: false)
+                    AdditionalInformation = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserStatus = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -103,8 +103,7 @@ namespace SA.GA.WebApp.Migrations
                 name: "History",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     PlotId = table.Column<int>(type: "int", nullable: false),
                     From = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -114,33 +113,23 @@ namespace SA.GA.WebApp.Migrations
                 {
                     table.PrimaryKey("PK_History", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_History_Plot_PlotId",
-                        column: x => x.PlotId,
+                        name: "FK_History_Plot_Id",
+                        column: x => x.Id,
                         principalTable: "Plot",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_History_User_UserId",
-                        column: x => x.UserId,
+                        name: "FK_History_User_Id",
+                        column: x => x.Id,
                         principalTable: "User",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Electricity_RateId",
                 table: "Electricity",
                 column: "RateId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_History_PlotId",
-                table: "History",
-                column: "PlotId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_History_UserId",
-                table: "History",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Plot_ElectricityId",

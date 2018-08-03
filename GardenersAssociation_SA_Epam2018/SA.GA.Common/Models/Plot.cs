@@ -32,6 +32,6 @@
         [ForeignKey("ElectricityId")]
         public Electricity Electricity { get; set; }
 
-        public ICollection<History> History { get; set; }
+        public ICollection<History> Historys { get; set; }
     }
 }

@@ -26,28 +26,23 @@
         public string Address { get; set; }
 
         [Required]
-        [Column("Phone", TypeName = "nvarchar(64)")]
+        [Column("PhoneNumber", TypeName = "nvarchar(64)")]
         public string Phone { get; set; }
 
         [Required]
         [Column("SuppliedElectricity", TypeName = "bit")]
         public bool SuppliedElectricity { get; set; }
-    
+
+        [Required]
         [Column("AdditionalInformation", TypeName = "nvarchar(max)")]
         public string AdditionalInformation { get; set; }
 
         [Required]
-        [Column("Status", TypeName = "bit)")]
+        [Column("UserStatus", TypeName = "bit")]
         public bool Status { get; set; }
 
-        //[Required]
-        //[Column("HistoryId", TypeName = "int)")]
-        //public int HistoryId { get; set; }
 
-        //[ForeignKey("HistoryId")]
-        //public Plot Plot { get; set; }
-
-        public ICollection<History> History { get; set; }
+        public ICollection<History> Historys { get; set; }
 
     }
 }
