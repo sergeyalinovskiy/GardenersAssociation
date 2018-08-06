@@ -7,7 +7,6 @@ using SA.GA.DataAccess.Context;
 using SA.GA.DataAccess.Context.Implementation;
 using SA.GA.DataAccess.Repository;
 using SA.GA.DataAccess.Repository.Implementation;
-using System.Configuration;
 
 namespace SA.GA.WebApp.ExtentionMethods
 {
@@ -15,7 +14,6 @@ namespace SA.GA.WebApp.ExtentionMethods
     {
         public static void RegisterDependency(this IServiceCollection services)
         {
-
             services.AddTransient<IRepository<User>, Repository<User>>();
             services.AddTransient<IRepository<Plot>, Repository<Plot>>();
             services.AddTransient<IRepository<Electricity>, Repository<Electricity>>();
@@ -26,20 +24,11 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddTransient<IPlotService, PlotService>();
             services.AddTransient<IElectricityService, ElectricityService>();
 
-
-            //services.AddTransient<IDbContext<User>, AppContext<User>>();
-            //services.AddTransient<IDbContext<Plot>, AppContext<Plot>>();
-            //services.AddTransient<IDbContext<Electricity>, AppContext<Electricity>>();
-            //services.AddTransient<IDbContext<History>, AppContext<History>>();
-            //services.AddTransient<IDbContext<Rate>, AppContext<Rate>>();
-
-
-
-
-
-
-
-
+            services.AddTransient<IDbContext<User>, AppContext<User>>();
+            services.AddTransient<IDbContext<Plot>, AppContext<Plot>>();
+            services.AddTransient<IDbContext<Electricity>, AppContext<Electricity>>();
+            services.AddTransient<IDbContext<History>, AppContext<History>>();
+            services.AddTransient<IDbContext<Rate>, AppContext<Rate>>();
 
             var connection2 = @"Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Contoso; Integrated Security = True; Connect Timeout = 30; ";
             var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB; Trusted_Connection = True;";
@@ -53,12 +42,6 @@ namespace SA.GA.WebApp.ExtentionMethods
             //services.AddDbContext<AppContext<Electricity>>(options => options.UseSqlServer(connection));
             //services.AddDbContext<AppContext<History>>(options => options.UseSqlServer(connection));
             //services.AddDbContext<AppContext<Rate>>(options => options.UseSqlServer(connection));
-
-
-
-
-
-           
         }
     }
 }

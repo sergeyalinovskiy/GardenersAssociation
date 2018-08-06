@@ -14,5 +14,6 @@ namespace SA.GA.Business.Services
         void SaveUser(User model);
 
         void UpdateUser(User model);
+
     }
 }
