@@ -24,6 +24,11 @@ namespace SA.GA.DataAccess.Context.Implementation
                 .OnDelete(DeleteBehavior.Restrict);
         }
 
+        //public virtual void Save()   // test method
+        //{
+        //    base.SaveChanges();
+        //}
+
         public DbSet<User> Users { get; set; }
         public DbSet<Plot> Plots { get; set; }
         public DbSet<History> Historys { get; set; }
