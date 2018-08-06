@@ -14,6 +14,10 @@ namespace SA.GA.WebApp.ExtentionMethods
         public static void RegisterDependency(this IServiceCollection services)
         {
 
+            services.AddTransient<IRepository<User>, Repository<User>>();
+            services.AddTransient<IRepository<Plot>, Repository<Plot>>();
+            services.AddTransient<IRepository<Electricity>, Repository<Electricity>>();
+            services.AddTransient<IRepository<Rate>, Repository<Rate>>();
 
 
             //services.AddTransient<IDbContext<User>, AppContext<User>>();
@@ -30,8 +34,8 @@ namespace SA.GA.WebApp.ExtentionMethods
 
 
 
-            //var connection2 = @"Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Contoso; Integrated Security = True; Connect Timeout = 30; ";
-            var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB5; Trusted_Connection = True;";
+            var connection2 = @"Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Contoso; Integrated Security = True; Connect Timeout = 30; ";
+            var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB; Trusted_Connection = True;";
             //services.AddDbContext<AppContext2>(options => options.UseSqlServer(connection));
             services.AddDbContext<AppContext2>(options =>
                 options.UseSqlServer(
@@ -45,10 +49,6 @@ namespace SA.GA.WebApp.ExtentionMethods
 
 
 
-            services.AddTransient<IRepository<User>, Repository<User>>();
-            services.AddTransient<IRepository<Plot>, Repository<Plot>>();
-            services.AddTransient<IRepository<Electricity>, Repository<Electricity>>();
-            services.AddTransient<IRepository<Rate>, Repository<Rate>>();
 
 
            

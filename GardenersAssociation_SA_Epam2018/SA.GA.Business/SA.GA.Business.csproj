@@ -9,4 +9,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SA.GA.Common\SA.GA.Common.csproj" />
+    <ProjectReference Include="..\SA.GA.DataAccess\SA.GA.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

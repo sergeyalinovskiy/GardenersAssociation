@@ -10,8 +10,8 @@ using SA.GA.DataAccess.Context.Implementation;
 namespace SA.GA.WebApp.Migrations
 {
     [DbContext(typeof(AppContext2))]
-    [Migration("20180803161542_Initial-Migration")]
-    partial class InitialMigration
+    [Migration("20180806133619_newMigration")]
+    partial class newMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
