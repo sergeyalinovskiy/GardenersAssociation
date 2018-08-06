@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using SA.GA.Business.Services;
+using SA.GA.Business.Services.Implementation;
 using SA.GA.Common.Models;
 using SA.GA.DataAccess.Context;
 using SA.GA.DataAccess.Context.Implementation;
@@ -18,6 +20,11 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddTransient<IRepository<Plot>, Repository<Plot>>();
             services.AddTransient<IRepository<Electricity>, Repository<Electricity>>();
             services.AddTransient<IRepository<Rate>, Repository<Rate>>();
+
+            services.AddTransient<IRateService, RateService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IPlotService, PlotService>();
+            services.AddTransient<IElectricityService, ElectricityService>();
 
 
             //services.AddTransient<IDbContext<User>, AppContext<User>>();

@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SA.GA.Business\SA.GA.Business.csproj" />
     <ProjectReference Include="..\SA.GA.DataAccess\SA.GA.DataAccess.csproj" />
   </ItemGroup>
 
