@@ -2,8 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using SA.GA.Business.Services;
 using SA.GA.Business.Services.Implementation;
-using SA.GA.Common.Models;
-using SA.GA.DataAccess.Context;
 using SA.GA.DataAccess.Context.Implementation;
 using SA.GA.DataAccess.Repository;
 using SA.GA.DataAccess.Repository.Implementation;
@@ -30,7 +28,7 @@ namespace SA.GA.WebApp.ExtentionMethods
 
             var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB; Trusted_Connection = True;";
 
-            services.AddDbContext<AppContext2>(options =>
+            services.AddDbContext<AppContext>(options =>
                 options.UseSqlServer(
                     connection,
                     b => b.MigrationsAssembly("SA.GA.WebApp")

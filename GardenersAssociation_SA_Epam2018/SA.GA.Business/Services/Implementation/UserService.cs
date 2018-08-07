@@ -7,9 +7,9 @@ namespace SA.GA.Business.Services.Implementation
 {
     public class UserService : IUserService
     {
-        private readonly IRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(IRepository<User> userRepository)
+        public UserService(IUserRepository userRepository)
         {
             if (userRepository == null)
             {

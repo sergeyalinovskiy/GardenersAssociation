@@ -8,9 +8,9 @@ namespace SA.GA.Business.Services.Implementation
 {
     public class ElectricityService : IElectricityService
     {
-        private readonly IRepository<Electricity> _electricityRepository;
+        private readonly IElectricityRepository _electricityRepository;
 
-        public ElectricityService(IRepository<Electricity> electricityRepository)
+        public ElectricityService(IElectricityRepository electricityRepository)
         {
             if (electricityRepository == null)
             {

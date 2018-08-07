@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using SA.GA.Common.Models;
 using SA.GA.DataAccess.Repository;
+using SA.GA.DataAccess.Repository.Implementation;
 
 namespace SA.GA.Business.Services.Implementation
 {
     public class RateService : IRateService
     {
-        private readonly IRepository<Rate> _rateRepository;
+        private readonly IRateRepository _rateRepository;
 
-        public RateService(IRepository<Rate> rateRepository)
+        public RateService(IRateRepository rateRepository)
         {
             if (rateRepository == null)
             {

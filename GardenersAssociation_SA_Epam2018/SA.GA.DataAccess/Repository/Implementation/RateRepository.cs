@@ -8,9 +8,9 @@ namespace SA.GA.DataAccess.Repository.Implementation
 {
     public class RateRepository : IRateRepository
     {
-        private readonly AppContext2 _context;
+        private readonly Context.Implementation.AppContext _context;
 
-        public RateRepository(AppContext2 context)
+        public RateRepository(Context.Implementation.AppContext context)
         {
             if (context == null)
             {

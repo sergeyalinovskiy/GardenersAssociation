@@ -8,9 +8,9 @@ namespace SA.GA.Business.Services.Implementation
 {
     public class PlotService : IPlotService
     {
-        private readonly IRepository<Plot> _plotRepository;
+        private readonly IPlotRepository _plotRepository;
 
-        public PlotService(IRepository<Plot> plotRepository)
+        public PlotService(IPlotRepository plotRepository)
         {
             if (plotRepository == null)
             {
