@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA.GA.DataAccess", "SA.GA.DataAccess\SA.GA.DataAccess.csproj", "{71046ADF-2FCF-4448-A616-917AEF18115A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SA.GA.DataAccess", "SA.GA.DataAccess\SA.GA.DataAccess.csproj", "{71046ADF-2FCF-4448-A616-917AEF18115A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA.GA.Business", "SA.GA.Business\SA.GA.Business.csproj", "{0F78FCCB-29B9-452A-9614-E6D4AC3CE2FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SA.GA.Business", "SA.GA.Business\SA.GA.Business.csproj", "{0F78FCCB-29B9-452A-9614-E6D4AC3CE2FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA.GA.Common", "SA.GA.Common\SA.GA.Common.csproj", "{EB3AAE53-4EB1-44DC-821E-11C15DC44604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SA.GA.Common", "SA.GA.Common\SA.GA.Common.csproj", "{EB3AAE53-4EB1-44DC-821E-11C15DC44604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA.GA.WebApp", "SA.GA.WebApp\SA.GA.WebApp.csproj", "{FB5A91A9-C037-4736-A306-BB6A5525AC98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA.GA.WebApplication", "SA.GA.WebApplication\SA.GA.WebApplication.csproj", "{8F5B1687-124A-4456-A41A-4E4FC647AA73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{EB3AAE53-4EB1-44DC-821E-11C15DC44604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB3AAE53-4EB1-44DC-821E-11C15DC44604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB3AAE53-4EB1-44DC-821E-11C15DC44604}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB5A91A9-C037-4736-A306-BB6A5525AC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB5A91A9-C037-4736-A306-BB6A5525AC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB5A91A9-C037-4736-A306-BB6A5525AC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB5A91A9-C037-4736-A306-BB6A5525AC98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5B1687-124A-4456-A41A-4E4FC647AA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5B1687-124A-4456-A41A-4E4FC647AA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5B1687-124A-4456-A41A-4E4FC647AA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5B1687-124A-4456-A41A-4E4FC647AA73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app.ts" />
+    <None Remove="ClientApp\app\app.component.ts" />
+    <None Remove="ClientApp\app\data.service.ts" />
+    <None Remove="ClientApp\app\not-found.component.ts" />
+    <None Remove="ClientApp\app\user-create.component.ts" />
+    <None Remove="ClientApp\app\user-edit.component.ts" />
+    <None Remove="ClientApp\app\user-form.component.ts" />
+    <None Remove="ClientApp\app\user-list.component.ts" />
+    <None Remove="ClientApp\app\user.ts" />
+    <None Remove="ClientApp\main.ts" />
+    <None Remove="ClientApp\polyfills.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
@@ -19,13 +33,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
-    <Content Remove="ClientApp\**" />
+    <ProjectReference Include="..\SA.GA.Business\SA.GA.Business.csproj" />
+    <ProjectReference Include="..\SA.GA.DataAccess\SA.GA.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SA.GA.Business\SA.GA.Business.csproj" />
-    <ProjectReference Include="..\SA.GA.DataAccess\SA.GA.DataAccess.csproj" />
+    <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\not-found.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user-edit.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user-create.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user.ts" />
+    <TypeScriptCompile Include="ClientApp\main.ts" />
+    <TypeScriptCompile Include="ClientApp\polyfills.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
