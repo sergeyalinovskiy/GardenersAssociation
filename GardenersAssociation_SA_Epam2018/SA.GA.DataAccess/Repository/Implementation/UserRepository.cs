@@ -7,9 +7,9 @@ namespace SA.GA.DataAccess.Repository.Implementation
 {
     public class UserRepository : IUserRepository
     {
-        private readonly AppContext2 _context;
+        private readonly Context.Implementation.AppContext _context;
 
-        public UserRepository(AppContext2 context)
+        public UserRepository(Context.Implementation.AppContext context)
         {
             if (context == null)
             {

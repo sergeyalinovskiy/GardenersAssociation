@@ -7,9 +7,9 @@ namespace SA.GA.DataAccess.Repository.Implementation
 {
     public class PlotRepository :IPlotRepository
     {
-        private readonly AppContext2 _context;
+        private readonly Context.Implementation.AppContext _context;
 
-        public PlotRepository(AppContext2 context)
+        public PlotRepository(Context.Implementation.AppContext context)
         {
             if (context == null)
             {

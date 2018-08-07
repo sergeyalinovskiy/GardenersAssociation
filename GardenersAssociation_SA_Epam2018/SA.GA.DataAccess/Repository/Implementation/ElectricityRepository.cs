@@ -8,9 +8,9 @@ namespace SA.GA.DataAccess.Repository.Implementation
 {
     public class ElectricityRepository : IElectricityRepository
     {
-        private readonly AppContext2 _context;
+        private readonly Context.Implementation.AppContext _context;
 
-        public ElectricityRepository(AppContext2 context)
+        public ElectricityRepository(Context.Implementation.AppContext context)
         {
             if (context == null)
             {

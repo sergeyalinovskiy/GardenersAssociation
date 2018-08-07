@@ -8,7 +8,7 @@ using SA.GA.DataAccess.Context.Implementation;
 
 namespace SA.GA.WebApp.Migrations
 {
-    [DbContext(typeof(AppContext2))]
+    [DbContext(typeof(DataAccess.Context.Implementation.AppContext))]
     partial class AppContext2ModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
