@@ -28,7 +28,7 @@ namespace SA.GA.WebApp.ExtentionMethods
 
             var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB; Trusted_Connection = True;";
 
-            services.AddDbContext<AppContext>(options =>
+            services.AddDbContext<AppContext2>(options =>
                 options.UseSqlServer(
                     connection,
                     b => b.MigrationsAssembly("SA.GA.WebApp")

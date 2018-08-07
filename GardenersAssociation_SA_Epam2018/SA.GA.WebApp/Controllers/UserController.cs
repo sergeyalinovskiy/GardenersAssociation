@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SA.GA.Business.Services;
 using SA.GA.Common.Models;
-using SA.GA.DataAccess.Context.Implementation;
 
 namespace SA.GA.WebApp.Controllers
 {
@@ -26,7 +23,6 @@ namespace SA.GA.WebApp.Controllers
             if(user != null)
             {
                 _userService.DeleteUserByUserId(id);
-                
             }
             return Ok(user);
         }
