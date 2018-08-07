@@ -8,15 +8,11 @@ namespace SA.GA.DataAccess.Repository.Implementation
 {
     public class RateRepository : IRateRepository
     {
-        private readonly Context.Implementation.AppContext _context;
+        private readonly AppContext2 _context;
 
-        public RateRepository(Context.Implementation.AppContext context)
+        public RateRepository()
         {
-            if (context == null)
-            {
-                throw new NullReferenceException();
-            }
-            _context = context;
+            _context = new AppContext2();
         }
 
         public void Create(Rate item)

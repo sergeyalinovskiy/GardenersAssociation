@@ -8,15 +8,11 @@ namespace SA.GA.DataAccess.Repository.Implementation
 {
     public class ElectricityRepository : IElectricityRepository
     {
-        private readonly Context.Implementation.AppContext _context;
+        private readonly AppContext2 _context;
 
-        public ElectricityRepository(Context.Implementation.AppContext context)
+        public ElectricityRepository()
         {
-            if (context == null)
-            {
-                throw new NullReferenceException();
-            }
-            _context = context;
+            _context = new AppContext2();
         }
 
         public void Create(Electricity item)

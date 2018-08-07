@@ -6,10 +6,12 @@ using System.Text;
 
 namespace SA.GA.DataAccess.Context.Implementation
 {
-    public class AppContext : DbContext
+    public class AppContext2 : DbContext
     {
+        public AppContext2(): base()
+        { }
 
-        public AppContext(DbContextOptions<AppContext> options) : base(options)
+        public AppContext2(DbContextOptions<AppContext2> options) : base(options)
         {
      
         }

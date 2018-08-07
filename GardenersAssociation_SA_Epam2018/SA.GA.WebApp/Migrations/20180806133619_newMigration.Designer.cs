@@ -9,7 +9,7 @@ using SA.GA.DataAccess.Context.Implementation;
 
 namespace SA.GA.WebApp.Migrations
 {
-    [DbContext(typeof(DataAccess.Context.Implementation.AppContext))]
+    [DbContext(typeof(DataAccess.Context.Implementation.AppContext2))]
     [Migration("20180806133619_newMigration")]
     partial class newMigration
     {
