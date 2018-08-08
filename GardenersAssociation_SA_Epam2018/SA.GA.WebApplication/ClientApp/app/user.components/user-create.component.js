@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from './user.data.service';
-import { User } from './user';
+import { DataService } from '../data.service';
+import { User } from '../models/user';
 var UserCreateComponent = /** @class */ (function () {
     function UserCreateComponent(dataService, router) {
         this.dataService = dataService;

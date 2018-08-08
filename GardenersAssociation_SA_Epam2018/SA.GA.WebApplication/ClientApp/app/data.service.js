@@ -12,22 +12,38 @@ import { HttpClient } from '@angular/common/http';
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.url = "/api/users";
+        this.urlUser = "/api/users";
+        this.urlPlot = "/api/plots";
     }
     DataService.prototype.getUsers = function () {
-        return this.http.get(this.url);
+        return this.http.get(this.urlUser);
     };
     DataService.prototype.getUser = function (id) {
-        return this.http.get(this.url + '/' + id);
+        return this.http.get(this.urlUser + '/' + id);
     };
     DataService.prototype.createUser = function (user) {
-        return this.http.post(this.url, user);
+        return this.http.post(this.urlUser, user);
     };
     DataService.prototype.updateUser = function (user) {
-        return this.http.put(this.url + '/' + user.id, user);
+        return this.http.put(this.urlUser + '/' + user.id, user);
     };
     DataService.prototype.deleteUser = function (id) {
-        return this.http.delete(this.url + '/' + id);
+        return this.http.delete(this.urlUser + '/' + id);
+    };
+    DataService.prototype.getPlots = function () {
+        return this.http.get(this.urlPlot);
+    };
+    DataService.prototype.getPlot = function (id) {
+        return this.http.get(this.urlPlot + '/' + id);
+    };
+    DataService.prototype.createPlot = function (plot) {
+        return this.http.post(this.urlPlot, plot);
+    };
+    DataService.prototype.updatePlot = function (plot) {
+        return this.http.put(this.urlPlot + '/' + plot.id, plot);
+    };
+    DataService.prototype.deletePlot = function (id) {
+        return this.http.delete(this.urlPlot + '/' + id);
     };
     DataService = __decorate([
         Injectable(),
@@ -36,4 +52,4 @@ var DataService = /** @class */ (function () {
     return DataService;
 }());
 export { DataService };
-//# sourceMappingURL=user.data.service.js.map
+//# sourceMappingURL=data.service.js.map
