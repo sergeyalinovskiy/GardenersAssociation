@@ -8,28 +8,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { DataService } from './data.service';
-import { User } from './user';
-var UserCreateComponent = /** @class */ (function () {
-    function UserCreateComponent(dataService, router) {
+var UserListComponent = /** @class */ (function () {
+    function UserListComponent(dataService) {
         this.dataService = dataService;
-        this.router = router;
-        this.user = new User(); // добавляемый объект
     }
-    UserCreateComponent.prototype.save = function () {
-        var _this = this;
-        this.dataService.createUser(this.user).subscribe(function (data) {
-            return _this.router.navigateByUrl("/");
-        });
+    UserListComponent.prototype.ngOnInit = function () {
+        this.load();
     };
-    UserCreateComponent = __decorate([
+    UserListComponent.prototype.load = function () {
+        var _this = this;
+        this.dataService.getUsers().subscribe(function (data) { return _this.users = data; });
+    };
+    UserListComponent.prototype.delete = function (id) {
+        var _this = this;
+        this.dataService.deleteUser(id).subscribe(function (data) { return _this.load(); });
+    };
+    UserListComponent = __decorate([
         Component({
-            templateUrl: './user-create.component.html'
+            templateUrl: '../user.template/user-list.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router])
-    ], UserCreateComponent);
-    return UserCreateComponent;
+        __metadata("design:paramtypes", [DataService])
+    ], UserListComponent);
+    return UserListComponent;
 }());
-export { UserCreateComponent };
-//# sourceMappingURL=user-create.component.js.map
+export { UserListComponent };
+//# sourceMappingURL=user-list.component.js.map

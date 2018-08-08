@@ -4,7 +4,7 @@ import { DataService } from './data.service';
 import { User } from './user';
 
 @Component({
-    templateUrl: './user-create.component.html'
+    templateUrl: '../user.template/user-create.component.html'
 })
 export class UserCreateComponent {
 

@@ -33,7 +33,7 @@ var UserEditComponent = /** @class */ (function () {
     };
     UserEditComponent = __decorate([
         Component({
-            templateUrl: './user-edit.component.html'
+            templateUrl: '../user.template/user-edit.component.html'
         }),
         __metadata("design:paramtypes", [DataService, Router, ActivatedRoute])
     ], UserEditComponent);
