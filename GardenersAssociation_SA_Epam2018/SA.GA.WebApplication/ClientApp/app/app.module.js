@@ -22,9 +22,9 @@ import { NotFoundComponent } from './not-found.component';
 import { DataService } from './data.service';
 // определение маршрутов
 var appRoutes = [
-    { path: 'user/', component: UserListComponent },
-    { path: 'user/create', component: UserCreateComponent },
-    { path: 'user/edit/:id', component: UserEditComponent },
+    { path: '', component: UserListComponent },
+    { path: 'create', component: UserCreateComponent },
+    { path: 'edit/:id', component: UserEditComponent },
     { path: '**', component: NotFoundComponent }
 ];
 var AppModule = /** @class */ (function () {
