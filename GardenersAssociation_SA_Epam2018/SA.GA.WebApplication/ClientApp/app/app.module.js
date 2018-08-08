@@ -10,12 +10,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { UserListComponent } from './user-list.component';
-import { UserFormComponent } from './user-form.component';
-import { UserCreateComponent } from './user-create.component';
-import { UserEditComponent } from './user-edit.component';
+import { UserListComponent } from './user.components/user-list.component';
+import { UserFormComponent } from './user.components/user-form.component';
+import { UserCreateComponent } from './user.components/user-create.component';
+import { UserEditComponent } from './user.components/user-edit.component';
 import { NotFoundComponent } from './not-found.component';
-import { DataService } from './data.service';
+import { DataService } from './user.components/user.data.service';
 // определение маршрутов
 var appRoutes = [
     { path: '', component: UserListComponent },

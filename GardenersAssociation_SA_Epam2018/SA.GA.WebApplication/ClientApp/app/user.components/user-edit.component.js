@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService } from './data.service';
+import { DataService } from './user.data.service';
 var UserEditComponent = /** @class */ (function () {
     function UserEditComponent(dataService, router, activeRoute) {
         this.dataService = dataService;
@@ -33,7 +33,7 @@ var UserEditComponent = /** @class */ (function () {
     };
     UserEditComponent = __decorate([
         Component({
-            templateUrl: './user-edit.component.html'
+            templateUrl: '../user.template/user-edit.component.html'
         }),
         __metadata("design:paramtypes", [DataService, Router, ActivatedRoute])
     ], UserEditComponent);

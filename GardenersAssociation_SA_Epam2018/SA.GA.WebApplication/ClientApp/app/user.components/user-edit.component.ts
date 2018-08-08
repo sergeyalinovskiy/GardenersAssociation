@@ -1,10 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService } from './data.service';
+import { DataService } from './user.data.service';
 import { User } from './user';
 
 @Component({
-    templateUrl: './user-edit.component.html'
+    templateUrl: '../user.template/user-edit.component.html'
 })
 export class UserEditComponent implements OnInit {
 

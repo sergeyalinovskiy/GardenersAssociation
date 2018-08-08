@@ -1,10 +1,10 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from './data.service';
+import { DataService } from './user.data.service';
 import { User } from './user';
 
 @Component({
-    templateUrl: './user-create.component.html'
+    templateUrl: '../user.template/user-create.component.html'
 })
 export class UserCreateComponent {
 
