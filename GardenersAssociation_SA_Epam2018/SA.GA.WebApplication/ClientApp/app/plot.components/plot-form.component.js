@@ -8,21 +8,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, Input } from '@angular/core';
-import { User } from '../models/user';
-var UserFormComponent = /** @class */ (function () {
-    function UserFormComponent() {
+import { Plot } from '../models/plot';
+var PlotFormComponent = /** @class */ (function () {
+    function PlotFormComponent() {
     }
     __decorate([
         Input(),
-        __metadata("design:type", User)
-    ], UserFormComponent.prototype, "user", void 0);
-    UserFormComponent = __decorate([
+        __metadata("design:type", Plot)
+    ], PlotFormComponent.prototype, "plot", void 0);
+    PlotFormComponent = __decorate([
         Component({
-            selector: "user-form",
-            templateUrl: '../user.template/user-form.component.html'
+            selector: "plot-form",
+            templateUrl: '../plot.template/plot-form.component.html'
         })
-    ], UserFormComponent);
-    return UserFormComponent;
+    ], PlotFormComponent);
+    return PlotFormComponent;
 }());
-export { UserFormComponent };
-//# sourceMappingURL=user-form.component.js.map
+export { PlotFormComponent };
+//# sourceMappingURL=plot-form.component.js.map

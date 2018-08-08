@@ -1,17 +1,17 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
-import { User } from '../models/user';
+import { Plot } from '../models/plot';
 
 @Component({
-    templateUrl: '../user.template/user-create.component.html'
+    templateUrl: '../plot.template/plot-create.component.html'
 })
-export class UserCreateComponent {
+export class PlotCreateComponent {
 
-    user: User = new User();    // добавляемый объект
+    plot: Plot = new Plot();    // добавляемый объект
     constructor(private dataService: DataService, private router: Router) { }
     save() {
-        this.dataService.createUser(this.user).subscribe(data =>
+        this.dataService.createUser(this.plot).subscribe(data =>
             this.router.navigateByUrl("/"));
     }
 }

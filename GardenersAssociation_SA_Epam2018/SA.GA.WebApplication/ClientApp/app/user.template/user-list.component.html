@@ -5,8 +5,8 @@
     <thead>
         <tr>
             <td>Имя</td>
-            <td>Фамилия</td>
             <td>Отчество</td>
+            <td>Фамилия</td>
             <td>Адрес</td>
             <td>Телефон</td>
             <td>Электроэнергия</td>
@@ -17,14 +17,14 @@
     </thead>
     <tbody>
         <tr *ngFor="let u of users">
-            <td>{{u?.FirstName}}</td>
-            <td>{{u?.LastName}}</td>
-            <td>{{u?.MiddleName}}</td>
-            <td>{{u?.Address}}</td>
-            <td>{{u?.Phone}}</td>
-            <td>{{u?.SuppliedElectricity}}</td>
-            <td>{{u?.AdditionalInformation}}</td>
-            <td>{{u?.Status}}</td>
+            <td>{{u?.firstName}}</td>
+            <td>{{u?.middleName}}</td>
+            <td>{{u?.lastName}}</td>
+            <td>{{u?.address}}</td>
+            <td>{{u?.phone}}</td>
+            <td>{{u?.suppliedElectricity}}</td>
+            <td>{{u?.additionalInformation}}</td>
+            <td>{{u?.status}}</td>
             <td>
                 <a [routerLink]="['edit', u.id]" class="btn btn-sm btn-primary">Изменить</a>
                 <button (click)="delete(u.id)" class="btn btn-sm btn-danger">Удалить</button>

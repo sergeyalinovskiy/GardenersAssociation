@@ -8,9 +8,9 @@ namespace SA.GA.DataAccess.Repository.Implementation
     {
         private readonly AppContext2 _context;
 
-        public ElectricityRepository()
+        public ElectricityRepository(AppContext2 appContext2)
         {
-            _context = new AppContext2();
+            _context = appContext2;
         }
 
         public void Create(Electricity item)

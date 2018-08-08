@@ -6,11 +6,11 @@ namespace SA.GA.DataAccess.Repository.Implementation
 {
     public class UserRepository : IUserRepository
     {
-        private readonly AppContext2 _context;
+        AppContext2 _context;
 
-        public UserRepository()
+        public UserRepository(AppContext2 appContext2)
         {
-            _context = new AppContext2();
+            _context = appContext2;
         }
 
         public void Create(User item)

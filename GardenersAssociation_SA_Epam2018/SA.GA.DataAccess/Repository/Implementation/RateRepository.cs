@@ -8,9 +8,9 @@ namespace SA.GA.DataAccess.Repository.Implementation
     {
         private readonly AppContext2 _context;
 
-        public RateRepository()
+        public RateRepository(AppContext2 appContext2)
         {
-            _context = new AppContext2();
+            _context = appContext2;
         }
 
         public void Create(Rate item)

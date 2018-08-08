@@ -7,8 +7,14 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\app.component.ts" />
-    <None Remove="ClientApp\app\data.service.ts" />
+    <None Remove="ClientApp\app\models\electricity.ts" />
+    <None Remove="ClientApp\app\models\plot.ts" />
+    <None Remove="ClientApp\app\models\rate.ts" />
     <None Remove="ClientApp\app\not-found.component.ts" />
+    <None Remove="ClientApp\app\plot.components\plot-create.component.ts" />
+    <None Remove="ClientApp\app\plot.components\plot-edit.component.ts" />
+    <None Remove="ClientApp\app\plot.components\plot-form.component.ts" />
+    <None Remove="ClientApp\app\plot.components\plot-list.component.ts" />
     <None Remove="ClientApp\app\user-create.component.ts" />
     <None Remove="ClientApp\app\user-edit.component.ts" />
     <None Remove="ClientApp\app\user-form.component.ts" />
@@ -31,13 +37,20 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
-    <TypeScriptCompile Include="ClientApp\app\user.components\user.data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\electricity.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\plot.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\rate.ts" />
     <TypeScriptCompile Include="ClientApp\app\not-found.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\plot.components\plot-create.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\plot.components\plot-edit.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\plot.components\plot-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\plot.components\plot-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user.components\user-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user.components\user-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user.components\user-form.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user.components\user-list.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\user.components\user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\user.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
   </ItemGroup>

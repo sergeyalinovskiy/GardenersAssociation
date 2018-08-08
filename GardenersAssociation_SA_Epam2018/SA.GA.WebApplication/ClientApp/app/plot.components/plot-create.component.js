@@ -8,29 +8,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
-var UserListComponent = /** @class */ (function () {
-    function UserListComponent(dataService) {
+import { Plot } from '../models/plot';
+var PlotCreateComponent = /** @class */ (function () {
+    function PlotCreateComponent(dataService, router) {
         this.dataService = dataService;
+        this.router = router;
+        this.plot = new Plot(); // добавляемый объект
     }
-    UserListComponent.prototype.ngOnInit = function () {
-        this.load();
-    };
-    UserListComponent.prototype.load = function () {
+    PlotCreateComponent.prototype.save = function () {
         var _this = this;
-        this.dataService.getUsers().subscribe(function (data) { return _this.users = data; });
+        this.dataService.createUser(this.plot).subscribe(function (data) {
+            return _this.router.navigateByUrl("/");
+        });
     };
-    UserListComponent.prototype.delete = function (id) {
-        var _this = this;
-        this.dataService.deleteUser(id).subscribe(function (data) { return _this.load(); });
-    };
-    UserListComponent = __decorate([
+    PlotCreateComponent = __decorate([
         Component({
-            templateUrl: '../user.template/user-list.component.html'
+            templateUrl: '../plot.template/plot-create.component.html'
         }),
-        __metadata("design:paramtypes", [DataService])
-    ], UserListComponent);
-    return UserListComponent;
+        __metadata("design:paramtypes", [DataService, Router])
+    ], PlotCreateComponent);
+    return PlotCreateComponent;
 }());
-export { UserListComponent };
-//# sourceMappingURL=user-list.component.js.map
+export { PlotCreateComponent };
+//# sourceMappingURL=plot-create.component.js.map

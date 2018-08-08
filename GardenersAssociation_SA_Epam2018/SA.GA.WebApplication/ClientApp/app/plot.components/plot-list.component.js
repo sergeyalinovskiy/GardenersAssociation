@@ -9,28 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
-var UserListComponent = /** @class */ (function () {
-    function UserListComponent(dataService) {
+var PlotListComponent = /** @class */ (function () {
+    function PlotListComponent(dataService) {
         this.dataService = dataService;
     }
-    UserListComponent.prototype.ngOnInit = function () {
+    PlotListComponent.prototype.ngOnInit = function () {
         this.load();
     };
-    UserListComponent.prototype.load = function () {
+    PlotListComponent.prototype.load = function () {
         var _this = this;
-        this.dataService.getUsers().subscribe(function (data) { return _this.users = data; });
+        this.dataService.getPlots().subscribe(function (data) { return _this.plots = data; });
     };
-    UserListComponent.prototype.delete = function (id) {
+    PlotListComponent.prototype.delete = function (id) {
         var _this = this;
-        this.dataService.deleteUser(id).subscribe(function (data) { return _this.load(); });
+        this.dataService.deletePlot(id).subscribe(function (data) { return _this.load(); });
     };
-    UserListComponent = __decorate([
+    PlotListComponent = __decorate([
         Component({
-            templateUrl: '../user.template/user-list.component.html'
+            templateUrl: '../plot.template/plot-list.component.html'
         }),
         __metadata("design:paramtypes", [DataService])
-    ], UserListComponent);
-    return UserListComponent;
+    ], PlotListComponent);
+    return PlotListComponent;
 }());
-export { UserListComponent };
-//# sourceMappingURL=user-list.component.js.map
+export { PlotListComponent };
+//# sourceMappingURL=plot-list.component.js.map
