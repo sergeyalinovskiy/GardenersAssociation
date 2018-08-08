@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +31,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
-    <TypeScriptCompile Include="ClientApp\app\user.components\data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user.components\user.data.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\not-found.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user.components\user-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user.components\user-edit.component.ts" />
@@ -39,10 +40,6 @@
     <TypeScriptCompile Include="ClientApp\app\user.components\user.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\app\models\" />
   </ItemGroup>
 
 </Project>

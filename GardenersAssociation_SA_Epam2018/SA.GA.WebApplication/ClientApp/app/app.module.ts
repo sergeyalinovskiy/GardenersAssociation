@@ -11,7 +11,7 @@ import { UserCreateComponent } from './user.components/user-create.component';
 import { UserEditComponent } from './user.components/user-edit.component';
 import { NotFoundComponent } from './not-found.component';
 
-import { DataService } from './user.components/data.service';
+import { DataService } from './user.components/user.data.service';
 
 // определение маршрутов
 const appRoutes: Routes = [
