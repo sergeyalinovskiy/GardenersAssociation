@@ -16,11 +16,13 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddTransient<IPlotRepository, PlotRepository>();
             services.AddTransient<IElectricityRepository, ElectricityRepository>();
             services.AddTransient<IRateRepository, RateRepository>();
+            services.AddTransient<IHistoryRepository, HistoryRepository>();
 
             services.AddTransient<IRateService, RateService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IPlotService, PlotService>();
             services.AddTransient<IElectricityService, ElectricityService>();
+            services.AddTransient<IHistoryService, HistoryService>();
             
 
             var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB; Trusted_Connection = True;";
