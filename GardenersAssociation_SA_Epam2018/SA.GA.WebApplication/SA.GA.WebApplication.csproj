@@ -12,6 +12,7 @@
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-list.component.ts" />
     <None Remove="ClientApp\app\models\electricity.ts" />
+    <None Remove="ClientApp\app\models\history.ts" />
     <None Remove="ClientApp\app\models\plot.ts" />
     <None Remove="ClientApp\app\models\rate.ts" />
     <None Remove="ClientApp\app\not-found.component.ts" />
@@ -51,6 +52,7 @@
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\electricity.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\history.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\plot.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\rate.ts" />
     <TypeScriptCompile Include="ClientApp\app\not-found.component.ts" />
