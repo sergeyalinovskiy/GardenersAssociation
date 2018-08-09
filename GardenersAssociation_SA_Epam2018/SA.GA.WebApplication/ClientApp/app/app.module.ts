@@ -26,6 +26,13 @@ import { RateCreateComponent } from './rate/rate.components/rate-create.componen
 import { RateEditComponent } from './rate/rate.components/rate-edit.component';
 
 
+import { HistoryListComponent } from './history/history.components/history-list.component';
+import { HistoryFormComponent } from './history/history.components/history-form.component';
+import { HistoryCreateComponent } from './history/history.components/history-create.component';
+import { HistoryEditComponent } from './history/history.components/history-edit.component';
+
+
+
 import { NotFoundComponent } from './not-found.component';
 
 import { DataService } from './data.service';
@@ -41,6 +48,7 @@ const appRoutes: Routes = [
     { path: 'createElectricity', component: ElectricityCreateComponent },
     { path: 'rate', component: RateListComponent },
     { path: 'createRate', component: RateCreateComponent },
+    { path: 'history', component: HistoryListComponent },
     { path: '**', component: NotFoundComponent }
     
 ];
@@ -50,7 +58,8 @@ const appRoutes: Routes = [
     declarations: [AppComponent, UserListComponent, UserCreateComponent, UserEditComponent,
         UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
         PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
-        ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent],
+        ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
+        HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent],
     providers: [DataService], // регистрация сервисов
     bootstrap: [AppComponent]
 })

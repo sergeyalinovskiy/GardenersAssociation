@@ -1,6 +1,6 @@
 ﻿import { Data } from "@angular/router";
 
-export class Rate {
+export class History {
     constructor(
         public id?: number,
         public UserId?: number,

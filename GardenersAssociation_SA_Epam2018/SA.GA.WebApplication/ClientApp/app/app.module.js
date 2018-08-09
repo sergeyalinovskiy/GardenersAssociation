@@ -26,6 +26,10 @@ import { RateListComponent } from './rate/rate.components/rate-list.component';
 import { RateFormComponent } from './rate/rate.components/rate-form.component';
 import { RateCreateComponent } from './rate/rate.components/rate-create.component';
 import { RateEditComponent } from './rate/rate.components/rate-edit.component';
+import { HistoryListComponent } from './history/history.components/history-list.component';
+import { HistoryFormComponent } from './history/history.components/history-form.component';
+import { HistoryCreateComponent } from './history/history.components/history-create.component';
+import { HistoryEditComponent } from './history/history.components/history-edit.component';
 import { NotFoundComponent } from './not-found.component';
 import { DataService } from './data.service';
 // определение маршрутов
@@ -39,6 +43,7 @@ var appRoutes = [
     { path: 'createElectricity', component: ElectricityCreateComponent },
     { path: 'rate', component: RateListComponent },
     { path: 'createRate', component: RateCreateComponent },
+    { path: 'history', component: HistoryListComponent },
     { path: '**', component: NotFoundComponent }
 ];
 var AppModule = /** @class */ (function () {
@@ -50,7 +55,8 @@ var AppModule = /** @class */ (function () {
             declarations: [AppComponent, UserListComponent, UserCreateComponent, UserEditComponent,
                 UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
-                ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent],
+                ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
+                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent],
             providers: [DataService],
             bootstrap: [AppComponent]
         })
