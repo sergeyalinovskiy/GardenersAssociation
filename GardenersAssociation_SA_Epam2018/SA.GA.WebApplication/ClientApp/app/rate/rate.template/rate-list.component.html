@@ -1,0 +1,28 @@
+﻿<div>
+    <a routerLink="/createRate" class="nav-link">Добавить</a>
+
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Тариф</td>
+            <td>Значение</td>
+            <td>Дествует с</td>
+            <td>По</td>
+           
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of rates">
+            <td>{{r?.name}}</td>
+            <td>{{r?.value}}</td>
+            <td>{{r?.from}}</td>
+            <td>{{r?.to}}</td>
+            <td>
+                <a [routerLink]="['edit', r.id]" class="btn btn-sm btn-primary">Изменить</a>
+                <button (click)="delete(r.id)" class="btn btn-sm btn-danger">Удалить</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

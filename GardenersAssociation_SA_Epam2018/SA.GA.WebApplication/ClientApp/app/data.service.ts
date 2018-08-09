@@ -2,12 +2,17 @@
 import { HttpClient } from '@angular/common/http';
 import { User } from './models/user';
 import { Plot } from './models/plot';
+import { Electricity } from './models/electricity';
+import { Rate } from './models/rate'
 
 @Injectable()
 export class DataService {
 
     private urlUser = "/api/users";
     private urlPlot = "/api/plots";
+    private urlRate = "/api/rates";
+    private urlElectricity = "/api/electricity";
+    
 
     constructor(private http: HttpClient) {
     }
@@ -52,4 +57,47 @@ export class DataService {
     deletePlot(id: number) {
         return this.http.delete(this.urlPlot + '/' + id);
     }
+
+
+    getElectricitys() {
+        return this.http.get(this.urlElectricity);
+    }
+
+    getElectricity(id: number) {
+        return this.http.get(this.urlElectricity + '/' + id);
+    }
+
+    createElectricity(electricity: Electricity) {
+        return this.http.post(this.urlElectricity, electricity);
+    }
+
+    updateElectricity(electricity: Electricity) {
+        return this.http.put(this.urlElectricity + '/' + electricity.id, electricity);
+    }
+
+    deleteElectricity(id: number) {
+        return this.http.delete(this.urlElectricity + '/' + id);
+    }
+
+
+    getRates() {
+        return this.http.get(this.urlRate);
+    }
+
+    getRate(id: number) {
+        return this.http.get(this.urlRate + '/' + id);
+    }
+
+    createRate(rate: Rate) {
+        return this.http.post(this.urlRate, rate);
+    }
+
+    updateRate(rate: Rate) {
+        return this.http.put(this.urlRate + '/' + rate.id, rate);
+    }
+
+    deleteRate(id: number) {
+        return this.http.delete(this.urlRate + '/' + id);
+    }
+
 }

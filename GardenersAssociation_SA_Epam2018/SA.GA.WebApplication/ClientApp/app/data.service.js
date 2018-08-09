@@ -14,6 +14,8 @@ var DataService = /** @class */ (function () {
         this.http = http;
         this.urlUser = "/api/users";
         this.urlPlot = "/api/plots";
+        this.urlRate = "/api/rates";
+        this.urlElectricity = "/api/electricity";
     }
     DataService.prototype.getUsers = function () {
         return this.http.get(this.urlUser);
@@ -44,6 +46,36 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.deletePlot = function (id) {
         return this.http.delete(this.urlPlot + '/' + id);
+    };
+    DataService.prototype.getElectricitys = function () {
+        return this.http.get(this.urlElectricity);
+    };
+    DataService.prototype.getElectricity = function (id) {
+        return this.http.get(this.urlElectricity + '/' + id);
+    };
+    DataService.prototype.createElectricity = function (electricity) {
+        return this.http.post(this.urlElectricity, electricity);
+    };
+    DataService.prototype.updateElectricity = function (electricity) {
+        return this.http.put(this.urlElectricity + '/' + electricity.id, electricity);
+    };
+    DataService.prototype.deleteElectricity = function (id) {
+        return this.http.delete(this.urlElectricity + '/' + id);
+    };
+    DataService.prototype.getRates = function () {
+        return this.http.get(this.urlRate);
+    };
+    DataService.prototype.getRate = function (id) {
+        return this.http.get(this.urlRate + '/' + id);
+    };
+    DataService.prototype.createRate = function (rate) {
+        return this.http.post(this.urlRate, rate);
+    };
+    DataService.prototype.updateRate = function (rate) {
+        return this.http.put(this.urlRate + '/' + rate.id, rate);
+    };
+    DataService.prototype.deleteRate = function (id) {
+        return this.http.delete(this.urlRate + '/' + id);
     };
     DataService = __decorate([
         Injectable(),

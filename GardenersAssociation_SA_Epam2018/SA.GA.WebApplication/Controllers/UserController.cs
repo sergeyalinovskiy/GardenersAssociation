@@ -10,9 +10,11 @@ namespace SA.GA.WebApplication.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-        public UserController( IUserService userService)
+        private readonly IPlotService _plotService;
+
+        public UserController( IUserService userService, IPlotService plotService)
         {
-           
+            _plotService = plotService;
             _userService = userService;
         }
         
@@ -61,6 +63,8 @@ namespace SA.GA.WebApplication.Controllers
         {
             return _userService.GetUsersList();
         }
-        
+
+       
+
     }
 }
