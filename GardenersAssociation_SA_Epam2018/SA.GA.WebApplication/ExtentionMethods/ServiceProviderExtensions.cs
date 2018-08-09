@@ -16,6 +16,7 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddTransient<IPlotRepository, PlotRepository>();
             services.AddTransient<IElectricityRepository, ElectricityRepository>();
             services.AddTransient<IRateRepository, RateRepository>();
+            services.AddTransient<IHistoryRepository, HistoryRepository>();
 
             services.AddTransient<IRateService, RateService>();
             services.AddTransient<IUserService, UserService>();
