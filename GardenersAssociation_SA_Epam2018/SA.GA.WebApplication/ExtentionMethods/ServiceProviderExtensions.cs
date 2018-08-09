@@ -22,6 +22,7 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IPlotService, PlotService>();
             services.AddTransient<IElectricityService, ElectricityService>();
+            services.AddTransient<IHistoryService, HistoryService>();
             
 
             var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB; Trusted_Connection = True;";
