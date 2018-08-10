@@ -1,10 +1,11 @@
-﻿using SA.GA.Common.Models;
-using SA.GA.DataAccess.Repository;
-using System;
-using System.Collections.Generic;
-
-namespace SA.GA.Business.Services.Implementation
+﻿namespace SA.GA.Business.Services.Implementation
 {
+    #region Usings
+    using System;
+    using System.Collections.Generic;
+    using SA.GA.Common.Models;
+    using SA.GA.DataAccess.Repository;
+    #endregion
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;

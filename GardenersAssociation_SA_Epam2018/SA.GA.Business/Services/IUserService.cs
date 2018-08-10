@@ -1,8 +1,9 @@
-﻿using SA.GA.Common.Models;
-using System.Collections.Generic;
-
-namespace SA.GA.Business.Services
+﻿namespace SA.GA.Business.Services
 {
+    #region Usings
+        using SA.GA.Common.Models;
+        using System.Collections.Generic;
+    #endregion
     public interface IUserService
     {
         User GetUserById(int id);
@@ -14,6 +15,5 @@ namespace SA.GA.Business.Services
         void SaveUser(User model);
 
         void UpdateUser(User model);
-
     }
 }

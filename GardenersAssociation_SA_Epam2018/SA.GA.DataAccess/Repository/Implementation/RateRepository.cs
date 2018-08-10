@@ -1,9 +1,10 @@
-﻿using SA.GA.Common.Models;
-using SA.GA.DataAccess.Context.Implementation;
-using System.Collections.Generic;
-
-namespace SA.GA.DataAccess.Repository.Implementation
+﻿namespace SA.GA.DataAccess.Repository.Implementation
 {
+    #region Usings
+    using SA.GA.Common.Models;
+    using SA.GA.DataAccess.Context.Implementation;
+    using System.Collections.Generic;
+    #endregion
     public class RateRepository : IRateRepository
     {
         private readonly AppContext2 _context;

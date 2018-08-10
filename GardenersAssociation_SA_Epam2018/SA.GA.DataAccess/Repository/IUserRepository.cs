@@ -1,8 +1,9 @@
-﻿using SA.GA.Common.Models;
-using System.Collections.Generic;
-
-namespace SA.GA.DataAccess.Repository
+﻿namespace SA.GA.DataAccess.Repository
 {
+    #region Usings
+    using SA.GA.Common.Models;
+    using System.Collections.Generic;
+    #endregion
     public interface IUserRepository
     {
         void Create(User item);

@@ -1,10 +1,9 @@
-﻿using SA.GA.Common.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SA.GA.DataAccess.Repository
+﻿namespace SA.GA.DataAccess.Repository
 {
+    #region Usings
+    using SA.GA.Common.Models;
+    using System.Collections.Generic;
+    #endregion
     public interface IPlotRepository
     {
         void Create(Plot item);

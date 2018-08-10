@@ -1,10 +1,9 @@
-﻿using SA.GA.Common.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SA.GA.Business.Services
+﻿namespace SA.GA.Business.Services
 {
+    #region Usings
+    using SA.GA.Common.Models;
+    using System.Collections.Generic;
+    #endregion
     public interface IHistoryService
     {
         History GetHistoryById(int id);

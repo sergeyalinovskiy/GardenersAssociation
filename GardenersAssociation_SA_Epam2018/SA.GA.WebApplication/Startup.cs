@@ -7,28 +7,28 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using SA.GA.WebApp.ExtentionMethods;
+
 
 namespace SA.GA.WebApplication
 {
+    #region Usings
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using SA.GA.WebApp.ExtentionMethods;
+    #endregion
     public class Startup
     {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
-
 
         public void ConfigureServices(IServiceCollection services)
         {
 
             services.AddMvc();
             services.RegisterDependency();
-
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -46,8 +46,6 @@ namespace SA.GA.WebApplication
                 app.UseExceptionHandler("/Home/Error");
             }
 
-
-
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
@@ -57,8 +55,6 @@ namespace SA.GA.WebApplication
                 context.Response.ContentType = "text/html";
                 await context.Response.SendFileAsync(Path.Combine(env.WebRootPath, "index.html"));
             });
-
-           
         }
     }
 }

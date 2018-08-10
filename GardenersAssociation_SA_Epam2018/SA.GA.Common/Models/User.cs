@@ -41,8 +41,6 @@
         [Column("UserStatus", TypeName = "bit")]
         public bool Status { get; set; }
 
-
         public ICollection<History> Historys { get; set; }
-
     }
 }
