@@ -12,6 +12,8 @@ namespace SA.GA.WebApp.ExtentionMethods
     {
         public static void RegisterDependency(this IServiceCollection services)
         {
+            var connection = @"Server =.\SQLEXPRESS; Database = SA.GA.DB; Trusted_Connection = True;";
+
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IPlotRepository, PlotRepository>();
             services.AddTransient<IElectricityRepository, ElectricityRepository>();
@@ -23,14 +25,11 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddTransient<IPlotService, PlotService>();
             services.AddTransient<IElectricityService, ElectricityService>();
             services.AddTransient<IHistoryService, HistoryService>();
-            
-
-            var connection = @"Server =.\SQLEXPRESS01; Database = SA.GA.DB; Trusted_Connection = True;";
 
             services.AddDbContext<AppContext2>(options =>
                 options.UseSqlServer(
                     connection,
-                    b => b.MigrationsAssembly("SA.GA.WebApp")
+                    b => b.MigrationsAssembly("SA.GA.WebApplication")
                 ));
         }
     }

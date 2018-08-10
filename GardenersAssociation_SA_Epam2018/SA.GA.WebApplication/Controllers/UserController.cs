@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using SA.GA.Business.Services;
-using SA.GA.Common.Models;
-
-namespace SA.GA.WebApplication.Controllers
+﻿namespace SA.GA.WebApplication.Controllers
 {
+
+    #region Usings
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.AspNetCore.Mvc;
+    using SA.GA.Business.Services;
+    using SA.GA.Common.Models;
+    #endregion
+
     [Route("api/users")]
     public class UserController : Controller
     {
@@ -63,8 +66,5 @@ namespace SA.GA.WebApplication.Controllers
         {
             return _userService.GetUsersList();
         }
-
-       
-
     }
 }

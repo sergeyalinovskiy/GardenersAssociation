@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using SA.GA.Common.Models;
-using SA.GA.DataAccess.Repository;
-using SA.GA.DataAccess.Repository.Implementation;
-
-namespace SA.GA.Business.Services.Implementation
+﻿namespace SA.GA.Business.Services.Implementation
 {
+    #region Usings
+    using System;
+    using System.Collections.Generic;
+    using SA.GA.Common.Models;
+    using SA.GA.DataAccess.Repository;
+    using SA.GA.DataAccess.Repository.Implementation;
+    #endregion
     public class RateService : IRateService
     {
         private readonly IRateRepository _rateRepository;

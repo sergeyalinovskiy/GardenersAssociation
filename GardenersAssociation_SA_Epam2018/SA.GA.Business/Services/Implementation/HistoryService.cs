@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SA.GA.Common.Models;
-using SA.GA.DataAccess.Repository;
-
+﻿
 namespace SA.GA.Business.Services.Implementation
 {
+    #region Usings
+    using System;
+    using System.Collections.Generic;
+    using SA.GA.Common.Models;
+    using SA.GA.DataAccess.Repository;
+    #endregion
     public class HistoryService : IHistoryService
     {
         private readonly IHistoryRepository _historyRepository;
