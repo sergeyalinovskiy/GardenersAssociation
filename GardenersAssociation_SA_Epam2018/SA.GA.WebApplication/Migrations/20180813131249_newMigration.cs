@@ -79,7 +79,6 @@ namespace SA.GA.WebApplication.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Area = table.Column<decimal>(type: "decimal(10, 2)", nullable: false),
                     Privatized = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
                     ElectricityId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -91,19 +90,14 @@ namespace SA.GA.WebApplication.Migrations
                         principalTable: "Electricity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Plot_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "History",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     PlotId = table.Column<int>(type: "int", nullable: false),
                     From = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -113,14 +107,14 @@ namespace SA.GA.WebApplication.Migrations
                 {
                     table.PrimaryKey("PK_History", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_History_Plot_Id",
-                        column: x => x.Id,
+                        name: "FK_History_Plot_PlotId",
+                        column: x => x.PlotId,
                         principalTable: "Plot",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_History_User_Id",
-                        column: x => x.Id,
+                        name: "FK_History_User_UserId",
+                        column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -132,14 +126,19 @@ namespace SA.GA.WebApplication.Migrations
                 column: "RateId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_History_PlotId",
+                table: "History",
+                column: "PlotId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_History_UserId",
+                table: "History",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Plot_ElectricityId",
                 table: "Plot",
                 column: "ElectricityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Plot_UserId",
-                table: "Plot",
-                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -151,10 +150,10 @@ namespace SA.GA.WebApplication.Migrations
                 name: "Plot");
 
             migrationBuilder.DropTable(
-                name: "Electricity");
+                name: "User");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "Electricity");
 
             migrationBuilder.DropTable(
                 name: "Rate");

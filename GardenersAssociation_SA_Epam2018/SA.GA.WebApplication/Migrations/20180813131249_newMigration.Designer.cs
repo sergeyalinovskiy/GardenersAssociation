@@ -10,7 +10,7 @@ using SA.GA.DataAccess.Context.Implementation;
 namespace SA.GA.WebApplication.Migrations
 {
     [DbContext(typeof(AppContext2))]
-    [Migration("20180810143756_newMigration")]
+    [Migration("20180813131249_newMigration")]
     partial class newMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,7 +78,9 @@ namespace SA.GA.WebApplication.Migrations
 
             modelBuilder.Entity("SA.GA.Common.Models.History", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("From")
                         .HasColumnName("From")
@@ -97,6 +99,10 @@ namespace SA.GA.WebApplication.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PlotId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("History");
                 });
@@ -120,15 +126,9 @@ namespace SA.GA.WebApplication.Migrations
                         .HasColumnName("Privatized")
                         .HasColumnType("bit");
 
-                    b.Property<int>("UserId")
-                        .HasColumnName("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ElectricityId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Plot");
                 });
@@ -223,12 +223,12 @@ namespace SA.GA.WebApplication.Migrations
                 {
                     b.HasOne("SA.GA.Common.Models.Plot", "Plot")
                         .WithMany("Historys")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("PlotId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SA.GA.Common.Models.User", "User")
                         .WithMany("Historys")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
@@ -237,11 +237,6 @@ namespace SA.GA.WebApplication.Migrations
                     b.HasOne("SA.GA.Common.Models.Electricity", "Electricity")
                         .WithMany("Plot")
                         .HasForeignKey("ElectricityId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SA.GA.Common.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

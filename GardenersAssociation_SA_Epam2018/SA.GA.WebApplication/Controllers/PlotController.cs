@@ -8,7 +8,7 @@
     using SA.GA.Common.Models;
     #endregion
 
-    [Route("api/plots")]
+    [Route("api/plot")]
     public class PlotController : Controller
     {
         private readonly IPlotService _plotService;

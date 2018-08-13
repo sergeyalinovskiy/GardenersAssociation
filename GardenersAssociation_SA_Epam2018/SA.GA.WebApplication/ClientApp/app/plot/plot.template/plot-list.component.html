@@ -6,7 +6,6 @@
         <tr>
             <td>Площадь</td>
             <td>Приватизирована</td>
-            <td>UserId</td>
             <td>ElectricityId</td>
             <td></td>
         </tr>
@@ -15,7 +14,6 @@
         <tr *ngFor="let p of plots">
             <td>{{p?.Area}}</td>
             <td>{{p?.Privatized}}</td>
-            <td>{{p?.UserId}}</td>
             <td>{{p?.ElectricityId}}</td>
             <td>
                 <a [routerLink]="['edit', p.id]" class="btn btn-sm btn-primary">Изменить</a>
