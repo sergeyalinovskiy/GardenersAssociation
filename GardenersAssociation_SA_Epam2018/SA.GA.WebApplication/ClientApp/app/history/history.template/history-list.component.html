@@ -1,10 +1,11 @@
 ﻿<div>
-    <a routerLink="/create" class="nav-link">Добавить</a>
+    <a routerLink="/createHistory" class="nav-link">Добавить</a>
 
 </div>
 <table class="table table-striped">
     <thead>
         <tr>
+            <td>Id</td>
             <td>UserId</td>
             <td>PlotId</td>
             <td>Дествует с</td>
@@ -14,7 +15,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let p of plots">
+        <tr *ngFor="let p of historys">
+            <td>{{p?.id}}</td>
             <td>{{p?.userId}}</td>
             <td>{{p?.plotId}}</td>
             <td>{{p?.from}}</td>

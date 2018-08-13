@@ -11,7 +11,7 @@ export class HistoryCreateComponent {
     history: History = new History();    // добавляемый объект
     constructor(private dataService: DataService, private router: Router) { }
     save() {
-        this.dataService.createUser(this.history).subscribe(data =>
+        this.dataService.createHistory(this.history).subscribe(data =>
             this.router.navigateByUrl("/"));
     }
 }

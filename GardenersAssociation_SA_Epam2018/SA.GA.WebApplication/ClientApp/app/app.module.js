@@ -39,11 +39,12 @@ var appRoutes = [
     { path: 'edit/:id', component: UserEditComponent },
     { path: 'plot', component: PlotListComponent },
     { path: 'createPlot', component: PlotCreateComponent },
-    { path: 'electricity', component: ElectricityListComponent },
+    { path: 'electricitys', component: ElectricityListComponent },
     { path: 'createElectricity', component: ElectricityCreateComponent },
-    { path: 'rate', component: RateListComponent },
+    { path: 'rates', component: RateListComponent },
     { path: 'createRate', component: RateCreateComponent },
     { path: 'history', component: HistoryListComponent },
+    { path: 'createHistory', component: HistoryCreateComponent },
     { path: '**', component: NotFoundComponent }
 ];
 var AppModule = /** @class */ (function () {

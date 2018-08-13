@@ -10,10 +10,10 @@ import { History } from './models/history';
 export class DataService {
 
     private urlUser = "/api/users";
-    private urlPlot = "/api/plots";
+    private urlPlot = "/api/plot";
     private urlRate = "/api/rates";
-    private urlHistory = "/api/historys";
-    private urlElectricity = "/api/electricity";
+    private urlHistory = "/api/history";
+    private urlElectricity = "/api/electricitys";
     
 
     constructor(private http: HttpClient) {

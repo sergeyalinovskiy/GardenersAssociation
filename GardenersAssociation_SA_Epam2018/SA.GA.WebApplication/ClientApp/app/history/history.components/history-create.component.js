@@ -19,7 +19,7 @@ var HistoryCreateComponent = /** @class */ (function () {
     }
     HistoryCreateComponent.prototype.save = function () {
         var _this = this;
-        this.dataService.createUser(this.history).subscribe(function (data) {
+        this.dataService.createHistory(this.history).subscribe(function (data) {
             return _this.router.navigateByUrl("/");
         });
     };

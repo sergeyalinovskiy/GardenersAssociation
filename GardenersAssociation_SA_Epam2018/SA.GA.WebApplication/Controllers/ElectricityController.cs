@@ -8,7 +8,7 @@
     using SA.GA.Common.Models;
     #endregion
 
-    [Route("api/electricity")]
+    [Route("api/electricitys")]
     public class ElectricityController : Controller
     {
         private readonly IElectricityService _electricityService;
