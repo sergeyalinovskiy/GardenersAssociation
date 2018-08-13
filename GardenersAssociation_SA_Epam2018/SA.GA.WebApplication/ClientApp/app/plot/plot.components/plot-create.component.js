@@ -19,7 +19,7 @@ var PlotCreateComponent = /** @class */ (function () {
     }
     PlotCreateComponent.prototype.save = function () {
         var _this = this;
-        this.dataService.createUser(this.plot).subscribe(function (data) {
+        this.dataService.createPlot(this.plot).subscribe(function (data) {
             return _this.router.navigateByUrl("/");
         });
     };

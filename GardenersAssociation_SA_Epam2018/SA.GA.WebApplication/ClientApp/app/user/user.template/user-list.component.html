@@ -1,14 +1,15 @@
 ﻿<div>
     <a routerLink="/create" class="nav-link">Добавить</a>
     <a routerLink="/plot" class="nav-link">Участки</a>
-    <a routerLink="/rate" class="nav-link">Тарифы</a>
-    <a routerLink="/electricity" class="nav-link">Электроэнергия</a>
+    <a routerLink="/rates" class="nav-link">Тарифы</a>
+    <a routerLink="/electricitys" class="nav-link">Электроэнергия</a>
     <a routerLink="/history" class="nav-link">История</a>
 
 </div>
 <table class="table table-striped">
     <thead>
         <tr>
+            <td>id</td>
             <td>Имя</td>
             <td>Отчество</td>
             <td>Фамилия</td>
@@ -22,6 +23,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let u of users">
+            <td>{{u?.id}}</td>
             <td>{{u?.firstName}}</td>
             <td>{{u?.middleName}}</td>
             <td>{{u?.lastName}}</td>

@@ -5,6 +5,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <td>id</td>
             <td>Тариф</td>
             <td>Значение</td>
             <td>Дествует с</td>
@@ -15,6 +16,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let r of rates">
+            <td>{{r?.id}}</td>
             <td>{{r?.name}}</td>
             <td>{{r?.value}}</td>
             <td>{{r?.from}}</td>

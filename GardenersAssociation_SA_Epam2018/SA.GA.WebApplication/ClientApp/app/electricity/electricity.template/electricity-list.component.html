@@ -4,6 +4,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <td>id</td>
             <td>Год</td>
             <td>Месяц</td>
             <td>Предыдущие данные</td>
@@ -18,6 +19,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let e of electricitys">
+            <td>{{e?.id}}</td>
             <td>{{e?.year}}</td>
             <td>{{e?.mounth}}</td>
             <td>{{e?.previousTestimony}}</td>

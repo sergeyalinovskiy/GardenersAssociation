@@ -11,7 +11,7 @@ export class PlotCreateComponent {
     plot: Plot = new Plot();    // добавляемый объект
     constructor(private dataService: DataService, private router: Router) { }
     save() {
-        this.dataService.createUser(this.plot).subscribe(data =>
+        this.dataService.createPlot(this.plot).subscribe(data =>
             this.router.navigateByUrl("/"));
     }
 }

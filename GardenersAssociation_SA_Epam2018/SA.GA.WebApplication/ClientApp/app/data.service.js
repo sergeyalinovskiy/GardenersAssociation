@@ -13,10 +13,10 @@ var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.urlUser = "/api/users";
-        this.urlPlot = "/api/plots";
+        this.urlPlot = "/api/plot";
         this.urlRate = "/api/rates";
-        this.urlHistory = "/api/historys";
-        this.urlElectricity = "/api/electricity";
+        this.urlHistory = "/api/history";
+        this.urlElectricity = "/api/electricitys";
     }
     DataService.prototype.getUsers = function () {
         return this.http.get(this.urlUser);
