@@ -81,6 +81,11 @@ export class DataService {
         return this.http.delete(this.urlElectricity + '/' + id);
     }
 
+    getRateInfo(id: number) {
+        return this.http.get(this.urlElectricity + '/' + 'GetRateInfo' + '/' + id);
+    }
+
+
 
     getRates() {
         return this.http.get(this.urlRate);

@@ -15,5 +15,7 @@
         void SaveElectricity(Electricity model);
 
         void UpdateElectricity(Electricity model);
+
+        Rate ShowRateInfo(int id);
     }
 }

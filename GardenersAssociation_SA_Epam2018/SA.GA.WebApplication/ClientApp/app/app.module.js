@@ -26,6 +26,7 @@ import { RateListComponent } from './rate/rate.components/rate-list.component';
 import { RateFormComponent } from './rate/rate.components/rate-form.component';
 import { RateCreateComponent } from './rate/rate.components/rate-create.component';
 import { RateEditComponent } from './rate/rate.components/rate-edit.component';
+import { RateComponent } from './rate/rate.components/rate-rate.component';
 import { HistoryListComponent } from './history/history.components/history-list.component';
 import { HistoryFormComponent } from './history/history.components/history-form.component';
 import { HistoryCreateComponent } from './history/history.components/history-create.component';
@@ -39,12 +40,17 @@ var appRoutes = [
     { path: 'edit/:id', component: UserEditComponent },
     { path: 'plot', component: PlotListComponent },
     { path: 'createPlot', component: PlotCreateComponent },
+    { path: 'editPlot/:id', component: PlotEditComponent },
     { path: 'electricitys', component: ElectricityListComponent },
     { path: 'createElectricity', component: ElectricityCreateComponent },
+    { path: 'editElectricity/:id', component: ElectricityEditComponent },
     { path: 'rates', component: RateListComponent },
+    { path: 'api/electricitys/GetRateInfo/:id', component: RateComponent },
+    { path: 'editRate/:id', component: RateEditComponent },
     { path: 'createRate', component: RateCreateComponent },
     { path: 'history', component: HistoryListComponent },
     { path: 'createHistory', component: HistoryCreateComponent },
+    { path: 'editHistory/:id', component: HistoryEditComponent },
     { path: '**', component: NotFoundComponent }
 ];
 var AppModule = /** @class */ (function () {
@@ -57,7 +63,7 @@ var AppModule = /** @class */ (function () {
                 UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
                 ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
-                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent],
+                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent],
             providers: [DataService],
             bootstrap: [AppComponent]
         })

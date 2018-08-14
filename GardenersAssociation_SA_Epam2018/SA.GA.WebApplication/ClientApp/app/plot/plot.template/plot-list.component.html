@@ -18,7 +18,7 @@
             <td>{{p?.privatized}}</td>
             <td>{{p?.electricityId}}</td>
             <td>
-                <a [routerLink]="['edit', p.id]" class="btn btn-sm btn-primary">Изменить</a>
+                <a [routerLink]="['/editPlot', p.id]" class="btn btn-sm btn-primary">Изменить</a>
                 <button (click)="delete(p.id)" class="btn btn-sm btn-danger">Удалить</button>
             </td>
         </tr>

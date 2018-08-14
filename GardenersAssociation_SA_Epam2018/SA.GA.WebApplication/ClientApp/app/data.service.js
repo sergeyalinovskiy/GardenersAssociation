@@ -63,6 +63,9 @@ var DataService = /** @class */ (function () {
     DataService.prototype.deleteElectricity = function (id) {
         return this.http.delete(this.urlElectricity + '/' + id);
     };
+    DataService.prototype.getRateInfo = function (id) {
+        return this.http.get(this.urlElectricity + '/' + 'GetRateInfo' + '/' + id);
+    };
     DataService.prototype.getRates = function () {
         return this.http.get(this.urlRate);
     };

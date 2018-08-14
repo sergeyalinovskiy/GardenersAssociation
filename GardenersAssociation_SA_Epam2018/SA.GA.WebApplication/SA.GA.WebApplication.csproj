@@ -28,6 +28,7 @@
     <None Remove="ClientApp\app\rate\rate.components\rate-edit.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-form.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-list.component.ts" />
+    <None Remove="ClientApp\app\rate\rate.components\rate-rate.component.ts" />
     <None Remove="ClientApp\app\user-create.component.ts" />
     <None Remove="ClientApp\app\user-edit.component.ts" />
     <None Remove="ClientApp\app\user-form.component.ts" />
@@ -72,6 +73,7 @@
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-form.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-rate.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-form.component.ts" />

@@ -5,17 +5,24 @@
     using System.Collections.Generic;
     using SA.GA.Common.Models;
     using SA.GA.DataAccess.Repository;
+    using SA.GA.DataAccess.Repository.Implementation;
     #endregion
     public class ElectricityService : IElectricityService
     {
         private readonly IElectricityRepository _electricityRepository;
+        private readonly IRateRepository _rateRepository;
 
-        public ElectricityService(IElectricityRepository electricityRepository)
+        public ElectricityService(IElectricityRepository electricityRepository, IRateRepository rateRepository)
         {
             if (electricityRepository == null)
             {
                 throw new NullReferenceException();
             }
+            if (rateRepository == null)
+            {
+                throw new NullReferenceException();
+            }
+            _rateRepository = rateRepository;
             _electricityRepository = electricityRepository;
         }
         public void DeleteElectricityByElectricityId(int id)
@@ -58,5 +65,22 @@
             }
             _electricityRepository.Update(model);
         }
+
+        public Rate ShowRateInfo(int id)
+        {
+            int ElectricityRateId =_electricityRepository.GetById(id).RateId;
+            Rate rate = _rateRepository.GetById(ElectricityRateId);
+            Rate rate2 = new Rate()
+            {
+                Id = rate.Id,
+                Electricity = null,
+                Name = rate.Name,
+                Value = rate.Value,
+                From = rate.From,
+                To = rate.To
+            };
+            return rate2;
+        }
+
     }
 }

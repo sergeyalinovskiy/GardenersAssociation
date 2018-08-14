@@ -63,5 +63,17 @@
         {
             return _electricityService.GetElectricitysList();
         }
+
+        [HttpGet("GetRateInfo/{id}")]
+        public IEnumerable<Rate> GetRateInfo(int id)
+        {
+            Rate rate = _electricityService.ShowRateInfo(id);
+            List<Rate> rateList = new List<Rate>();
+            rateList.Add(rate);
+            
+            return rateList;
+        }
     }
+
+    
 }
