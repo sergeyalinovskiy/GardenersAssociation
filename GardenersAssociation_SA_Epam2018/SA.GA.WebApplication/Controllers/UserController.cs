@@ -7,6 +7,7 @@
     using Microsoft.AspNetCore.Mvc;
     using SA.GA.Business.Services;
     using SA.GA.Common.Models;
+    using SA.GA.WebApplication.ViewModels;
     #endregion
 
     [Route("api/users")]
@@ -65,6 +66,36 @@
         public IEnumerable<User> Get()
         {
             return _userService.GetUsersList();
+        }
+
+        [HttpGet("/getPlots/{id}")]
+        public IEnumerable<PlotViewModel> GetPlots(int id)
+        {
+            IEnumerable<Plot> plots = _userService.GetUserPlots(id);
+            IEnumerable<PlotViewModel> resultPlots= this.MapPlotToViewModel(plots);
+            
+            return resultPlots;
+        }
+
+        private PlotViewModel MapPlotToViewModel(Plot plot)
+        {
+            return new PlotViewModel()
+            {
+                Id=plot.Id,
+                Area=plot.Area,
+                ElectricityId=plot.ElectricityId,
+                Privatized=plot.Privatized
+            };
+        }
+
+        private IEnumerable<PlotViewModel> MapPlotToViewModel(IEnumerable<Plot> plots)
+        {
+            List<PlotViewModel> resultPlots = new List<PlotViewModel>();
+            foreach(Plot p in plots)
+            {
+                resultPlots.Add(this.MapPlotToViewModel(p));
+            }
+            return resultPlots;
         }
     }
 }

@@ -11,6 +11,7 @@
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-edit.component.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-list.component.ts" />
+    <None Remove="ClientApp\app\electricity\electricity.components\electricity-plot.component.ts" />
     <None Remove="ClientApp\app\history\history.components\history-create.component.ts" />
     <None Remove="ClientApp\app\history\history.components\history-edit.component.ts" />
     <None Remove="ClientApp\app\history\history.components\history-form.component.ts" />
@@ -24,10 +25,12 @@
     <None Remove="ClientApp\app\plot\plot.components\plot-edit.component.ts" />
     <None Remove="ClientApp\app\plot\plot.components\plot-form.component.ts" />
     <None Remove="ClientApp\app\plot\plot.components\plot-list.component.ts" />
+    <None Remove="ClientApp\app\plot\plot.components\plot-user.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-create.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-edit.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-form.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-list.component.ts" />
+    <None Remove="ClientApp\app\rate\rate.components\rate-rate.component.ts" />
     <None Remove="ClientApp\app\user-create.component.ts" />
     <None Remove="ClientApp\app\user-edit.component.ts" />
     <None Remove="ClientApp\app\user-form.component.ts" />
@@ -54,6 +57,7 @@
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-plot.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\history\history.components\history-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\history\history.components\history-edit.component.ts" />
@@ -67,11 +71,13 @@
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-user.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-form.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-rate.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-form.component.ts" />

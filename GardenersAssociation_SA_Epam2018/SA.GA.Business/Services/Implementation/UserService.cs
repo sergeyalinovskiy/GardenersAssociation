@@ -3,20 +3,36 @@
     #region Usings
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using SA.GA.Common.Models;
     using SA.GA.DataAccess.Repository;
+    using SA.GA.DataAccess.Repository.Implementation;
     #endregion
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
 
-        public UserService(IUserRepository userRepository)
+        private readonly IHistoryRepository _historyRepository;
+
+        private readonly IPlotRepository _plotRepository;
+
+        public UserService(IUserRepository userRepository, IHistoryRepository historyRepository, IPlotRepository plotRepository)
         {
             if (userRepository == null)
             {
                 throw new NullReferenceException();
             }
+            if (historyRepository == null)
+            {
+                throw new NullReferenceException();
+            }
+            if (plotRepository == null)
+            {
+                throw new NullReferenceException();
+            }
             _userRepository = userRepository;
+            _historyRepository = historyRepository;
+            _plotRepository = plotRepository;
         }
 
         public void DeleteUserByUserId(int id)
@@ -59,5 +75,19 @@
             }
             _userRepository.Update(model);
         }
+
+        public IEnumerable<Plot> GetUserPlots(int id)
+        {
+            IEnumerable<History> historys;
+            historys = _historyRepository.GetAll();
+            int [] plotsId =historys.Where(m => m.UserId == id).Select(m => m.PlotId).ToArray();
+            List<Plot> plots = new List<Plot>();
+
+            foreach(int i in plotsId)
+            {
+                plots.Add(_plotRepository.GetById(i));
+            }
+            return plots;
+        } 
     }
 }

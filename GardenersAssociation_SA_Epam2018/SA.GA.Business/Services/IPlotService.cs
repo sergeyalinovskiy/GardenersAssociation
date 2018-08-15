@@ -15,5 +15,7 @@
         void SavePlot(Plot model);
 
         void UpdatePlot(Plot model);
+
+        IEnumerable<Electricity> GetPlotElectricity(int id);
     }
 }

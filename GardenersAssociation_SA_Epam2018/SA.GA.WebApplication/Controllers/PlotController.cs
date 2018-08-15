@@ -6,16 +6,19 @@
     using Microsoft.AspNetCore.Mvc;
     using SA.GA.Business.Services;
     using SA.GA.Common.Models;
+    using SA.GA.WebApplication.ViewModels;
     #endregion
 
     [Route("api/plot")]
     public class PlotController : Controller
     {
         private readonly IPlotService _plotService;
+        private readonly IElectricityService _electricityService;
 
-        public PlotController(IPlotService plotService)
+        public PlotController(IPlotService plotService, IElectricityService electricityService)
         {
             _plotService = plotService;
+            _electricityService = electricityService;
         }
 
         [HttpDelete("{id}")]
@@ -62,6 +65,42 @@
         public IEnumerable<Plot> Get()
         {
             return _plotService.GetPlotsList();
+        }
+
+        [HttpGet("/getPlotElectricity/{id}")]
+        public IEnumerable<ElectricityViewModel> GetPlotElectricity(int id)
+        {
+            IEnumerable<Electricity> electricities = _plotService.GetPlotElectricity(id);
+            IEnumerable<ElectricityViewModel> plotElectricities = this.MapElectricityListToViewModel(electricities);
+
+            return plotElectricities;
+        }
+
+        private ElectricityViewModel MapElectricityToViewModel(Electricity electricity)
+        {
+            return new ElectricityViewModel()
+            {
+                Id = electricity.Id,
+                Year=electricity.Year,
+                Mounth=electricity.Mounth,
+                BankCollections=electricity.BankCollections,
+                Losses=electricity.Losses,
+                Paid=electricity.Paid,
+                NecessaryToPlay=electricity.NecessaryToPlay,
+                PreviousTestimony=electricity.PreviousTestimony,
+                RecentTestimony=electricity.RecentTestimony,
+                RateId=electricity.RateId                
+            };
+        }
+
+        private IEnumerable<ElectricityViewModel> MapElectricityListToViewModel(IEnumerable<Electricity> electricities)
+        {
+            List<ElectricityViewModel> resultElectricity = new List<ElectricityViewModel>();
+            foreach (Electricity e in electricities)
+            {
+                resultElectricity.Add(this.MapElectricityToViewModel(e));
+            }
+            return resultElectricity;
         }
     }
 }

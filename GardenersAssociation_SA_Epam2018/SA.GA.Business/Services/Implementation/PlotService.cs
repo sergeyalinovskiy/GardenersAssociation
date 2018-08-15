@@ -3,6 +3,7 @@
     #region Usings
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using SA.GA.Common.Models;
     using SA.GA.DataAccess.Repository;
     #endregion
@@ -10,12 +11,19 @@
     {
         private readonly IPlotRepository _plotRepository;
 
-        public PlotService(IPlotRepository plotRepository)
+        private readonly IElectricityRepository _electricityRepository;
+
+        public PlotService(IPlotRepository plotRepository, IElectricityRepository electricityRepository)
         {
+            if (electricityRepository == null)
+            {
+                throw new NullReferenceException();
+            }
             if (plotRepository == null)
             {
                throw new NullReferenceException();
             }
+            _electricityRepository = electricityRepository;
             _plotRepository = plotRepository;
         }
 
@@ -59,5 +67,15 @@
             }
             _plotRepository.Update(model);
         }
+
+        public IEnumerable<Electricity> GetPlotElectricity(int id)
+        {
+            int electricityId = _plotRepository.GetAll().Where(m => m.Id == id).Select(m => m.ElectricityId).Single();
+            List<Electricity> electricities= new List<Electricity>();
+            Electricity electricity = _electricityRepository.GetById(electricityId);
+            electricities.Add(electricity);
+            return electricities;
+        }
+
     }
 }

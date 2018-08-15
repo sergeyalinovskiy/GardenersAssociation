@@ -22,7 +22,7 @@
             <td>{{r?.from}}</td>
             <td>{{r?.to}}</td>
             <td>
-                <a [routerLink]="['edit', r.id]" class="btn btn-sm btn-primary">Изменить</a>
+                <a [routerLink]="['/editRate', r.id]" class="btn btn-sm btn-primary">Изменить</a>
                 <button (click)="delete(r.id)" class="btn btn-sm btn-danger">Удалить</button>
             </td>
         </tr>

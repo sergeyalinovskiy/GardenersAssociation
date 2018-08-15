@@ -15,5 +15,7 @@
         void SaveElectricity(Electricity model);
 
         void UpdateElectricity(Electricity model);
+
+        IEnumerable<Rate> ShowRateInfo(int id);
     }
 }

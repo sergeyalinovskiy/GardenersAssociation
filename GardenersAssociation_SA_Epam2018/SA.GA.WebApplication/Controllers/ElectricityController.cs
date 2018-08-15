@@ -6,6 +6,7 @@
     using Microsoft.AspNetCore.Mvc;
     using SA.GA.Business.Services;
     using SA.GA.Common.Models;
+    using SA.GA.WebApplication.ViewModels;
     #endregion
 
     [Route("api/electricitys")]
@@ -63,5 +64,36 @@
         {
             return _electricityService.GetElectricitysList();
         }
+
+        [HttpGet("GetRateInfo/{id}")]
+        public IEnumerable<RateViewModel> GetRateInfo(int id)
+        {
+            IEnumerable<RateViewModel> rates = this.MapRateListToViewModel(_electricityService.ShowRateInfo(id));
+            return rates;
+        }
+
+        private RateViewModel MapRateToViewModel(Rate rate)
+        {
+            return new RateViewModel()
+            {
+                Id = rate.Id,
+                Name = rate.Name,
+                Value = rate.Value,
+                From = rate.From,
+                To = rate.To
+            };
+        }
+
+        private IEnumerable<RateViewModel> MapRateListToViewModel(IEnumerable<Rate> rates)
+        {
+            List<RateViewModel> resultPlots = new List<RateViewModel>();
+            foreach (Rate r in rates)
+            {
+                resultPlots.Add(this.MapRateToViewModel(r));
+            }
+            return resultPlots;
+        }
     }
+
+    
 }

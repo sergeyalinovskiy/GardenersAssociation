@@ -18,14 +18,17 @@ import { PlotListComponent } from './plot/plot.components/plot-list.component';
 import { PlotFormComponent } from './plot/plot.components/plot-form.component';
 import { PlotCreateComponent } from './plot/plot.components/plot-create.component';
 import { PlotEditComponent } from './plot/plot.components/plot-edit.component';
+import { PlotUserComponent } from './plot/plot.components/plot-user.component';
 import { ElectricityListComponent } from './electricity/electricity.components/electricity-list.component';
 import { ElectricityFormComponent } from './electricity/electricity.components/electricity-form.component';
 import { ElectricityCreateComponent } from './electricity/electricity.components/electricity-create.component';
 import { ElectricityEditComponent } from './electricity/electricity.components/electricity-edit.component';
+import { ElectricityPlotComponent } from './electricity/electricity.components/electricity-plot.component';
 import { RateListComponent } from './rate/rate.components/rate-list.component';
 import { RateFormComponent } from './rate/rate.components/rate-form.component';
 import { RateCreateComponent } from './rate/rate.components/rate-create.component';
 import { RateEditComponent } from './rate/rate.components/rate-edit.component';
+import { RateComponent } from './rate/rate.components/rate-rate.component';
 import { HistoryListComponent } from './history/history.components/history-list.component';
 import { HistoryFormComponent } from './history/history.components/history-form.component';
 import { HistoryCreateComponent } from './history/history.components/history-create.component';
@@ -37,14 +40,21 @@ var appRoutes = [
     { path: '', component: UserListComponent },
     { path: 'create', component: UserCreateComponent },
     { path: 'edit/:id', component: UserEditComponent },
+    { path: 'getPlots/:id', component: PlotUserComponent },
     { path: 'plot', component: PlotListComponent },
     { path: 'createPlot', component: PlotCreateComponent },
+    { path: 'editPlot/:id', component: PlotEditComponent },
     { path: 'electricitys', component: ElectricityListComponent },
     { path: 'createElectricity', component: ElectricityCreateComponent },
+    { path: 'editElectricity/:id', component: ElectricityEditComponent },
+    { path: 'getPlotElectricity/:id', component: ElectricityPlotComponent },
     { path: 'rates', component: RateListComponent },
+    { path: 'api/electricitys/GetRateInfo/:id', component: RateComponent },
+    { path: 'editRate/:id', component: RateEditComponent },
     { path: 'createRate', component: RateCreateComponent },
     { path: 'history', component: HistoryListComponent },
     { path: 'createHistory', component: HistoryCreateComponent },
+    { path: 'editHistory/:id', component: HistoryEditComponent },
     { path: '**', component: NotFoundComponent }
 ];
 var AppModule = /** @class */ (function () {
@@ -57,7 +67,7 @@ var AppModule = /** @class */ (function () {
                 UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
                 ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
-                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent],
+                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent, PlotUserComponent, ElectricityPlotComponent],
             providers: [DataService],
             bootstrap: [AppComponent]
         })

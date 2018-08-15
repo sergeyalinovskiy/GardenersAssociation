@@ -1,7 +1,4 @@
-﻿<div>
-    <a routerLink="/createPlot" class="nav-link">Добавить</a>
-</div>
-<table class="table table-striped">
+﻿<table class="table table-striped">
     <thead>
         <tr>
             <td>id</td>
@@ -18,8 +15,9 @@
             <td>{{p?.privatized}}</td>
             <td>{{p?.electricityId}}</td>
             <td>
-                <a [routerLink]="['/editPlot', p.id]" class="btn btn-sm btn-primary">Изменить</a>
-                <button (click)="delete(p.id)" class="btn btn-sm btn-danger">Удалить</button>
+                <a [routerLink]="['/getPlotElectricity', p.id]" class="btn btn-sm btn-primary">Электроэнергия</a>
+                <!--<a [routerLink]="['/editPlot', p.id]" class="btn btn-sm btn-primary">Изменить</a>
+                <button (click)="delete(p.id)" class="btn btn-sm btn-danger">Удалить</button>-->
             </td>
         </tr>
     </tbody>
