@@ -12,6 +12,5 @@ namespace SA.GA.WebApplication.ViewModels
         public DateTime From { get; set; }
 
         public DateTime To { get; set; }
-
     }
 }

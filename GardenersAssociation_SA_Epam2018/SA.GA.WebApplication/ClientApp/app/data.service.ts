@@ -91,6 +91,10 @@ export class DataService {
         return this.http.get('/' + 'getPlots' + '/' + id);
     }
 
+    getPlotElectricity(id: number) {
+        return this.http.get('/' + 'getPlotElectricity' + '/' + id);
+    }
+
 
 
     getRates() {

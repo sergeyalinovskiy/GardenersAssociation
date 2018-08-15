@@ -15,5 +15,7 @@
         void SaveRate(Rate model);
 
         void UpdateRate(Rate model);
+
+        
     }
 }

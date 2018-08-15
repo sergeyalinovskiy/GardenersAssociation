@@ -69,6 +69,9 @@ var DataService = /** @class */ (function () {
     DataService.prototype.getUserPlots = function (id) {
         return this.http.get('/' + 'getPlots' + '/' + id);
     };
+    DataService.prototype.getPlotElectricity = function (id) {
+        return this.http.get('/' + 'getPlotElectricity' + '/' + id);
+    };
     DataService.prototype.getRates = function () {
         return this.http.get(this.urlRate);
     };

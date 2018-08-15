@@ -20,6 +20,7 @@ import { ElectricityListComponent } from './electricity/electricity.components/e
 import { ElectricityFormComponent } from './electricity/electricity.components/electricity-form.component';
 import { ElectricityCreateComponent } from './electricity/electricity.components/electricity-create.component';
 import { ElectricityEditComponent } from './electricity/electricity.components/electricity-edit.component';
+import { ElectricityPlotComponent } from './electricity/electricity.components/electricity-plot.component';
 
 import { RateListComponent } from './rate/rate.components/rate-list.component';
 import { RateFormComponent } from './rate/rate.components/rate-form.component';
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
     { path: 'electricitys', component: ElectricityListComponent },
     { path: 'createElectricity', component: ElectricityCreateComponent },
     { path: 'editElectricity/:id', component: ElectricityEditComponent },
+    { path: 'getPlotElectricity/:id', component: ElectricityPlotComponent },
     { path: 'rates', component: RateListComponent },
     { path: 'api/electricitys/GetRateInfo/:id', component: RateComponent },
     { path: 'editRate/:id', component: RateEditComponent },
@@ -67,7 +69,7 @@ const appRoutes: Routes = [
         UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
         PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
         ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
-        HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent, PlotUserComponent],
+        HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent, PlotUserComponent, ElectricityPlotComponent],
     providers: [DataService], // регистрация сервисов
     bootstrap: [AppComponent]
 })

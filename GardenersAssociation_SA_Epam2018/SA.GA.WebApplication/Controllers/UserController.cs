@@ -25,7 +25,7 @@
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            UserViewModel user = _userService.GetUsersList().FirstOrDefault(x => x.Id == id);
+            User user = _userService.GetUsersList().FirstOrDefault(x => x.Id == id);
             if(user != null)
             {
                 _userService.DeleteUserByUserId(id);
@@ -34,7 +34,7 @@
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]UserViewModel user)
+        public IActionResult Put(int id, [FromBody]User user)
         {
             if (ModelState.IsValid)
             {
@@ -45,7 +45,7 @@
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]UserViewModel user)
+        public IActionResult Post([FromBody]User user)
         {
             if (ModelState.IsValid)
             {
@@ -56,14 +56,14 @@
         }
 
         [HttpGet("{id}")]
-        public UserViewModel Get(int id)
+        public User Get(int id)
         {
-            UserViewModel user = _userService.GetUserById(id);
+            User user = _userService.GetUserById(id);
             return user;
         }
 
         [HttpGet]
-        public IEnumerable<UserViewModel> Get()
+        public IEnumerable<User> Get()
         {
             return _userService.GetUsersList();
         }

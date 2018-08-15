@@ -11,6 +11,7 @@
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-edit.component.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-list.component.ts" />
+    <None Remove="ClientApp\app\electricity\electricity.components\electricity-plot.component.ts" />
     <None Remove="ClientApp\app\history\history.components\history-create.component.ts" />
     <None Remove="ClientApp\app\history\history.components\history-edit.component.ts" />
     <None Remove="ClientApp\app\history\history.components\history-form.component.ts" />
@@ -56,6 +57,7 @@
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-plot.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\history\history.components\history-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\history\history.components\history-edit.component.ts" />

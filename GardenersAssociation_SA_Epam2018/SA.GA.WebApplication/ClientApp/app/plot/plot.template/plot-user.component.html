@@ -1,0 +1,24 @@
+﻿<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>Площадь</td>
+            <td>Приватизирована</td>
+            <td>ElectricityId</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of plots">
+            <td>{{p?.id}}</td>
+            <td>{{p?.area}}</td>
+            <td>{{p?.privatized}}</td>
+            <td>{{p?.electricityId}}</td>
+            <td>
+                <a [routerLink]="['/getPlotElectricity', p.id]" class="btn btn-sm btn-primary">Электроэнергия</a>
+                <!--<a [routerLink]="['/editPlot', p.id]" class="btn btn-sm btn-primary">Изменить</a>
+                <button (click)="delete(p.id)" class="btn btn-sm btn-danger">Удалить</button>-->
+            </td>
+        </tr>
+    </tbody>
+</table>
