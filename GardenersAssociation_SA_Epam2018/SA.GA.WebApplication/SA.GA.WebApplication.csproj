@@ -24,6 +24,7 @@
     <None Remove="ClientApp\app\plot\plot.components\plot-edit.component.ts" />
     <None Remove="ClientApp\app\plot\plot.components\plot-form.component.ts" />
     <None Remove="ClientApp\app\plot\plot.components\plot-list.component.ts" />
+    <None Remove="ClientApp\app\plot\plot.components\plot-user.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-create.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-edit.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-form.component.ts" />
@@ -68,6 +69,7 @@
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-user.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-edit.component.ts" />

@@ -7,6 +7,7 @@
     using Microsoft.AspNetCore.Mvc;
     using SA.GA.Business.Services;
     using SA.GA.Common.Models;
+    using SA.GA.WebApplication.ViewModels;
     #endregion
 
     [Route("api/users")]
@@ -24,7 +25,7 @@
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            User user = _userService.GetUsersList().FirstOrDefault(x => x.Id == id);
+            UserViewModel user = _userService.GetUsersList().FirstOrDefault(x => x.Id == id);
             if(user != null)
             {
                 _userService.DeleteUserByUserId(id);
@@ -33,7 +34,7 @@
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]User user)
+        public IActionResult Put(int id, [FromBody]UserViewModel user)
         {
             if (ModelState.IsValid)
             {
@@ -44,7 +45,7 @@
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]User user)
+        public IActionResult Post([FromBody]UserViewModel user)
         {
             if (ModelState.IsValid)
             {
@@ -55,16 +56,46 @@
         }
 
         [HttpGet("{id}")]
-        public User Get(int id)
+        public UserViewModel Get(int id)
         {
-            User user = _userService.GetUserById(id);
+            UserViewModel user = _userService.GetUserById(id);
             return user;
         }
 
         [HttpGet]
-        public IEnumerable<User> Get()
+        public IEnumerable<UserViewModel> Get()
         {
             return _userService.GetUsersList();
+        }
+
+        [HttpGet("/getPlots/{id}")]
+        public IEnumerable<PlotViewModel> GetPlots(int id)
+        {
+            IEnumerable<Plot> plots = _userService.GetUserPlots(id);
+            IEnumerable<PlotViewModel> resultPlots= this.MapPlotToViewModel(plots);
+            
+            return resultPlots;
+        }
+
+        private PlotViewModel MapPlotToViewModel(Plot plot)
+        {
+            return new PlotViewModel()
+            {
+                Id=plot.Id,
+                Area=plot.Area,
+                ElectricityId=plot.ElectricityId,
+                Privatized=plot.Privatized
+            };
+        }
+
+        private IEnumerable<PlotViewModel> MapPlotToViewModel(IEnumerable<Plot> plots)
+        {
+            List<PlotViewModel> resultPlots = new List<PlotViewModel>();
+            foreach(Plot p in plots)
+            {
+                resultPlots.Add(this.MapPlotToViewModel(p));
+            }
+            return resultPlots;
         }
     }
 }

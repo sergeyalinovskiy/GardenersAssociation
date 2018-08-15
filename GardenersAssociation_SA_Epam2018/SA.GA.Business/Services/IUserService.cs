@@ -15,5 +15,7 @@
         void SaveUser(User model);
 
         void UpdateUser(User model);
+
+        IEnumerable<Plot> GetUserPlots(int id);
     }
 }

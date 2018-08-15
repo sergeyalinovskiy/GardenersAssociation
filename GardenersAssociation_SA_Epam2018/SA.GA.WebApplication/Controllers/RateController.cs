@@ -21,7 +21,7 @@
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            Rate rate = _rateService.GetRatesList().FirstOrDefault(x => x.Id == id);
+            RateViewModel rate = _rateService.GetRatesList().FirstOrDefault(x => x.Id == id);
             if (rate != null)
             {
                 _rateService.DeleteRateByRateId(id);
@@ -30,7 +30,7 @@
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]Rate rate)
+        public IActionResult Put(int id, [FromBody]RateViewModel rate)
         {
             if (ModelState.IsValid)
             {
@@ -41,7 +41,7 @@
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Rate rate)
+        public IActionResult Post([FromBody]RateViewModel rate)
         {
             if (ModelState.IsValid)
             {
@@ -52,14 +52,14 @@
         }
 
         [HttpGet("{id}")]
-        public Rate Get(int id)
+        public RateViewModel Get(int id)
         {
-            Rate rate = _rateService.GetRateById(id);
+            RateViewModel rate = _rateService.GetRateById(id);
             return rate;
         }
 
         [HttpGet]
-        public IEnumerable<Rate> Get()
+        public IEnumerable<RateViewModel> Get()
         {
             return _rateService.GetRatesList();
         }

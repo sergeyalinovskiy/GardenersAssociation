@@ -34,6 +34,7 @@
             <td>{{u?.status}}</td>
             <td>
                 <a [routerLink]="['edit', u.id]" class="btn btn-sm btn-primary">Изменить</a>
+                <a [routerLink]="['/getPlots', u.id]" class="btn btn-sm btn-primary">Изменить</a>
                 <button (click)="delete(u.id)" class="btn btn-sm btn-danger">Удалить</button>
             </td>
         </tr>

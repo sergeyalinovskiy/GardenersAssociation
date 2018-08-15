@@ -40,6 +40,7 @@ export class DataService {
     }
 
 
+
     getPlots() {
         return this.http.get(this.urlPlot);
     }
@@ -83,6 +84,11 @@ export class DataService {
 
     getRateInfo(id: number) {
         return this.http.get(this.urlElectricity + '/' + 'GetRateInfo' + '/' + id);
+    }
+
+
+    getUserPlots(id: number) {
+        return this.http.get('/' + 'getPlots' + '/' + id);
     }
 
 

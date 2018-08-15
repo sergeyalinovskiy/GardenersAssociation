@@ -18,6 +18,7 @@ import { PlotListComponent } from './plot/plot.components/plot-list.component';
 import { PlotFormComponent } from './plot/plot.components/plot-form.component';
 import { PlotCreateComponent } from './plot/plot.components/plot-create.component';
 import { PlotEditComponent } from './plot/plot.components/plot-edit.component';
+import { PlotUserComponent } from './plot/plot.components/plot-user.component';
 import { ElectricityListComponent } from './electricity/electricity.components/electricity-list.component';
 import { ElectricityFormComponent } from './electricity/electricity.components/electricity-form.component';
 import { ElectricityCreateComponent } from './electricity/electricity.components/electricity-create.component';
@@ -38,6 +39,7 @@ var appRoutes = [
     { path: '', component: UserListComponent },
     { path: 'create', component: UserCreateComponent },
     { path: 'edit/:id', component: UserEditComponent },
+    { path: 'getPlots/:id', component: PlotUserComponent },
     { path: 'plot', component: PlotListComponent },
     { path: 'createPlot', component: PlotCreateComponent },
     { path: 'editPlot/:id', component: PlotEditComponent },
@@ -63,7 +65,7 @@ var AppModule = /** @class */ (function () {
                 UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
                 ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
-                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent],
+                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent, PlotUserComponent],
             providers: [DataService],
             bootstrap: [AppComponent]
         })

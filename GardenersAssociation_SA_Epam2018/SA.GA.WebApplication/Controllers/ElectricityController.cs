@@ -65,10 +65,10 @@
         }
 
         [HttpGet("GetRateInfo/{id}")]
-        public IEnumerable<Rate> GetRateInfo(int id)
+        public IEnumerable<RateViewModel> GetRateInfo(int id)
         {
-            Rate rate = _electricityService.ShowRateInfo(id);
-            List<Rate> rateList = new List<Rate>();
+            RateViewModel rate = _electricityService.ShowRateInfo(id);
+            List<RateViewModel> rateList = new List<RateViewModel>();
             rateList.Add(rate);
             
             return rateList;
