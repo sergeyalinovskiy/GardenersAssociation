@@ -66,20 +66,13 @@
             _electricityRepository.Update(model);
         }
 
-        public Rate ShowRateInfo(int id)
+        public IEnumerable<Rate> ShowRateInfo(int id)
         {
             int ElectricityRateId =_electricityRepository.GetById(id).RateId;
             Rate rate = _rateRepository.GetById(ElectricityRateId);
-            Rate rate2 = new Rate()
-            {
-                Id = rate.Id,
-                Electricity = null,
-                Name = rate.Name,
-                Value = rate.Value,
-                From = rate.From,
-                To = rate.To
-            };
-            return rate2;
+            List<Rate> rates = new List<Rate>();
+            rates.Add(rate);
+            return rates;
         }
 
     }
