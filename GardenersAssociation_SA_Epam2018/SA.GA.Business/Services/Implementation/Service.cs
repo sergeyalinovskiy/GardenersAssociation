@@ -9,7 +9,7 @@ namespace SA.GA.Business.Services.Implementation
                     
     //    //public Service()
     //    //{
-    //    //    _repository = new Repository<T>(new AppContext2());
+    //    //    _repository = new Repository<T>();
     //    //}
             
     //    //public void Create(T item)

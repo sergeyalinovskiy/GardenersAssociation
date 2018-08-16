@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceHistory } from '../../data-service/data.service.history';
 import { History } from '../../models/history';
 var HistoryCreateComponent = /** @class */ (function () {
     function HistoryCreateComponent(dataService, router) {
@@ -27,7 +27,7 @@ var HistoryCreateComponent = /** @class */ (function () {
         Component({
             templateUrl: '../history.template/history-create.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router])
+        __metadata("design:paramtypes", [DataServiceHistory, Router])
     ], HistoryCreateComponent);
     return HistoryCreateComponent;
 }());

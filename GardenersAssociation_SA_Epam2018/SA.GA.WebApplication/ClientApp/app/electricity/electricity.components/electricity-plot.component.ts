@@ -1,16 +1,16 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServiceElectricity } from '../../data-service/data.service.electricity';
 import { Electricity } from '../../models/electricity';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-    templateUrl: '../electricity.template/electricity-list.component.html'
+    templateUrl: '../electricity.template/electricity-plot.component.html'
 })
 export class ElectricityPlotComponent implements OnInit {
 
     id: number;
     electricitys: Electricity[];
-    constructor(private dataService: DataService, private router: Router, activeRoute: ActivatedRoute) {
+    constructor(private dataService: DataServiceElectricity, private router: Router, activeRoute: ActivatedRoute) {
         this.id = Number.parseInt(activeRoute.snapshot.params["id"]);
     }
     ngOnInit() {

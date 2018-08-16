@@ -21,5 +21,7 @@
         public double Paid { get; set; }
 
         public int RateId { get; set; }
+
+        public string RateName { get; set; }
     }
 }

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceRate } from '../../data-service/data.service.rate';
 import { Rate } from '../../models/rate';
 var RateCreateComponent = /** @class */ (function () {
     function RateCreateComponent(dataService, router) {
@@ -27,7 +27,7 @@ var RateCreateComponent = /** @class */ (function () {
         Component({
             templateUrl: '../rate.template/rate-create.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router])
+        __metadata("design:paramtypes", [DataServiceRate, Router])
     ], RateCreateComponent);
     return RateCreateComponent;
 }());

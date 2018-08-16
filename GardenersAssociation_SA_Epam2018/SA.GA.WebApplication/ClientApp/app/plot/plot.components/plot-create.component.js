@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServicePlot } from '../../data-service/data.service.plot';
 import { Plot } from '../../models/plot';
 var PlotCreateComponent = /** @class */ (function () {
     function PlotCreateComponent(dataService, router) {
@@ -27,7 +27,7 @@ var PlotCreateComponent = /** @class */ (function () {
         Component({
             templateUrl: '../plot.template/plot-create.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router])
+        __metadata("design:paramtypes", [DataServicePlot, Router])
     ], PlotCreateComponent);
     return PlotCreateComponent;
 }());

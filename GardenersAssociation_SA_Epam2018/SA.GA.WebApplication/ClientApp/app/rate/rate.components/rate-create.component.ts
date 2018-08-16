@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceRate } from '../../data-service/data.service.rate';
 import { Rate } from '../../models/rate';
 
 @Component({
@@ -9,7 +9,7 @@ import { Rate } from '../../models/rate';
 export class RateCreateComponent {
 
     rate: Rate = new Rate();    // добавляемый объект
-    constructor(private dataService: DataService, private router: Router) { }
+    constructor(private dataService: DataServiceRate, private router: Router) { }
     save() {
         this.dataService.createRate(this.rate).subscribe(data =>
             this.router.navigateByUrl("/"));

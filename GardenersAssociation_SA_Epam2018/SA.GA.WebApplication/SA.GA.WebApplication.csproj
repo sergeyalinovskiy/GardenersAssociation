@@ -7,6 +7,11 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\app.component.ts" />
+    <None Remove="ClientApp\app\data.service.electricity.ts" />
+    <None Remove="ClientApp\app\data.service.history.ts" />
+    <None Remove="ClientApp\app\data.service.plot.ts" />
+    <None Remove="ClientApp\app\data.service.rate.ts" />
+    <None Remove="ClientApp\app\data.service.user.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-create.component.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-edit.component.ts" />
     <None Remove="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />
@@ -53,7 +58,11 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
-    <TypeScriptCompile Include="ClientApp\app\data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data-service\data.service.rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data-service\data.service.electricity.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data-service\data.service.history.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data-service\data.service.user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data-service\data.service.plot.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-form.component.ts" />

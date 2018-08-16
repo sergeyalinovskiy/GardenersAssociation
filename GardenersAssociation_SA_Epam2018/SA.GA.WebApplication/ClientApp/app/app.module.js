@@ -34,7 +34,11 @@ import { HistoryFormComponent } from './history/history.components/history-form.
 import { HistoryCreateComponent } from './history/history.components/history-create.component';
 import { HistoryEditComponent } from './history/history.components/history-edit.component';
 import { NotFoundComponent } from './not-found.component';
-import { DataService } from './data.service';
+import { DataServiceElectricity } from './data-service/data.service.electricity';
+import { DataServiceHistory } from './data-service/data.service.history';
+import { DataServicePlot } from './data-service/data.service.plot';
+import { DataServiceRate } from './data-service/data.service.rate';
+import { DataServiceUser } from './data-service/data.service.user';
 // определение маршрутов
 var appRoutes = [
     { path: '', component: UserListComponent },
@@ -67,8 +71,9 @@ var AppModule = /** @class */ (function () {
                 UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
                 ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
-                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent, PlotUserComponent, ElectricityPlotComponent],
-            providers: [DataService],
+                HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent,
+                PlotUserComponent, ElectricityPlotComponent],
+            providers: [DataServiceElectricity, DataServiceHistory, DataServicePlot, DataServiceRate, DataServiceUser],
             bootstrap: [AppComponent]
         })
     ], AppModule);

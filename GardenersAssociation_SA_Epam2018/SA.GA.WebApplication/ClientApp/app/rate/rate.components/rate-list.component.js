@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServiceRate } from '../../data-service/data.service.rate';
 var RateListComponent = /** @class */ (function () {
     function RateListComponent(dataService) {
         this.dataService = dataService;
@@ -28,7 +28,7 @@ var RateListComponent = /** @class */ (function () {
         Component({
             templateUrl: '../rate.template/rate-list.component.html'
         }),
-        __metadata("design:paramtypes", [DataService])
+        __metadata("design:paramtypes", [DataServiceRate])
     ], RateListComponent);
     return RateListComponent;
 }());

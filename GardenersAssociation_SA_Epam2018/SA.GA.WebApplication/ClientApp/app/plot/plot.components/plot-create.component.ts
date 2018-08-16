@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServicePlot } from '../../data-service/data.service.plot';
 import { Plot } from '../../models/plot';
 
 @Component({
@@ -9,7 +9,7 @@ import { Plot } from '../../models/plot';
 export class PlotCreateComponent {
 
     plot: Plot = new Plot();    // добавляемый объект
-    constructor(private dataService: DataService, private router: Router) { }
+    constructor(private dataService: DataServicePlot, private router: Router) { }
     save() {
         this.dataService.createPlot(this.plot).subscribe(data =>
             this.router.navigateByUrl("/"));

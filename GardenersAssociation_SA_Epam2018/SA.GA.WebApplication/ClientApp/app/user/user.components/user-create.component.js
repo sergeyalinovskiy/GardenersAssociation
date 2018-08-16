@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceUser } from '../../data-service/data.service.user';
 import { User } from '../../models/user';
 var UserCreateComponent = /** @class */ (function () {
     function UserCreateComponent(dataService, router) {
@@ -27,7 +27,7 @@ var UserCreateComponent = /** @class */ (function () {
         Component({
             templateUrl: '../user.template/user-create.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router])
+        __metadata("design:paramtypes", [DataServiceUser, Router])
     ], UserCreateComponent);
     return UserCreateComponent;
 }());
