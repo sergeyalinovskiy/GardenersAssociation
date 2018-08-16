@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServicePlot } from '../../data-service/data.service.plot';
 var PlotListComponent = /** @class */ (function () {
     function PlotListComponent(dataService) {
         this.dataService = dataService;
@@ -28,7 +28,7 @@ var PlotListComponent = /** @class */ (function () {
         Component({
             templateUrl: '../plot.template/plot-list.component.html'
         }),
-        __metadata("design:paramtypes", [DataService])
+        __metadata("design:paramtypes", [DataServicePlot])
     ], PlotListComponent);
     return PlotListComponent;
 }());

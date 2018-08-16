@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceUser } from '../../data-service/data.service.user';
 import { User } from '../../models/user';
 
 @Component({
@@ -9,7 +9,7 @@ import { User } from '../../models/user';
 export class UserCreateComponent {
 
     user: User = new User();    // добавляемый объект
-    constructor(private dataService: DataService, private router: Router) { }
+    constructor(private dataService: DataServiceUser, private router: Router) { }
     save() {
         this.dataService.createUser(this.user).subscribe(data =>
             this.router.navigateByUrl("/"));

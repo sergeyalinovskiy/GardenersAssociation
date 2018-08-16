@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServiceHistory } from '../../data-service/data.service.history';
 import { History } from '../../models/history';
 
 @Component({
@@ -8,7 +8,7 @@ import { History } from '../../models/history';
 export class HistoryListComponent implements OnInit {
 
     historys: History[];
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataServiceHistory) { }
 
     ngOnInit() {
         this.load();

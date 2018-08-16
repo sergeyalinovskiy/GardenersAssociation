@@ -89,7 +89,8 @@
                 NecessaryToPlay=electricity.NecessaryToPlay,
                 PreviousTestimony=electricity.PreviousTestimony,
                 RecentTestimony=electricity.RecentTestimony,
-                RateId=electricity.RateId                
+                RateId=electricity.RateId,
+                //RateName = electricity.Rate.Name
             };
         }
 

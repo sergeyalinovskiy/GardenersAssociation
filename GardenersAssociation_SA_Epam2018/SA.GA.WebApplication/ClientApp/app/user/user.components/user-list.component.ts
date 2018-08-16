@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServiceUser } from '../../data-service/data.service.user';
 import { User } from '../../models/user';
 
 @Component({
@@ -8,7 +8,7 @@ import { User } from '../../models/user';
 export class UserListComponent implements OnInit {
 
     users: User[];
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataServiceUser) { }
 
     ngOnInit() {
         this.load();

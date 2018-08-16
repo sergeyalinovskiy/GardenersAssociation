@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServicePlot } from '../../data-service/data.service.plot';
 import { Plot } from '../../models/plot';
 
 @Component({
@@ -12,7 +12,7 @@ export class PlotEditComponent implements OnInit {
     plot: Plot;    // изменяемый объект
     loaded: boolean = false;
 
-    constructor(private dataService: DataService, private router: Router, activeRoute: ActivatedRoute) {
+    constructor(private dataService: DataServicePlot, private router: Router, activeRoute: ActivatedRoute) {
         this.id = Number.parseInt(activeRoute.snapshot.params["id"]);
     }
 

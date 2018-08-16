@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServiceElectricity } from '../../data-service/data.service.electricity';
 import { ActivatedRoute, Router } from '@angular/router';
 var ElectricityPlotComponent = /** @class */ (function () {
     function ElectricityPlotComponent(dataService, router, activeRoute) {
@@ -29,9 +29,9 @@ var ElectricityPlotComponent = /** @class */ (function () {
     };
     ElectricityPlotComponent = __decorate([
         Component({
-            templateUrl: '../electricity.template/electricity-list.component.html'
+            templateUrl: '../electricity.template/electricity-plot.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router, ActivatedRoute])
+        __metadata("design:paramtypes", [DataServiceElectricity, Router, ActivatedRoute])
     ], ElectricityPlotComponent);
     return ElectricityPlotComponent;
 }());

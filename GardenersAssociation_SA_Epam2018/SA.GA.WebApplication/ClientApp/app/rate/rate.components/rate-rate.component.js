@@ -1,7 +1,3 @@
-//import { Component, OnInit } from '@angular/core';
-//import { DataService } from '../../data.service';
-//import { Router, ActivatedRoute } from '@angular/router';
-//import { Rate } from '../../models/rate';
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,27 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-//@Component({
-//    templateUrl: '../rate.template/rate-list.component.html'
-//})
-//export class RateComponent implements OnInit {
-//    id: number;
-//    rate: Rate;    // изменяемый объект
-//    loaded: boolean = false;
-//    constructor(private dataService: DataService, private router: Router, activeRoute: ActivatedRoute) {
-//        this.id = Number.parseInt(activeRoute.snapshot.params["id"]);
-//    }
-//    ngOnInit() {
-//        if (this.id)
-//            this.dataService.getRateInfo(this.id)
-//                .subscribe((data: Rate) => {
-//                    this.rate = data;
-//                    if (this.rate != null) this.loaded = true;
-//                });
-//    }
-//}
 import { Component } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServiceRate } from '../../data-service/data.service.rate';
 import { Router, ActivatedRoute } from '@angular/router';
 var RateComponent = /** @class */ (function () {
     function RateComponent(dataService, router, activeRoute) {
@@ -54,7 +31,7 @@ var RateComponent = /** @class */ (function () {
         Component({
             templateUrl: '../rate.template/rate-list.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router, ActivatedRoute])
+        __metadata("design:paramtypes", [DataServiceRate, Router, ActivatedRoute])
     ], RateComponent);
     return RateComponent;
 }());

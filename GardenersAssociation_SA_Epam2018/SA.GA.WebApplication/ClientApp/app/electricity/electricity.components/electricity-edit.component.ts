@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceElectricity } from '../../data-service/data.service.electricity';
 import { Electricity } from '../../models/electricity';
 
 @Component({
@@ -12,7 +12,7 @@ export class ElectricityEditComponent implements OnInit {
     electricity: Electricity;    // изменяемый объект
     loaded: boolean = false;
 
-    constructor(private dataService: DataService, private router: Router, activeRoute: ActivatedRoute) {
+    constructor(private dataService: DataServiceElectricity, private router: Router, activeRoute: ActivatedRoute) {
         this.id = Number.parseInt(activeRoute.snapshot.params["id"]);
     }
 

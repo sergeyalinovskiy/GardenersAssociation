@@ -9,6 +9,5 @@
         public bool Privatized { get; set; }
 
         public int ElectricityId { get; set; }
-
     }
 }

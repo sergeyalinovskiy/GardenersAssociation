@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServicePlot } from '../../data-service/data.service.plot';
 import { Plot } from '../../models/plot';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -10,7 +10,7 @@ export class PlotUserComponent implements OnInit {
 
     id: number;
     plots: Plot[];
-    constructor(private dataService: DataService, private router: Router, activeRoute: ActivatedRoute)
+    constructor(private dataService: DataServicePlot, private router: Router, activeRoute: ActivatedRoute)
     {
         this.id = Number.parseInt(activeRoute.snapshot.params["id"]);
     }

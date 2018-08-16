@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServiceRate } from '../../data-service/data.service.rate';
 import { Rate } from '../../models/rate';
 
 @Component({
@@ -8,7 +8,7 @@ import { Rate } from '../../models/rate';
 export class RateListComponent implements OnInit {
 
     rates: Rate[];
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataServiceRate) { }
 
     ngOnInit() {
         this.load();

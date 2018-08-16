@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceElectricity } from '../../data-service/data.service.electricity';
 import { Electricity } from '../../models/electricity';
 var ElectricityCreateComponent = /** @class */ (function () {
     function ElectricityCreateComponent(dataService, router) {
@@ -27,7 +27,7 @@ var ElectricityCreateComponent = /** @class */ (function () {
         Component({
             templateUrl: '../electricity.template/electricity-create.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router])
+        __metadata("design:paramtypes", [DataServiceElectricity, Router])
     ], ElectricityCreateComponent);
     return ElectricityCreateComponent;
 }());

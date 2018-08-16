@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServicePlot } from '../../data-service/data.service.plot';
 import { Plot } from '../../models/plot';
 
 @Component({
@@ -8,7 +8,7 @@ import { Plot } from '../../models/plot';
 export class PlotListComponent implements OnInit {
 
     plots: Plot[];
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataServicePlot) { }
 
     ngOnInit() {
         this.load();

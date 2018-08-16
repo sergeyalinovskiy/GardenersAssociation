@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService } from '../../data.service';
+import { DataServiceHistory } from '../../data-service/data.service.history';
 import { History } from '../../models/history';
 
 @Component({
@@ -12,7 +12,7 @@ export class HistoryEditComponent implements OnInit {
     history: History;    // изменяемый объект
     loaded: boolean = false;
 
-    constructor(private dataService: DataService, private router: Router, activeRoute: ActivatedRoute) {
+    constructor(private dataService: DataServiceHistory, private router: Router, activeRoute: ActivatedRoute) {
         this.id = Number.parseInt(activeRoute.snapshot.params["id"]);
     }
 

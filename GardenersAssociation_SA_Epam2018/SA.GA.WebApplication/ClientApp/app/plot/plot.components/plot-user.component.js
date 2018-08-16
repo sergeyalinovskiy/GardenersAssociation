@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataServicePlot } from '../../data-service/data.service.plot';
 import { Router, ActivatedRoute } from '@angular/router';
 var PlotUserComponent = /** @class */ (function () {
     function PlotUserComponent(dataService, router, activeRoute) {
@@ -31,7 +31,7 @@ var PlotUserComponent = /** @class */ (function () {
         Component({
             templateUrl: '../plot.template/plot-user.component.html'
         }),
-        __metadata("design:paramtypes", [DataService, Router, ActivatedRoute])
+        __metadata("design:paramtypes", [DataServicePlot, Router, ActivatedRoute])
     ], PlotUserComponent);
     return PlotUserComponent;
 }());
