@@ -3,7 +3,8 @@ import { DataServiceUser } from '../../data-service/data.service.user';
 import { User } from '../../models/user';
 
 @Component({
-    templateUrl: '../user.template/user-list.component.html'
+    templateUrl: '../user.template/user-list.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class UserListComponent implements OnInit {
 

@@ -26,7 +26,8 @@ var UserListComponent = /** @class */ (function () {
     };
     UserListComponent = __decorate([
         Component({
-            templateUrl: '../user.template/user-list.component.html'
+            templateUrl: '../user.template/user-list.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceUser])
     ], UserListComponent);
