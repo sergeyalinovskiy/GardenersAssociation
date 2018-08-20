@@ -54,7 +54,14 @@
             {
                 throw new NullReferenceException();
             }
-            _electricityRepository.Create(model);
+           
+            _electricityRepository.Create(CalculateNecessaryToPay(model));
+        }
+
+        private Electricity CalculateNecessaryToPay(Electricity model)
+        {
+            model.NecessaryToPlay = (model.RecentTestimony - model.PreviousTestimony) * model.Losses * model.BankCollections;
+            return model;
         }
 
         public void UpdateElectricity(Electricity model)
@@ -63,7 +70,7 @@
             {
                 throw new NullReferenceException();
             }
-            _electricityRepository.Update(model);
+            _electricityRepository.Update(CalculateNecessaryToPay(model));
         }
 
         public IEnumerable<Rate> ShowRateInfo(int id)
