@@ -6,7 +6,7 @@ import { User } from '../../models/user';
     templateUrl: '../user.template/user-list.component.html',
     styleUrls: ['../../style/app.component.css']
 })
-export class UserListComponent implements OnInit {
+export class ActiveUserListComponent implements OnInit {
 
     users: User[];
     constructor(private dataService: DataServiceUser) { }
@@ -15,7 +15,7 @@ export class UserListComponent implements OnInit {
         this.load();
     }
     load() {
-        this.dataService.getUsers().subscribe((data: User[]) => this.users = data);
+        this.dataService.getActiveUsers().subscribe((data: User[]) => this.users = data);
     }
     delete(id: number) {
         this.dataService.deleteUser(id).subscribe(data => this.load());

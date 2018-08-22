@@ -9,29 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { DataServiceUser } from '../../data-service/data.service.user';
-var UserListComponent = /** @class */ (function () {
-    function UserListComponent(dataService) {
+var NotActiveUserListComponent = /** @class */ (function () {
+    function NotActiveUserListComponent(dataService) {
         this.dataService = dataService;
     }
-    UserListComponent.prototype.ngOnInit = function () {
+    NotActiveUserListComponent.prototype.ngOnInit = function () {
         this.load();
     };
-    UserListComponent.prototype.load = function () {
+    NotActiveUserListComponent.prototype.load = function () {
         var _this = this;
-        this.dataService.getUsers().subscribe(function (data) { return _this.users = data; });
+        this.dataService.getNotActiveUsers().subscribe(function (data) { return _this.users = data; });
     };
-    UserListComponent.prototype.delete = function (id) {
+    NotActiveUserListComponent.prototype.delete = function (id) {
         var _this = this;
         this.dataService.deleteUser(id).subscribe(function (data) { return _this.load(); });
     };
-    UserListComponent = __decorate([
+    NotActiveUserListComponent = __decorate([
         Component({
             templateUrl: '../user.template/user-list.component.html',
             styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceUser])
-    ], UserListComponent);
-    return UserListComponent;
+    ], NotActiveUserListComponent);
+    return NotActiveUserListComponent;
 }());
-export { UserListComponent };
-//# sourceMappingURL=user-list.component.js.map
+export { NotActiveUserListComponent };
+//# sourceMappingURL=user-NotActiveList.component.js.map

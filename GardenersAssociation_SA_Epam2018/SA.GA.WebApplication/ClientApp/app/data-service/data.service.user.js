@@ -17,6 +17,12 @@ var DataServiceUser = /** @class */ (function () {
     DataServiceUser.prototype.getUsers = function () {
         return this.http.get(this.urlUser);
     };
+    DataServiceUser.prototype.getActiveUsers = function () {
+        return this.http.get('/' + 'getActiveUsers');
+    };
+    DataServiceUser.prototype.getNotActiveUsers = function () {
+        return this.http.get('/' + 'getNotActiveUsers');
+    };
     DataServiceUser.prototype.getUser = function (id) {
         return this.http.get(this.urlUser + '/' + id);
     };

@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user/user.components/user-list.component';
+import { ActiveUserListComponent } from './user/user.components/user-ActiveList.component';
+import { NotActiveUserListComponent } from './user/user.components/user-NotActiveList.component';
 import { UserFormComponent } from './user/user.components/user-form.component';
 import { UserCreateComponent } from './user/user.components/user-create.component';
 import { UserEditComponent } from './user/user.components/user-edit.component';
@@ -42,6 +44,8 @@ import { DataServiceUser } from './data-service/data.service.user';
 // определение маршрутов
 var appRoutes = [
     { path: '', component: UserListComponent },
+    { path: 'getActiveUsers', component: ActiveUserListComponent },
+    { path: 'getNotActiveUsers', component: NotActiveUserListComponent },
     { path: 'create', component: UserCreateComponent },
     { path: 'edit/:id', component: UserEditComponent },
     { path: 'getPlots/:id', component: PlotUserComponent },
@@ -72,7 +76,7 @@ var AppModule = /** @class */ (function () {
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
                 ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
                 HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent,
-                PlotUserComponent, ElectricityPlotComponent],
+                PlotUserComponent, ElectricityPlotComponent, NotActiveUserListComponent, ActiveUserListComponent],
             providers: [DataServiceElectricity, DataServiceHistory, DataServicePlot, DataServiceRate, DataServiceUser],
             bootstrap: [AppComponent]
         })

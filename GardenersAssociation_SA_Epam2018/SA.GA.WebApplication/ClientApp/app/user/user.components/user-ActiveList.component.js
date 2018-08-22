@@ -9,29 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { DataServiceUser } from '../../data-service/data.service.user';
-var UserListComponent = /** @class */ (function () {
-    function UserListComponent(dataService) {
+var ActiveUserListComponent = /** @class */ (function () {
+    function ActiveUserListComponent(dataService) {
         this.dataService = dataService;
     }
-    UserListComponent.prototype.ngOnInit = function () {
+    ActiveUserListComponent.prototype.ngOnInit = function () {
         this.load();
     };
-    UserListComponent.prototype.load = function () {
+    ActiveUserListComponent.prototype.load = function () {
         var _this = this;
-        this.dataService.getUsers().subscribe(function (data) { return _this.users = data; });
+        this.dataService.getActiveUsers().subscribe(function (data) { return _this.users = data; });
     };
-    UserListComponent.prototype.delete = function (id) {
+    ActiveUserListComponent.prototype.delete = function (id) {
         var _this = this;
         this.dataService.deleteUser(id).subscribe(function (data) { return _this.load(); });
     };
-    UserListComponent = __decorate([
+    ActiveUserListComponent = __decorate([
         Component({
             templateUrl: '../user.template/user-list.component.html',
             styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceUser])
-    ], UserListComponent);
-    return UserListComponent;
+    ], ActiveUserListComponent);
+    return ActiveUserListComponent;
 }());
-export { UserListComponent };
-//# sourceMappingURL=user-list.component.js.map
+export { ActiveUserListComponent };
+//# sourceMappingURL=user-ActiveList.component.js.map

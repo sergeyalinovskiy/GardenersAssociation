@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SA.GA.Common.Models;
+using System;
 namespace SA.GA.WebApplication.ViewModels
 {
     public class RateViewModel
@@ -12,5 +13,6 @@ namespace SA.GA.WebApplication.ViewModels
         public DateTime From { get; set; }
 
         public DateTime To { get; set; }
+
     }
 }

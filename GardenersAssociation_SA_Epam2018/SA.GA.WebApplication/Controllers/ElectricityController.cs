@@ -81,6 +81,7 @@
                 Value = rate.Value,
                 From = rate.From,
                 To = rate.To
+                
             };
         }
 

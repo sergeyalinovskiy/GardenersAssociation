@@ -41,7 +41,9 @@
             {
                 throw new Exception();
             }
-            _userRepository.Delete(id);
+            User user=_userRepository.GetById(id);
+            user.Status = false;
+            _userRepository.Update(user);
         }
 
         public User GetUserById(int id)

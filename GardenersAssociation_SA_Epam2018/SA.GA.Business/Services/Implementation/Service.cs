@@ -1,30 +1,31 @@
-﻿using SA.GA.DataAccess.Context.Implementation;
+﻿using SA.GA.Common.Models;
+using SA.GA.DataAccess.Context.Implementation;
 using SA.GA.DataAccess.Repository;
 using SA.GA.DataAccess.Repository.Implementation;
 namespace SA.GA.Business.Services.Implementation
 {
-    //public class Service<T> : IService<T> where T : class
+    //public class UserService : IService<User>, IUserService
     //{
-    //    //private readonly IRepository<T> _repository;
-                    
-    //    //public Service()
-    //    //{
-    //    //    _repository = new Repository<T>();
-    //    //}
-            
-    //    //public void Create(T item)
-    //    //{
-    //    //    _repository.Create(item);
-    //    //}
+    //    private readonly IRepository<User> _repository;
 
-    //    //public void Delete(int id)
-    //    //{
-    //    //    _repository.Delete(id);
-    //    //}
-            
-    //    //public void Update(T item)
-    //    //{
-    //    //    _repository.Update(item);
-    //    //}
+    //    public UserService(IRepository<User> rep)
+    //    {
+    //        _repository = rep;
+    //    }
+
+    //    public void Create(T item)
+    //    {
+    //        _repository.Create(item);
+    //    }
+
+    //    public void Delete(int id)
+    //    {
+    //        _repository.Delete(id);
+    //    }
+
+    //    public void Update(T item)
+    //    {
+    //        _repository.Update(item);
+    //    }
     //}
 }

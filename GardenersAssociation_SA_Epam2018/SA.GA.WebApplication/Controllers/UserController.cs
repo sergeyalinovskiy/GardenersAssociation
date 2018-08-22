@@ -97,5 +97,19 @@
             }
             return resultPlots;
         }
+
+
+        [HttpGet("/getNotActiveUsers")]
+        public IEnumerable<User> GetNotActiveUsers()
+        {
+            return _userService.GetUsersList().Where(m=>m.Status==false);
+        }
+
+        [HttpGet("/getActiveUsers")]
+        public IEnumerable<User> GetActiveUsers()
+        {
+            return _userService.GetUsersList().Where(m=>m.Status==true);
+        }
+
     }
 }
