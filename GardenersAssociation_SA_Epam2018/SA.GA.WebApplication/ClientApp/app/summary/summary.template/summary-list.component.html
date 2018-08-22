@@ -1,0 +1,23 @@
+﻿
+<table class="table table-striped">
+    
+    <thead>
+        <tr>
+            <td>UserId</td>
+            <td>Предыдущие данные</td>
+            <td>Новые данные</td>
+            <td>Расход</td>
+            <td>Нужно оплатить</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of summarys">
+            <td>{{s?.id}}</td>
+            <td>{{s?.previousTestimony}}</td>
+            <td>{{s?.recentTestimony}}</td>
+            <td>{{s?.сonsumption}}</td>
+            <td>{{s?.necessaryToPay}}</td>
+        </tr>
+    </tbody>
+</table>

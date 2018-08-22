@@ -40,7 +40,6 @@ namespace SA.GA.Business.Services.Implementation
             _userRepository = userRepository;
         }
 
-
         public IEnumerable<Summary> GetSummaryList()
         {
             _userRepository.GetAll().Select(m => m.Id);
@@ -52,7 +51,6 @@ namespace SA.GA.Business.Services.Implementation
             }
             return sammaryResult;
         }
-
 
         private Summary MapToSammary(int userId)
         {
@@ -98,7 +96,6 @@ namespace SA.GA.Business.Services.Implementation
             Electricity electricity = _electricityRepository.GetById(electricityId);          
             return electricity;
         }
-
 
         public Summary SummaryValues()
         {

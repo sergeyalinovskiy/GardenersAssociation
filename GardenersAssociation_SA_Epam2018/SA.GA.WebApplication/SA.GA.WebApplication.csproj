@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\app.component.ts" />
+    <None Remove="ClientApp\app\data-service\data.service.summary.ts" />
     <None Remove="ClientApp\app\data.service.electricity.ts" />
     <None Remove="ClientApp\app\data.service.history.ts" />
     <None Remove="ClientApp\app\data.service.plot.ts" />
@@ -25,6 +26,7 @@
     <None Remove="ClientApp\app\models\history.ts" />
     <None Remove="ClientApp\app\models\plot.ts" />
     <None Remove="ClientApp\app\models\rate.ts" />
+    <None Remove="ClientApp\app\models\summary.ts" />
     <None Remove="ClientApp\app\not-found.component.ts" />
     <None Remove="ClientApp\app\plot\plot.components\plot-create.component.ts" />
     <None Remove="ClientApp\app\plot\plot.components\plot-edit.component.ts" />
@@ -36,6 +38,7 @@
     <None Remove="ClientApp\app\rate\rate.components\rate-form.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-list.component.ts" />
     <None Remove="ClientApp\app\rate\rate.components\rate-rate.component.ts" />
+    <None Remove="ClientApp\app\summary\summary.components\summary-list.component.ts" />
     <None Remove="ClientApp\app\user-create.component.ts" />
     <None Remove="ClientApp\app\user-edit.component.ts" />
     <None Remove="ClientApp\app\user-form.component.ts" />
@@ -63,6 +66,7 @@
     <TypeScriptCompile Include="ClientApp\app\data-service\data.service.rate.ts" />
     <TypeScriptCompile Include="ClientApp\app\data-service\data.service.electricity.ts" />
     <TypeScriptCompile Include="ClientApp\app\data-service\data.service.history.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data-service\data.service.summary.ts" />
     <TypeScriptCompile Include="ClientApp\app\data-service\data.service.user.ts" />
     <TypeScriptCompile Include="ClientApp\app\data-service\data.service.plot.ts" />
     <TypeScriptCompile Include="ClientApp\app\electricity\electricity.components\electricity-create.component.ts" />
@@ -78,6 +82,7 @@
     <TypeScriptCompile Include="ClientApp\app\models\history.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\plot.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\summary.ts" />
     <TypeScriptCompile Include="ClientApp\app\not-found.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\plot\plot.components\plot-edit.component.ts" />
@@ -89,6 +94,7 @@
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-form.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\rate\rate.components\rate-rate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\summary\summary.components\summary-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-form.component.ts" />
