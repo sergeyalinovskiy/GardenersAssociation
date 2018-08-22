@@ -83,6 +83,5 @@
             rates.Add(rate);
             return rates;
         }
-
     }
 }
