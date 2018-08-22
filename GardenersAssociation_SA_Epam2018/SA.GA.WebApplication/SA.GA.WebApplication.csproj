@@ -40,6 +40,8 @@
     <None Remove="ClientApp\app\user-edit.component.ts" />
     <None Remove="ClientApp\app\user-form.component.ts" />
     <None Remove="ClientApp\app\user-list.component.ts" />
+    <None Remove="ClientApp\app\user\user.components\user-ActiveList.component.ts" />
+    <None Remove="ClientApp\app\user\user.components\user-NotActiveList.component.ts" />
     <None Remove="ClientApp\main.ts" />
     <None Remove="ClientApp\polyfills.ts" />
   </ItemGroup>
@@ -90,6 +92,8 @@
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-create.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user\user.components\user-NotActiveList.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\user\user.components\user-ActiveList.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\user\user.components\user-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\user.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />

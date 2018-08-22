@@ -18,6 +18,14 @@ export class DataServiceUser {
         return this.http.get(this.urlUser);
     }
 
+    getActiveUsers() {
+        return this.http.get('/' + 'getActiveUsers');
+    }
+
+    getNotActiveUsers() {
+        return this.http.get('/' + 'getNotActiveUsers');
+    }
+
     getUser(id: number) {
         return this.http.get(this.urlUser + '/' + id);
     }

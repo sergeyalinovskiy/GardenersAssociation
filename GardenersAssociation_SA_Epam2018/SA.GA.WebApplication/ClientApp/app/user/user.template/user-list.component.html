@@ -4,6 +4,9 @@
     <a routerLink="/rates" class="btn sa-ga-btn--darkgray">Тарифы</a>
     <a routerLink="/electricitys" class="btn sa-ga-btn--lightslategray">Электроэнергия</a>
     <a routerLink="/history" class="btn sa-ga-btn--darkgray">История</a>
+    <a routerLink="" class="btn sa-ga-btn--darkgray">Все члены</a>
+    <a routerLink="/getActiveUsers" class="btn sa-ga-btn--darkgray">Активные члены</a>
+    <a routerLink="/getNotActiveUsers" class="btn sa-ga-btn--darkgray">Бывшие члены</a>
 </div>
 <table class="table table-striped">
     <thead>
@@ -32,7 +35,7 @@
             <td>{{u?.additionalInformation}}</td>
             <td>{{u?.status}}</td>
             <td>
-                <button [routerLink]="['edit', u.id]" class="btn btn-sm btn-primary">Изменить</button>
+                <button [routerLink]="['/edit', u.id]" class="btn btn-sm btn-primary">Изменить</button>
                 <button [routerLink]="['/getPlots', u.id]" class="btn btn-sm btn-primary">Участки</button>
                 <button (click)="delete(u.id)" class="btn btn-sm btn-danger">Удалить</button>
                 <button type="button" class="button"><span>Hover Btn </span> </button>
