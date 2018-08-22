@@ -1,6 +1,10 @@
-﻿namespace SA.GA.WebApplication.ViewModels
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace SA.GA.Common
 {
-    public class SummaryTableViewModel
+    public class Summary
     {
         public int UserId { get; set; }
         public double PreviousTestimony { get; set; }

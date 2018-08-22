@@ -26,6 +26,8 @@ namespace SA.GA.WebApp.ExtentionMethods
             services.AddTransient<IElectricityService, ElectricityService>();
             services.AddTransient<IHistoryService, HistoryService>();
 
+            services.AddTransient<ISummaryService, SummaryService>();
+            
             services.AddDbContext<AppContext2>(options =>
                 options.UseSqlServer(
                     connection,
