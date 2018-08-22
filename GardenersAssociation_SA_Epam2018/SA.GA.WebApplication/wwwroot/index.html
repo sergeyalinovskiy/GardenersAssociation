@@ -5,11 +5,20 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angular in ASP.NET Core</title>
+    <link href="preLoader.css" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+
 </head>
 <body>
-    <app>Загрузка...</app>
-
+    <app>
+        <div class="container-preloader">
+            <div class="dash uno"></div>
+            <div class="dash dos"></div>
+            <div class="dash tres"></div>
+            <div class="dash cuatro"></div>
+        </div>
+        <!--Загрузка...-->
+    </app>
     <script src="/dist/polyfills.js"></script>
     <script src="/dist/app.js"></script>
 </body>

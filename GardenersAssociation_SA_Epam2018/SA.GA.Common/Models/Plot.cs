@@ -25,7 +25,7 @@
         //[ForeignKey("UserId")]
         //public User User { get; set; }
 
-        [Required]
+     
         [Column("ElectricityId", TypeName = "int")]  
         public int ElectricityId { get; set; }
 
