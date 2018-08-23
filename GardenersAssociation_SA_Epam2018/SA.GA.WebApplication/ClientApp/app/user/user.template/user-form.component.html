@@ -1,7 +1,15 @@
-﻿<div class="form-group">
+﻿<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<form name="myForm">
     <label>Имя</label>
-    <input type="text" [(ngModel)]="user.firstName" class="form-control" />
-</div>
+    <input type="text" class="form-control" id="firstName"
+           minlength="5" maxlength="30" required [(ngModel)]="user.firstName"
+           name="firstName" />
+</form>
+<p>qewqew</p>
+<h1>{{myForm.firstName.$valid}}</h1>
+
+
+
 <div class="form-group">
     <label>Фамилия</label>
     <input type="text" [(ngModel)]="user.lastName" class="form-control" />

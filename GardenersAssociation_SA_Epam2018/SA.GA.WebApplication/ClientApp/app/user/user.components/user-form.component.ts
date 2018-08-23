@@ -8,3 +8,4 @@ import { User } from '../../models/user';
 export class UserFormComponent {
     @Input() user: User;
 }
+
