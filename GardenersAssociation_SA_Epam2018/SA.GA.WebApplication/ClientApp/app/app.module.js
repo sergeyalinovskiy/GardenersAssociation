@@ -35,12 +35,14 @@ import { HistoryListComponent } from './history/history.components/history-list.
 import { HistoryFormComponent } from './history/history.components/history-form.component';
 import { HistoryCreateComponent } from './history/history.components/history-create.component';
 import { HistoryEditComponent } from './history/history.components/history-edit.component';
+import { SummaryListComponent } from './summary/summary.components/summary-list.component';
 import { NotFoundComponent } from './not-found.component';
 import { DataServiceElectricity } from './data-service/data.service.electricity';
 import { DataServiceHistory } from './data-service/data.service.history';
 import { DataServicePlot } from './data-service/data.service.plot';
 import { DataServiceRate } from './data-service/data.service.rate';
 import { DataServiceUser } from './data-service/data.service.user';
+import { DataServiceSummary } from './data-service/data.service.summary';
 // определение маршрутов
 var appRoutes = [
     { path: '', component: UserListComponent },
@@ -49,6 +51,7 @@ var appRoutes = [
     { path: 'create', component: UserCreateComponent },
     { path: 'edit/:id', component: UserEditComponent },
     { path: 'getPlots/:id', component: PlotUserComponent },
+    { path: 'summary', component: SummaryListComponent },
     { path: 'plot', component: PlotListComponent },
     { path: 'createPlot', component: PlotCreateComponent },
     { path: 'editPlot/:id', component: PlotEditComponent },
@@ -76,8 +79,8 @@ var AppModule = /** @class */ (function () {
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
                 ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
                 HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent,
-                PlotUserComponent, ElectricityPlotComponent, NotActiveUserListComponent, ActiveUserListComponent],
-            providers: [DataServiceElectricity, DataServiceHistory, DataServicePlot, DataServiceRate, DataServiceUser],
+                PlotUserComponent, ElectricityPlotComponent, NotActiveUserListComponent, ActiveUserListComponent, SummaryListComponent],
+            providers: [DataServiceElectricity, DataServiceHistory, DataServicePlot, DataServiceRate, DataServiceUser, DataServiceSummary],
             bootstrap: [AppComponent]
         })
     ], AppModule);

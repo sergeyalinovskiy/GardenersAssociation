@@ -60,7 +60,9 @@
 
         private Electricity CalculateNecessaryToPay(Electricity model)
         {
-            model.NecessaryToPlay = (model.RecentTestimony - model.PreviousTestimony) * model.Losses * model.BankCollections;
+            Rate rateModel =_rateRepository.GetById(model.RateId);
+            double rateValue = rateModel.Value;
+            model.NecessaryToPlay = (model.RecentTestimony - model.PreviousTestimony) * model.Losses * model.BankCollections /** rateValue*/;
             return model;
         }
 
@@ -81,6 +83,5 @@
             rates.Add(rate);
             return rates;
         }
-
     }
 }
