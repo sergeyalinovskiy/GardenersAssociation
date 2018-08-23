@@ -1,5 +1,4 @@
-﻿using SA.GA.Common;
-using SA.GA.Common.Models;
+﻿using SA.GA.Common.Models;
 using SA.GA.DataAccess.Repository;
 using System;
 using System.Collections.Generic;
@@ -49,7 +48,23 @@ namespace SA.GA.Business.Services.Implementation
             {
                 sammaryResult.Add(MapToSammary(i));
             }
-            return sammaryResult;
+            return this.AddSummValue(sammaryResult);
+        }
+
+        private List<Summary> AddSummValue(List<Summary> models)
+        {
+            Summary fullSummory = new Summary();
+
+            foreach(Summary s in models)
+            {
+                fullSummory.PreviousTestimony += s.PreviousTestimony;
+                fullSummory.RecentTestimony += s.RecentTestimony;
+                fullSummory.Consumption += s.Consumption;
+                fullSummory.NecessaryToPay += s.NecessaryToPay;
+            }
+            //fullSummory.UserId = 10000;
+            models.Add(fullSummory);
+            return models;
         }
 
         private Summary MapToSammary(int userId)
@@ -97,9 +112,5 @@ namespace SA.GA.Business.Services.Implementation
             return electricity;
         }
 
-        public Summary SummaryValues()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
