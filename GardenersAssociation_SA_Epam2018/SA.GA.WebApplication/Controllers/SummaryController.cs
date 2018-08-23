@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SA.GA.Business.Services;
 using SA.GA.Common;
+using SA.GA.Common.Models;
 
 namespace SA.GA.WebApplication.Controllers
 {

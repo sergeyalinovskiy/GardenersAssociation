@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SA.GA.Common
+namespace SA.GA.Common.Models   
 {
     public class Summary
     {

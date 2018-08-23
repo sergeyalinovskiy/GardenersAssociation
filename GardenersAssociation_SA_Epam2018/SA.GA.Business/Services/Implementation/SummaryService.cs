@@ -59,7 +59,7 @@ namespace SA.GA.Business.Services.Implementation
             {
                 resultSummary.PreviousTestimony += e.PreviousTestimony;
                 resultSummary.RecentTestimony += e.RecentTestimony;
-                resultSummary.Consumption += e.RecentTestimony - e.RecentTestimony;
+                resultSummary.Consumption += e.RecentTestimony - e.PreviousTestimony;
                 resultSummary.NecessaryToPay += e.NecessaryToPlay;
             }
             resultSummary.UserId = userId;

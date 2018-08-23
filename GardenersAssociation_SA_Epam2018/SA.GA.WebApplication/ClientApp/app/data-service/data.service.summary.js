@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 var DataServiceSummary = /** @class */ (function () {
     function DataServiceSummary(http) {
         this.http = http;
-        this.urlSummary = "/api/summary";
+        this.urlSummary = "api/summary";
     }
     DataServiceSummary.prototype.getSummary = function () {
         return this.http.get(this.urlSummary);

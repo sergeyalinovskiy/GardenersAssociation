@@ -5,7 +5,7 @@ import { Summary } from '../models/summary';
 @Injectable()
 export class DataServiceSummary {
 
-    private urlSummary = "/api/summary";
+    private urlSummary = "api/summary";
 
     constructor(private http: HttpClient) {
     }
