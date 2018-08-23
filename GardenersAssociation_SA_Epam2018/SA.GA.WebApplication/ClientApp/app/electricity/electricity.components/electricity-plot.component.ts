@@ -4,7 +4,8 @@ import { Electricity } from '../../models/electricity';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-    templateUrl: '../electricity.template/electricity-plot.component.html'
+    templateUrl: '../electricity.template/electricity-plot.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class ElectricityPlotComponent implements OnInit {
 

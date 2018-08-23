@@ -4,7 +4,8 @@ import { DataServicePlot } from '../../data-service/data.service.plot';
 import { Plot } from '../../models/plot';
 
 @Component({
-    templateUrl: '../plot.template/plot-edit.component.html'
+    templateUrl: '../plot.template/plot-edit.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class PlotEditComponent implements OnInit {
 

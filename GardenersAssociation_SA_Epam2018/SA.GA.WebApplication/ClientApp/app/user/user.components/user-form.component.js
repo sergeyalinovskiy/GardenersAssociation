@@ -19,7 +19,8 @@ var UserFormComponent = /** @class */ (function () {
     UserFormComponent = __decorate([
         Component({
             selector: "user-form",
-            templateUrl: '../user.template/user-form.component.html'
+            templateUrl: '../user.template/user-form.component.html',
+            styleUrls: ['../../style/app.component.css']
         })
     ], UserFormComponent);
     return UserFormComponent;

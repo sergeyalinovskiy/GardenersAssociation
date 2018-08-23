@@ -111,6 +111,5 @@ namespace SA.GA.Business.Services.Implementation
             Electricity electricity = _electricityRepository.GetById(electricityId);          
             return electricity;
         }
-
     }
 }

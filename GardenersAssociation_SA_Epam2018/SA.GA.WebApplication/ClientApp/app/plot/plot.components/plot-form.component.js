@@ -19,7 +19,8 @@ var PlotFormComponent = /** @class */ (function () {
     PlotFormComponent = __decorate([
         Component({
             selector: "plot-form",
-            templateUrl: '../plot.template/plot-form.component.html'
+            templateUrl: '../plot.template/plot-form.component.html',
+            styleUrls: ['../../style/app.component.css']
         })
     ], PlotFormComponent);
     return PlotFormComponent;

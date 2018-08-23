@@ -26,7 +26,8 @@ var PlotListComponent = /** @class */ (function () {
     };
     PlotListComponent = __decorate([
         Component({
-            templateUrl: '../plot.template/plot-list.component.html'
+            templateUrl: '../plot.template/plot-list.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServicePlot])
     ], PlotListComponent);

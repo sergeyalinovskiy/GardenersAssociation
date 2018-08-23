@@ -4,7 +4,8 @@ import { DataServiceElectricity } from '../../data-service/data.service.electric
 import { Electricity } from '../../models/electricity';
 
 @Component({
-    templateUrl: '../electricity.template/electricity-create.component.html'
+    templateUrl: '../electricity.template/electricity-create.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class ElectricityCreateComponent {
 

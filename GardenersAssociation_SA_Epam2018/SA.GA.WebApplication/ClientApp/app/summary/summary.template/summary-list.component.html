@@ -1,24 +1,25 @@
-﻿<table class="table table-striped">    
-    <thead>
+﻿<table class="table" id="customers">    
+
         <tr>
-            <td>UserId</td>
-            <td>Предыдущие данные</td>
-            <td>Новые данные</td>
-            <td>Расход</td>
-            <td>Нужно оплатить</td>
+            <th></th>
+            <th>UserId</th>
+            <th>Предыдущие данные</th>
+            <th>Новые данные</th>
+            <th>Расход</th>
+            <th>Нужно оплатить</th>
         </tr>
-    </thead>
-    <tbody>
+           
         <tr *ngFor="let s of summarys">
+            <td></td>
             <td>{{s?.userId}}</td>
             <td>{{s?.previousTestimony}}</td>
             <td>{{s?.recentTestimony}}</td>
             <td>{{s?.consumption}}</td>
             <td>{{s?.necessaryToPay}}</td>
         </tr>
-    </tbody>
     <tr>
-        <td>Суммарный долг:</td>
+        <th>Суммарный долг:</th>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>

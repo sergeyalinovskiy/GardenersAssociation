@@ -19,7 +19,8 @@ var HistoryFormComponent = /** @class */ (function () {
     HistoryFormComponent = __decorate([
         Component({
             selector: "history-form",
-            templateUrl: '../history.template/history-form.component.html'
+            templateUrl: '../history.template/history-form.component.html',
+            styleUrls: ['../../style/app.component.css']
         })
     ], HistoryFormComponent);
     return HistoryFormComponent;

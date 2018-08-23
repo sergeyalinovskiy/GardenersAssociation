@@ -8,10 +8,10 @@ button {
     border:medium;
 }
 
-a{
+/*a{
     color:gold;
     font-size:larger;
-}
+}*/
 
 
 .sa-ga-btn {
@@ -32,7 +32,7 @@ a{
 .sa-ga-btn--lightslategray {
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50
+    border: 1px solid #0094ff
     /*font-size: 16px;
     background-color: lightslategray;
     color: cornsilk;*/
@@ -41,7 +41,7 @@ a{
 .sa-ga-btn--darkgray {
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50
+    border: 1px solid #0094ff
     /*font-size: 16px;
     background-color: darkgray;
     color: black;*/
@@ -79,3 +79,50 @@ a{
         opacity: 1;
         right: 0;
     }
+
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #0094ff;
+        color: white;
+    }
+
+
+
+
+/*a:link {
+    background-color: green;
+}
+
+a:visited {
+    background-color: white;
+}
+
+a:hover {
+    background-color: darkgrey;
+}
+
+a:active {
+    background-color: darkgray;
+}*/ 

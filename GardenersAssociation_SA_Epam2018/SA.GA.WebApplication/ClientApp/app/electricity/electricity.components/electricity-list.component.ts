@@ -3,7 +3,8 @@ import { DataServiceElectricity } from '../../data-service/data.service.electric
 import { Electricity } from '../../models/electricity';
 
 @Component({
-    templateUrl: '../electricity.template/electricity-list.component.html'
+    templateUrl: '../electricity.template/electricity-list.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class ElectricityListComponent implements OnInit {
 

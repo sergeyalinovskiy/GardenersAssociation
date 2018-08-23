@@ -25,7 +25,8 @@ var PlotCreateComponent = /** @class */ (function () {
     };
     PlotCreateComponent = __decorate([
         Component({
-            templateUrl: '../plot.template/plot-create.component.html'
+            templateUrl: '../plot.template/plot-create.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServicePlot, Router])
     ], PlotCreateComponent);

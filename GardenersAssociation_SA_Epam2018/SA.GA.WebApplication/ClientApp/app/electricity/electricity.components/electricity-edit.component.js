@@ -33,7 +33,8 @@ var ElectricityEditComponent = /** @class */ (function () {
     };
     ElectricityEditComponent = __decorate([
         Component({
-            templateUrl: '../electricity.template/electricity-edit.component.html'
+            templateUrl: '../electricity.template/electricity-edit.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceElectricity, Router, ActivatedRoute])
     ], ElectricityEditComponent);

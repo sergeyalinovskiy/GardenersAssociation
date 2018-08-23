@@ -33,7 +33,8 @@ var RateEditComponent = /** @class */ (function () {
     };
     RateEditComponent = __decorate([
         Component({
-            templateUrl: '../rate.template/rate-edit.component.html'
+            templateUrl: '../rate.template/rate-edit.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceRate, Router, ActivatedRoute])
     ], RateEditComponent);

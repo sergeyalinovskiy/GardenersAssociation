@@ -25,7 +25,8 @@ var ElectricityCreateComponent = /** @class */ (function () {
     };
     ElectricityCreateComponent = __decorate([
         Component({
-            templateUrl: '../electricity.template/electricity-create.component.html'
+            templateUrl: '../electricity.template/electricity-create.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceElectricity, Router])
     ], ElectricityCreateComponent);
