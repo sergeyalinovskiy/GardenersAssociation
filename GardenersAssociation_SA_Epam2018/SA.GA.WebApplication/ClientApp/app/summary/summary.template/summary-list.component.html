@@ -1,8 +1,8 @@
 ﻿<table class="table" id="customers">    
 
         <tr>
-            <th></th>
-            <th>UserId</th>
+            <th>Фамилия участника</th>
+            <th>Номер участника</th>
             <th>Предыдущие данные</th>
             <th>Новые данные</th>
             <th>Расход</th>
@@ -10,19 +10,13 @@
         </tr>
            
         <tr *ngFor="let s of summarys">
-            <td></td>
+            
+            <td>{{s?.name}}</td>
             <td>{{s?.userId}}</td>
             <td>{{s?.previousTestimony}}</td>
             <td>{{s?.recentTestimony}}</td>
             <td>{{s?.consumption}}</td>
             <td>{{s?.necessaryToPay}}</td>
         </tr>
-    <tr>
-        <th>Суммарный долг:</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>необходимо еще оплатить</td>
-    </tr>
+    
 </table>

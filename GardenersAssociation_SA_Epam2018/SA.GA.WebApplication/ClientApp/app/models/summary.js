@@ -1,5 +1,6 @@
 var Summary = /** @class */ (function () {
-    function Summary(id, PreviousTestimony, RecentTestimony, Consumption, NecessaryToPay) {
+    function Summary(name, id, PreviousTestimony, RecentTestimony, Consumption, NecessaryToPay) {
+        this.name = name;
         this.id = id;
         this.PreviousTestimony = PreviousTestimony;
         this.RecentTestimony = RecentTestimony;

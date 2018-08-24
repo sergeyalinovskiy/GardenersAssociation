@@ -63,6 +63,7 @@ namespace SA.GA.Business.Services.Implementation
                 fullSummory.NecessaryToPay += s.NecessaryToPay;
             }
             //fullSummory.UserId = 10000;
+            fullSummory.Name = "Общие показания";
             models.Add(fullSummory);
             return models;
         }
@@ -72,6 +73,7 @@ namespace SA.GA.Business.Services.Implementation
             Summary resultSummary = new Summary();
             foreach(Electricity e in GetUserElectricities(userId))
             {
+                resultSummary.Name = _userRepository.GetById(userId).LastName;
                 resultSummary.PreviousTestimony += e.PreviousTestimony;
                 resultSummary.RecentTestimony += e.RecentTestimony;
                 resultSummary.Consumption += e.RecentTestimony - e.PreviousTestimony;
