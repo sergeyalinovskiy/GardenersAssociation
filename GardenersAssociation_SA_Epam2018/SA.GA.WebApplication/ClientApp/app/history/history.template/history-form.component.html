@@ -1,16 +1,52 @@
-﻿<div class="form-group">
-    <label>UserId</label>
-    <input type="text" [(ngModel)]="history.userId" class="form-control" />
-</div>
-<div class="form-group">
-    <label>PlotId</label>
-    <input type="text" [(ngModel)]="history.plotId" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Дествует с</label>
-    <input type="text" [(ngModel)]="history.from" class="form-control" />
-</div>
-<div class="form-group">
-    <label>По</label>
-    <input type="text" [(ngModel)]="history.to" class="form-control" />
+﻿<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="userId">UserId</label>
+            <input type="text" class="form-control" id="userId"
+                   required [(ngModel)]="history.userId"
+                   name="userId" #userId="ngModel">
+            <div *ngIf="userId.errors && (userId.dirty || userId.touched)" class="alert alert-danger">
+                <div [hidden]="!userId.errors.required">
+                    userId is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="plotId">PlotId</label>
+            <input type="text" class="form-control" id="plotId"
+                   required [(ngModel)]="history.plotId"
+                   name="plotId" #plotId="ngModel">
+            <div *ngIf="plotId.errors && (plotId.dirty || plotId.touched)" class="alert alert-danger">
+                <div [hidden]="!plotId.errors.required">
+                    plotId is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="from">Дествует с</label>
+            <input type="text" class="form-control" id="from"
+                   required [(ngModel)]="history.from"
+                   name="from" #from="ngModel">
+
+            <div *ngIf="from.errors && (from.dirty || from.touched)" class="alert alert-danger">
+                <div [hidden]="!from.errors.required">
+                    from date is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="to">По</label>
+            <input type="text" class="form-control" id="to"
+                   required [(ngModel)]="history.to"
+                   name="to" #to="ngModel">
+            <div *ngIf="to.errors && (to.dirty || to.touched)" class="alert alert-danger">
+                <div [hidden]="!to.errors.required">
+                    to date is required!
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
