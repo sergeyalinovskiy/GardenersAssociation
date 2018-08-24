@@ -36,6 +36,8 @@ import { HistoryFormComponent } from './history/history.components/history-form.
 import { HistoryCreateComponent } from './history/history.components/history-create.component';
 import { HistoryEditComponent } from './history/history.components/history-edit.component';
 import { SummaryListComponent } from './summary/summary.components/summary-list.component';
+import { SummaryCreateComponent } from './summary/summary.components/summary-create.component';
+import { SummaryFormComponent } from './summary/summary.components/summary-form.component';
 import { NotFoundComponent } from './not-found.component';
 import { DataServiceElectricity } from './data-service/data.service.electricity';
 import { DataServiceHistory } from './data-service/data.service.history';
@@ -52,6 +54,7 @@ var appRoutes = [
     { path: 'edit/:id', component: UserEditComponent },
     { path: 'getPlots/:id', component: PlotUserComponent },
     { path: 'summary', component: SummaryListComponent },
+    { path: 'createSummary', component: SummaryCreateComponent },
     { path: 'plot', component: PlotListComponent },
     { path: 'createPlot', component: PlotCreateComponent },
     { path: 'editPlot/:id', component: PlotEditComponent },
@@ -79,7 +82,7 @@ var AppModule = /** @class */ (function () {
                 PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
                 ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
                 HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent,
-                PlotUserComponent, ElectricityPlotComponent, NotActiveUserListComponent, ActiveUserListComponent, SummaryListComponent],
+                PlotUserComponent, ElectricityPlotComponent, NotActiveUserListComponent, ActiveUserListComponent, SummaryListComponent, SummaryCreateComponent, SummaryFormComponent],
             providers: [DataServiceElectricity, DataServiceHistory, DataServicePlot, DataServiceRate, DataServiceUser, DataServiceSummary],
             bootstrap: [AppComponent]
         })

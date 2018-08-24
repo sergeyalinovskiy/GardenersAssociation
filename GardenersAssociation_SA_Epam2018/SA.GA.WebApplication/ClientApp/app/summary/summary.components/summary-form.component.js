@@ -7,24 +7,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-var DataServiceSummary = /** @class */ (function () {
-    function DataServiceSummary(http) {
-        this.http = http;
-        this.urlSummary = "api/summary";
+import { Component, Input } from '@angular/core';
+import { Summary } from '../../models/summary';
+var SummaryFormComponent = /** @class */ (function () {
+    function SummaryFormComponent() {
     }
-    DataServiceSummary.prototype.getSummary = function () {
-        return this.http.get(this.urlSummary);
-    };
-    DataServiceSummary.prototype.createSummary = function (summary) {
-        return this.http.post(this.urlSummary, summary);
-    };
-    DataServiceSummary = __decorate([
-        Injectable(),
-        __metadata("design:paramtypes", [HttpClient])
-    ], DataServiceSummary);
-    return DataServiceSummary;
+    __decorate([
+        Input(),
+        __metadata("design:type", Summary)
+    ], SummaryFormComponent.prototype, "summary", void 0);
+    SummaryFormComponent = __decorate([
+        Component({
+            selector: "summary-form",
+            templateUrl: '../summary.template/summary-form.component.html',
+            styleUrls: ['../../style/app.component.css']
+        })
+    ], SummaryFormComponent);
+    return SummaryFormComponent;
 }());
-export { DataServiceSummary };
-//# sourceMappingURL=data.service.summary.js.map
+export { SummaryFormComponent };
+//# sourceMappingURL=summary-form.component.js.map

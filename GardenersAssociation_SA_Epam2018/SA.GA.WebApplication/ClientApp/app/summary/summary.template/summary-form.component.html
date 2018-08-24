@@ -1,0 +1,33 @@
+﻿<div class="container">
+    <form>
+        <div class="form-group">
+            <label>Имя</label>
+            <input type="text" [(ngModel)]="summary.name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Номер пользователя</label>
+            <input type="text" [(ngModel)]="summary.userId" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Предыдущие значения</label>
+            <input type="text" [(ngModel)]="summary.previousTestimony" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Значения сейчас</label>
+            <input type="text" [(ngModel)]="summary.recentTestimony" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Разница</label>
+            <input type="text" [(ngModel)]="summary.consumption" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Необходимо оплатить</label>
+            <input type="text" [(ngModel)]="summary.necessaryToPay" class="form-control" />
+        </div>
+    </form>
+</div>
+

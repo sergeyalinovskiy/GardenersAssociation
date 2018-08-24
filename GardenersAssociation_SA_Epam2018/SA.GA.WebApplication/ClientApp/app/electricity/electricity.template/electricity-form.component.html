@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="mounth">Месяц</label>
             <input type="text" class="form-control" id="mounth"
-                   required [(ngModel)]="electricity.year"
+                   required [(ngModel)]="electricity.mounth"
                    name="mounth" #mounth="ngModel">
             <div *ngIf="mounth.errors && (mounth.dirty || mounth.touched)" class="alert alert-danger">
                 <div [hidden]="!mounth.errors.required">
