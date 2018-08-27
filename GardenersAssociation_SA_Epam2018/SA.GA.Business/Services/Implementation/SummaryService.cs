@@ -66,17 +66,34 @@ namespace SA.GA.Business.Services.Implementation
         private List<Summary> AddSummValue(List<Summary> models)
         {
             Summary fullSummory = new Summary();
+            Summary total = new Summary();
 
             foreach(Summary s in models)
             {
-                fullSummory.PreviousTestimony += s.PreviousTestimony;
-                fullSummory.RecentTestimony += s.RecentTestimony;
-                fullSummory.Consumption += s.Consumption;
-                fullSummory.NecessaryToPay += s.NecessaryToPay;
+                if (s.Name != "Председатель")
+                {
+                    fullSummory.PreviousTestimony += s.PreviousTestimony;
+                    fullSummory.RecentTestimony += s.RecentTestimony;
+                    fullSummory.Consumption += s.Consumption;
+                    fullSummory.NecessaryToPay += s.NecessaryToPay;
+                }
             }
+            foreach (Summary s in models)
+            {
+                if (s.Name == "Председатель")
+                {
+                    total.Name = "Недоплата/Переплата";
+                    total.PreviousTestimony = 0;
+                    total.RecentTestimony = 0;
+                    total.NecessaryToPay = s.NecessaryToPay - fullSummory.NecessaryToPay;
+                    total.Consumption = s.Consumption - fullSummory.Consumption;
+                }
+            }
+
             //fullSummory.UserId = 10000;
-            fullSummory.Name = "Общие показания";
+            fullSummory.Name = "Итого";
             models.Add(fullSummory);
+            models.Add(total);
             return models;
         }
 
