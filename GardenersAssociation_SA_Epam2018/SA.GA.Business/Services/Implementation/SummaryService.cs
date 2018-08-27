@@ -39,17 +39,15 @@ namespace SA.GA.Business.Services.Implementation
             _userRepository = userRepository;
         }
         List<Summary> sammaryResult = new List<Summary>();
-        public void AddCounterValues(Summary counter)
-        {
-            if (counter == null)
-            {
-                throw new NullReferenceException();
-            }
-            counter.Name = "Счетчик";
-            sammaryResult.Add(counter);
-
-           
-        }
+        //public void AddCounterValues(Summary counter)
+        //{
+        //    if (counter == null)
+        //    {
+        //        throw new NullReferenceException();
+        //    }
+        //    counter.Name = "Счетчик";
+        //    sammaryResult.Add(counter);
+        //}
        
         public IEnumerable<Summary> GetSummaryList()
         {

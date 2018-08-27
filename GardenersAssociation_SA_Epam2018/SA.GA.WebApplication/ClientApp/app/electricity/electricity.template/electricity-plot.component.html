@@ -13,8 +13,8 @@
             <td>Банковский сбор</td>
             <td>Нужно оплатить</td>
             <td>Оплачено</td>
-            <td>Id Тарифa</td>
-            <!--<td>Тариф</td>-->
+            <!--<td>Id Тарифa</td>-->
+            <td>Тариф</td>
             <td></td>
         </tr>
     </thead>
@@ -29,8 +29,8 @@
             <td>{{e?.bankCollections}}</td>
             <td>{{e?.necessaryToPlay}}</td>
             <td>{{e?.paid}}</td>
-            <td>{{e?.rateId}}</td>
-            <!--<td>{{e?.rateName}}</td>-->
+            <!--<td>{{e?.rateId}}</td>-->
+            <td>{{e?.rateName}}</td>
             <td>
                 <a [routerLink]="['/editElectricity', e.id]" class="btn btn-sm btn-primary">Изменить</a>
                 <a [routerLink]="['/api/electricitys/GetRateInfo', e.id]" class="btn btn-sm btn-primary">Подробнее о тарифе</a>

@@ -1,23 +1,23 @@
-﻿<a routerLink="/createSummary" class="nav-link">Добавить</a>
-<table class="table" id="customers">    
+﻿<a routerLink="/editElectricity/11" class="nav-link">Изменить значения счетчика</a>
+<table class="table" id="customers">
 
-        <tr>
-            <th>Фамилия участника</th>
-            <th>Номер участника</th>
-            <th>Предыдущие данные</th>
-            <th>Новые данные</th>
-            <th>Расход</th>
-            <th>Нужно оплатить</th>
-        </tr>
-           
-        <tr *ngFor="let s of summarys">
-            
-            <td>{{s?.name}}</td>
-            <td>{{s?.userId}}</td>
-            <td>{{s?.previousTestimony}}</td>
-            <td>{{s?.recentTestimony}}</td>
-            <td>{{s?.consumption}}</td>
-            <td>{{s?.necessaryToPay}}</td>
-        </tr>
-    
+    <tr>
+        <th>Фамилия участника</th>
+        <th>Номер участника</th>
+        <th>Предыдущие данные</th>
+        <th>Новые данные</th>
+        <th>Расход</th>
+        <th>Нужно оплатить</th>
+    </tr>
+
+    <tr *ngFor="let s of summarys">
+
+        <td>{{s?.name}}</td>
+        <td>{{s?.userId}}</td>
+        <td>{{s?.previousTestimony}}</td>
+        <td>{{s?.recentTestimony}}</td>
+        <td>{{s?.consumption}}</td>
+        <td>{{s?.necessaryToPay}}</td>
+    </tr>
+
 </table>

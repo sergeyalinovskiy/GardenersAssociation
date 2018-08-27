@@ -5,6 +5,7 @@
     using System.Linq;
     using Microsoft.AspNetCore.Mvc;
     using SA.GA.Business.Services;
+    using SA.GA.Business.Services.Implementation;
     using SA.GA.Common.Models;
     using SA.GA.WebApplication.ViewModels;
     #endregion
@@ -14,11 +15,13 @@
     {
         private readonly IPlotService _plotService;
         private readonly IElectricityService _electricityService;
+        private readonly IRateService _rateService;
 
-        public PlotController(IPlotService plotService, IElectricityService electricityService)
+        public PlotController(IPlotService plotService, IElectricityService electricityService, IRateService rateService)
         {
             _plotService = plotService;
             _electricityService = electricityService;
+            _rateService = rateService;
         }
 
         [HttpDelete("{id}")]
@@ -90,7 +93,10 @@
                 PreviousTestimony=electricity.PreviousTestimony,
                 RecentTestimony=electricity.RecentTestimony,
                 RateId=electricity.RateId,
-                //RateName = electricity.Rate.Name
+                RateName = _rateService.GetRatesList()
+                                    .Where(m => m.Id == electricity.RateId)
+                                    .Select(m => m.Name)
+                                    .FirstOrDefault()
             };
         }
 

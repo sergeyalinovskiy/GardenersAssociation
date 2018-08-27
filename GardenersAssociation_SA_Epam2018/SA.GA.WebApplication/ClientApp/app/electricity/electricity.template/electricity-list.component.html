@@ -14,7 +14,7 @@
             <th>Нужно оплатить</th>
             <th>Оплачено</th>
             <th>Тариф</th>
-            <th></th>
+            <th>Название тарифа</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +29,7 @@
             <td>{{e?.necessaryToPlay}}</td>
             <td>{{e?.paid}}</td>
             <td>{{e?.rateId}}</td>
+            <td>{{e?.rateName}}</td>
             <td>
                 <a [routerLink]="['/editElectricity', e.id]" class="btn btn-sm btn-primary">Изменить</a>
                 <a [routerLink]="['/api/electricitys/GetRateInfo', e.id]" class="btn btn-sm btn-primary">Подробнее о тарифе</a>

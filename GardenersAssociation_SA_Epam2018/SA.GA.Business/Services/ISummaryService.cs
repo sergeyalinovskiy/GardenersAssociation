@@ -6,6 +6,6 @@ namespace SA.GA.Business.Services
     public interface ISummaryService
     {
         IEnumerable<Summary> GetSummaryList();
-        void AddCounterValues(Summary counter);
+        //void AddCounterValues(Summary counter);
     }
 }

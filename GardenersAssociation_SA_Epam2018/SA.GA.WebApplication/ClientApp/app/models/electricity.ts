@@ -9,6 +9,7 @@
         public BankCollections?: number,
         public NecessaryToPlay?: number,
         public Paid?: number,
-        public RateId?: number) { }
+        public RateId?: number,
+        public rateName?: string) { }
 }
 
