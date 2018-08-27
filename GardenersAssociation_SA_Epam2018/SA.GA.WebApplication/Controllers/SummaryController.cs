@@ -19,6 +19,17 @@ namespace SA.GA.WebApplication.Controllers
             _summaryService = summaryService;
         }
 
+        [HttpPost]
+        public IActionResult Post([FromBody]Summary counter)
+        {
+            if (ModelState.IsValid)
+            {
+                _summaryService.AddCounterValues(counter);
+                return Ok(counter);
+            }
+            return BadRequest(ModelState);
+        }
+
         [HttpGet]
         public IEnumerable<Summary> Get()
         {

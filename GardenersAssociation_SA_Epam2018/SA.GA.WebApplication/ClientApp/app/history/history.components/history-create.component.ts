@@ -4,7 +4,8 @@ import { DataServiceHistory } from '../../data-service/data.service.history';
 import { History } from '../../models/history';
 
 @Component({
-    templateUrl: '../history.template/history-create.component.html'
+    templateUrl: '../history.template/history-create.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class HistoryCreateComponent {
 

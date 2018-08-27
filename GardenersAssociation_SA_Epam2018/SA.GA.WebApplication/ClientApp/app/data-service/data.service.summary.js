@@ -17,6 +17,9 @@ var DataServiceSummary = /** @class */ (function () {
     DataServiceSummary.prototype.getSummary = function () {
         return this.http.get(this.urlSummary);
     };
+    DataServiceSummary.prototype.createSummary = function (summary) {
+        return this.http.post(this.urlSummary, summary);
+    };
     DataServiceSummary = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])

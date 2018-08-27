@@ -25,7 +25,8 @@ var RateCreateComponent = /** @class */ (function () {
     };
     RateCreateComponent = __decorate([
         Component({
-            templateUrl: '../rate.template/rate-create.component.html'
+            templateUrl: '../rate.template/rate-create.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceRate, Router])
     ], RateCreateComponent);

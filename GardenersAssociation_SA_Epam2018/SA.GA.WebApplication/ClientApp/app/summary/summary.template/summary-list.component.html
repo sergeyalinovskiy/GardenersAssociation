@@ -1,23 +1,23 @@
-﻿
-<table class="table table-striped">
-    
-    <thead>
-        <tr>
-            <td>UserId</td>
-            <td>Предыдущие данные</td>
-            <td>Новые данные</td>
-            <td>Расход</td>
-            <td>Нужно оплатить</td>
+﻿<a routerLink="/createSummary" class="nav-link">Добавить</a>
+<table class="table" id="customers">    
 
+        <tr>
+            <th>Фамилия участника</th>
+            <th>Номер участника</th>
+            <th>Предыдущие данные</th>
+            <th>Новые данные</th>
+            <th>Расход</th>
+            <th>Нужно оплатить</th>
         </tr>
-    </thead>
-    <tbody>
+           
         <tr *ngFor="let s of summarys">
+            
+            <td>{{s?.name}}</td>
             <td>{{s?.userId}}</td>
             <td>{{s?.previousTestimony}}</td>
             <td>{{s?.recentTestimony}}</td>
             <td>{{s?.consumption}}</td>
             <td>{{s?.necessaryToPay}}</td>
         </tr>
-    </tbody>
+    
 </table>

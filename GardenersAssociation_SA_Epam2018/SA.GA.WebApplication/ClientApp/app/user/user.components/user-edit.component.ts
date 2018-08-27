@@ -4,7 +4,8 @@ import { DataServiceUser } from '../../data-service/data.service.user';
 import { User } from '../../models/user';
 
 @Component({
-    templateUrl: '../user.template/user-edit.component.html'
+    templateUrl: '../user.template/user-edit.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class UserEditComponent implements OnInit {
 

@@ -22,7 +22,8 @@ var SummaryListComponent = /** @class */ (function () {
     };
     SummaryListComponent = __decorate([
         Component({
-            templateUrl: '../summary.template/summary-list.component.html'
+            templateUrl: '../summary.template/summary-list.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceSummary])
     ], SummaryListComponent);

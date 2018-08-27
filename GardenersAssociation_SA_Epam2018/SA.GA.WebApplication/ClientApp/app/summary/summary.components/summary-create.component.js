@@ -8,30 +8,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { DataServicePlot } from '../../data-service/data.service.plot';
-var PlotListComponent = /** @class */ (function () {
-    function PlotListComponent(dataService) {
+import { Router } from '@angular/router';
+import { DataServiceSummary } from '../../data-service/data.service.summary';
+import { Summary } from '../../models/summary';
+var SummaryCreateComponent = /** @class */ (function () {
+    function SummaryCreateComponent(dataService, router) {
         this.dataService = dataService;
+        this.router = router;
+        this.summary = new Summary(); // добавляемый объект
     }
-    PlotListComponent.prototype.ngOnInit = function () {
-        this.load();
-    };
-    PlotListComponent.prototype.load = function () {
+    SummaryCreateComponent.prototype.save = function () {
         var _this = this;
-        this.dataService.getPlots().subscribe(function (data) { return _this.plots = data; });
+        this.dataService.createSummary(this.summary).subscribe(function (data) {
+            return _this.router.navigateByUrl("/");
+        });
     };
-    PlotListComponent.prototype.delete = function (id) {
-        var _this = this;
-        this.dataService.deletePlot(id).subscribe(function (data) { return _this.load(); });
-    };
-    PlotListComponent = __decorate([
+    SummaryCreateComponent = __decorate([
         Component({
-            templateUrl: '../plot.template/plot-list.component.html',
+            templateUrl: '../summary.template/summary-create.component.html',
             styleUrls: ['../../style/app.component.css']
         }),
-        __metadata("design:paramtypes", [DataServicePlot])
-    ], PlotListComponent);
-    return PlotListComponent;
+        __metadata("design:paramtypes", [DataServiceSummary, Router])
+    ], SummaryCreateComponent);
+    return SummaryCreateComponent;
 }());
-export { PlotListComponent };
-//# sourceMappingURL=plot-list.component.js.map
+export { SummaryCreateComponent };
+//# sourceMappingURL=summary-create.component.js.map

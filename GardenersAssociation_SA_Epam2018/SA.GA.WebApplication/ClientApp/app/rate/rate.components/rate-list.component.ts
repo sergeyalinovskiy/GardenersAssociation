@@ -3,7 +3,8 @@ import { DataServiceRate } from '../../data-service/data.service.rate';
 import { Rate } from '../../models/rate';
 
 @Component({
-    templateUrl: '../rate.template/rate-list.component.html'
+    templateUrl: '../rate.template/rate-list.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class RateListComponent implements OnInit {
 

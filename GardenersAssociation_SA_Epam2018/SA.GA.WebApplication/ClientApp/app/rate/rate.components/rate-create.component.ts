@@ -4,7 +4,8 @@ import { DataServiceRate } from '../../data-service/data.service.rate';
 import { Rate } from '../../models/rate';
 
 @Component({
-    templateUrl: '../rate.template/rate-create.component.html'
+    templateUrl: '../rate.template/rate-create.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class RateCreateComponent {
 

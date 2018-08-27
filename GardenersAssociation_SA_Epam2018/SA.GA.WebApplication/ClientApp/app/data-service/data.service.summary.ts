@@ -13,4 +13,8 @@ export class DataServiceSummary {
     getSummary() {
         return this.http.get(this.urlSummary);
     }
+
+    createSummary(summary: Summary) {
+        return this.http.post(this.urlSummary, summary);
+    }
 }

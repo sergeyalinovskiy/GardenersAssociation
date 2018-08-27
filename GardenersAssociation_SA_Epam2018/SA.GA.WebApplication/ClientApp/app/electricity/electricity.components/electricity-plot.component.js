@@ -29,7 +29,8 @@ var ElectricityPlotComponent = /** @class */ (function () {
     };
     ElectricityPlotComponent = __decorate([
         Component({
-            templateUrl: '../electricity.template/electricity-plot.component.html'
+            templateUrl: '../electricity.template/electricity-plot.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceElectricity, Router, ActivatedRoute])
     ], ElectricityPlotComponent);

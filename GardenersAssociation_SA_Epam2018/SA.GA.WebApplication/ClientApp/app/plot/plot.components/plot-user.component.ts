@@ -4,7 +4,8 @@ import { Plot } from '../../models/plot';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-    templateUrl: '../plot.template/plot-user.component.html'
+    templateUrl: '../plot.template/plot-user.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class PlotUserComponent implements OnInit {
 

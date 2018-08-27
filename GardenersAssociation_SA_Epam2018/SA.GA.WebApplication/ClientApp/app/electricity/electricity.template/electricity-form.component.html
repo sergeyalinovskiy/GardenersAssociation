@@ -1,36 +1,109 @@
-﻿<div class="form-group">
-    <label>Год</label>
-    <input type="text" [(ngModel)]="electricity.year" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Месяц</label>
-    <input type="text" [(ngModel)]="electricity.mounth" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Предыдущие данные</label>
-    <input type="text" [(ngModel)]="electricity.previousTestimony" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Новые данные</label>
-    <input type="text" [(ngModel)]="electricity.recentTestimony" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Потери</label>
-    <input type="text" [(ngModel)]="electricity.losses" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Банковский сбор</label>
-    <input type="text" [(ngModel)]="electricity.bankCollections" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Нужно оплатить</label>
-    <input type="text" [(ngModel)]="electricity.necessaryToPlay" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Оплачено</label>
-    <input type="text" [(ngModel)]="electricity.paid" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Тариф</label>
-    <input type="text" [(ngModel)]="electricity.rateId" class="form-control" />
+﻿<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="year">Год</label>
+            <input type="text" class="form-control" id="year"
+                   required [(ngModel)]="electricity.year"
+                   name="year" #year="ngModel">
+            <div *ngIf="year.errors && (year.dirty || year.touched)" class="alert alert-danger">
+                <div [hidden]="!year.errors.required">
+                    year is required!
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mounth">Месяц</label>
+            <input type="text" class="form-control" id="mounth"
+                   required [(ngModel)]="electricity.mounth"
+                   name="mounth" #mounth="ngModel">
+            <div *ngIf="mounth.errors && (mounth.dirty || mounth.touched)" class="alert alert-danger">
+                <div [hidden]="!mounth.errors.required">
+                    mounth is required!
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="previousTestimony">Предыдущие данные</label>
+            <input type="text" class="form-control" id="previousTestimony"
+                   required [(ngModel)]="electricity.previousTestimony"
+                   name="previousTestimony" #previousTestimony="ngModel">
+            <div *ngIf="previousTestimony.errors && (previousTestimony.dirty || previousTestimony.touched)" class="alert alert-danger">
+                <div [hidden]="!previousTestimony.errors.required">
+                    previousTestimony is required!
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="recentTestimony">Новые данные</label>
+            <input type="text" class="form-control" id="recentTestimony"
+                   required [(ngModel)]="electricity.recentTestimony"
+                   name="recentTestimony" #recentTestimony="ngModel">
+            <div *ngIf="recentTestimony.errors && (recentTestimony.dirty || recentTestimony.touched)" class="alert alert-danger">
+                <div [hidden]="!previousTestimony.errors.required">
+                    recentTestimony is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="losses">Потери</label>
+            <input type="text" class="form-control" id="losses"
+                   required [(ngModel)]="electricity.losses"
+                   name="losses" #losses="ngModel">
+            <div *ngIf="losses.errors && (losses.dirty || losses.touched)" class="alert alert-danger">
+                <div [hidden]="!losses.errors.required">
+                    losses is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bankCollections">Банковский сбор</label>
+            <input type="text" class="form-control" id="bankCollections"
+                   required [(ngModel)]="electricity.bankCollections"
+                   name="bankCollections" #bankCollections="ngModel">
+            <div *ngIf="bankCollections.errors && (bankCollections.dirty || bankCollections.touched)" class="alert alert-danger">
+                <div [hidden]="!bankCollections.errors.required">
+                    bankCollections is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="necessaryToPlay">Нужно оплатить</label>
+            <input type="text" class="form-control" id="necessaryToPlay"
+                   required [(ngModel)]="electricity.necessaryToPlay"
+                   name="necessaryToPlay" #necessaryToPlay="ngModel">
+            <div *ngIf="necessaryToPlay.errors && (necessaryToPlay.dirty || necessaryToPlay.touched)" class="alert alert-danger">
+                <div [hidden]="!necessaryToPlay.errors.required">
+                    necessaryToPlay is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="paid">Оплачено</label>
+            <input type="text" class="form-control" id="paid"
+                   required [(ngModel)]="electricity.paid"
+                   name="paid" #paid="ngModel">
+            <div *ngIf="paid.errors && (paid.dirty || paid.touched)" class="alert alert-danger">
+                <div [hidden]="!paid.errors.required">
+                    paid is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="rateId">Оплачено</label>
+            <input type="text" class="form-control" id="rateId"
+                   required [(ngModel)]="electricity.rateId"
+                   name="rateId" #rateId="ngModel">
+            <div *ngIf="rateId.errors && (rateId.dirty || rateId.touched)" class="alert alert-danger">
+                <div [hidden]="!rateId.errors.required">
+                    rateId is required!
+                </div>
+            </div>
+        </div>
+
+    </form>
 </div>

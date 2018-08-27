@@ -33,7 +33,8 @@ var PlotEditComponent = /** @class */ (function () {
     };
     PlotEditComponent = __decorate([
         Component({
-            templateUrl: '../plot.template/plot-edit.component.html'
+            templateUrl: '../plot.template/plot-edit.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServicePlot, Router, ActivatedRoute])
     ], PlotEditComponent);

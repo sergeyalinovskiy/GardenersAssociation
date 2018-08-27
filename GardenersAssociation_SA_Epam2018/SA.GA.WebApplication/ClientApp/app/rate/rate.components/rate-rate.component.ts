@@ -4,7 +4,8 @@ import { Rate } from '../../models/rate';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-    templateUrl: '../rate.template/rate-list.component.html'
+    templateUrl: '../rate.template/rate-list.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class RateComponent implements OnInit {
 

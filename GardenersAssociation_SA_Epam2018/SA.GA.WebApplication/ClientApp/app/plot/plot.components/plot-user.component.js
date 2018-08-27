@@ -29,7 +29,8 @@ var PlotUserComponent = /** @class */ (function () {
     };
     PlotUserComponent = __decorate([
         Component({
-            templateUrl: '../plot.template/plot-user.component.html'
+            templateUrl: '../plot.template/plot-user.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServicePlot, Router, ActivatedRoute])
     ], PlotUserComponent);

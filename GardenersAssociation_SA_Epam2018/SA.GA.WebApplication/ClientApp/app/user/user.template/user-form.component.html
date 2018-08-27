@@ -1,32 +1,107 @@
-﻿<div class="form-group">
-    <label>Имя</label>
-    <input type="text" [(ngModel)]="user.firstName" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Фамилия</label>
-    <input type="text" [(ngModel)]="user.lastName" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Отчество</label>
-    <input type="text" [(ngModel)]="user.middleName" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Адрес</label>
-    <input type="text" [(ngModel)]="user.address" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Телефон</label>
-    <input type="text" [(ngModel)]="user.phone" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Подведено электричество</label>
-    <input type="checkbox" [(ngModel)]="user.suppliedElectricity" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Дополнительная информация</label>
-    <input type="text" [(ngModel)]="user.additionalInformation" class="form-control" />
-</div>
-<div class="form-group">
-    <label>Статус владения</label>
-    <input type="checkbox" [(ngModel)]="user.status" class="form-control" />
+﻿<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="firstName">Имя</label>
+            <input type="text" class="form-control" id="firstName"
+                   required minlength="2" maxlength="30" [(ngModel)]="user.firstName"
+                   name="firstName" #firstName="ngModel">
+            <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+                <div [hidden]="!firstName.errors.required">
+                    firstName is required!
+                </div>
+                <div [hidden]="!firstName.errors.minlength">
+                    firstName must be at least 2 characters long.
+                </div>
+                <div [hidden]="!firstName.errors.maxlength">
+                    firstName cannot be more than 30 characters long.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Фамилия</label>
+            <input type="text" class="form-control" id="lastName"
+                   required minlength="3" maxlength="30" [(ngModel)]="user.lastName"
+                   name="lastName" #lastName="ngModel">
+
+            <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+                <div [hidden]="!lastName.errors.required">
+                    lastName is required!
+                </div>
+                <div [hidden]="!lastName.errors.minlength">
+                    lastName must be at least 3 characters long.
+                </div>
+                <div [hidden]="!lastName.errors.maxlength">
+                    lastName cannot be more than 30 characters long.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="middleName">Отчество</label>
+            <input type="text" class="form-control" id="middleName"
+                   required minlength="4" maxlength="30" [(ngModel)]="user.middleName"
+                   name="middleName" #middleName="ngModel">
+
+            <div *ngIf="middleName.errors && (middleName.dirty || middleName.touched)" class="alert alert-danger">
+                <div [hidden]="!middleName.errors.required">
+                    middleName is required!
+                </div>
+                <div [hidden]="!middleName.errors.minlength">
+                    middleName must be at least 4 characters long.
+                </div>
+                <div [hidden]="!middleName.errors.maxlength">
+                    middleName cannot be more than 30 characters long.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Адрес</label>
+            <input type="text" class="form-control" id="address"
+                   required [(ngModel)]="user.address"
+                   name="address" #address="ngModel">
+            <div *ngIf="address.errors && (address.dirty || address.touched)" class="alert alert-danger">
+                <div [hidden]="!middleName.errors.required">
+                    address is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="text" class="form-control" id="phone"
+                   required [(ngModel)]="user.phone"
+                   name="phone" #phone="ngModel">
+
+            <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
+                <div [hidden]="!phone.errors.required">
+                    phone is required!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Подведено электричество</label>
+            <input type="checkbox" [(ngModel)]="user.suppliedElectricity" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="additionalInformation">Дополнительная информация</label>
+            <input type="text" class="form-control" id="additionalInformation"
+                   required [(ngModel)]="user.additionalInformation"
+                   name="additionalInformation" #additionalInformation="ngModel">
+
+            <div *ngIf="additionalInformation.errors && (additionalInformation.dirty || additionalInformation.touched)" class="alert alert-danger">
+                <div [hidden]="!additionalInformation.errors.required">
+                    additionalInformation is required!
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Статус владения</label>
+            <input type="checkbox" [(ngModel)]="user.status" class="form-control" />
+        </div>
+    </form>
 </div>

@@ -3,7 +3,8 @@ import { DataServiceHistory } from '../../data-service/data.service.history';
 import { History } from '../../models/history';
 
 @Component({
-    templateUrl: '../history.template/history-list.component.html'
+    templateUrl: '../history.template/history-list.component.html',
+    styleUrls: ['../../style/app.component.css']
 })
 export class HistoryListComponent implements OnInit {
 

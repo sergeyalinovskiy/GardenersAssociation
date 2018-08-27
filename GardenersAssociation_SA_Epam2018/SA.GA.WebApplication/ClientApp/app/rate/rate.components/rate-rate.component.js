@@ -29,7 +29,8 @@ var RateComponent = /** @class */ (function () {
     };
     RateComponent = __decorate([
         Component({
-            templateUrl: '../rate.template/rate-list.component.html'
+            templateUrl: '../rate.template/rate-list.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceRate, Router, ActivatedRoute])
     ], RateComponent);

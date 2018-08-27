@@ -1,5 +1,4 @@
-﻿using SA.GA.Common;
-using SA.GA.Common.Models;
+﻿using SA.GA.Common.Models;
 using SA.GA.DataAccess.Repository;
 using System;
 using System.Collections.Generic;
@@ -39,17 +38,63 @@ namespace SA.GA.Business.Services.Implementation
             _electricityRepository = electricityRepository;
             _userRepository = userRepository;
         }
+        List<Summary> sammaryResult = new List<Summary>();
+        public void AddCounterValues(Summary counter)
+        {
+            if (counter == null)
+            {
+                throw new NullReferenceException();
+            }
+            counter.Name = "Счетчик";
+            sammaryResult.Add(counter);
 
+           
+        }
+       
         public IEnumerable<Summary> GetSummaryList()
         {
             _userRepository.GetAll().Select(m => m.Id);
-            List<Summary> sammaryResult = new List<Summary>();
+            
 
             foreach (int i in _userRepository.GetAll().Select(m => m.Id))
             {
                 sammaryResult.Add(MapToSammary(i));
             }
-            return sammaryResult;
+            return this.AddSummValue(sammaryResult);
+        }
+
+        private List<Summary> AddSummValue(List<Summary> models)
+        {
+            Summary fullSummory = new Summary();
+            Summary total = new Summary();
+
+            foreach(Summary s in models)
+            {
+                if (s.Name != "Председатель")
+                {
+                    fullSummory.PreviousTestimony += s.PreviousTestimony;
+                    fullSummory.RecentTestimony += s.RecentTestimony;
+                    fullSummory.Consumption += s.Consumption;
+                    fullSummory.NecessaryToPay += s.NecessaryToPay;
+                }
+            }
+            foreach (Summary s in models)
+            {
+                if (s.Name == "Председатель")
+                {
+                    total.Name = "Недоплата/Переплата";
+                    total.PreviousTestimony = 0;
+                    total.RecentTestimony = 0;
+                    total.NecessaryToPay = s.NecessaryToPay - fullSummory.NecessaryToPay;
+                    total.Consumption = s.Consumption - fullSummory.Consumption;
+                }
+            }
+
+            //fullSummory.UserId = 10000;
+            fullSummory.Name = "Итого";
+            models.Add(fullSummory);
+            models.Add(total);
+            return models;
         }
 
         private Summary MapToSammary(int userId)
@@ -57,6 +102,7 @@ namespace SA.GA.Business.Services.Implementation
             Summary resultSummary = new Summary();
             foreach(Electricity e in GetUserElectricities(userId))
             {
+                resultSummary.Name = _userRepository.GetById(userId).LastName;
                 resultSummary.PreviousTestimony += e.PreviousTestimony;
                 resultSummary.RecentTestimony += e.RecentTestimony;
                 resultSummary.Consumption += e.RecentTestimony - e.PreviousTestimony;
@@ -95,11 +141,6 @@ namespace SA.GA.Business.Services.Implementation
             int electricityId = _plotRepository.GetAll().Where(m => m.Id == id).Select(m => m.ElectricityId).Single();
             Electricity electricity = _electricityRepository.GetById(electricityId);          
             return electricity;
-        }
-
-        public Summary SummaryValues()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

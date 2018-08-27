@@ -25,7 +25,8 @@ var UserCreateComponent = /** @class */ (function () {
     };
     UserCreateComponent = __decorate([
         Component({
-            templateUrl: '../user.template/user-create.component.html'
+            templateUrl: '../user.template/user-create.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceUser, Router])
     ], UserCreateComponent);

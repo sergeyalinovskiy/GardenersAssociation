@@ -25,7 +25,8 @@ var HistoryCreateComponent = /** @class */ (function () {
     };
     HistoryCreateComponent = __decorate([
         Component({
-            templateUrl: '../history.template/history-create.component.html'
+            templateUrl: '../history.template/history-create.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceHistory, Router])
     ], HistoryCreateComponent);

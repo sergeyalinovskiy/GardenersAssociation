@@ -26,7 +26,8 @@ var HistoryListComponent = /** @class */ (function () {
     };
     HistoryListComponent = __decorate([
         Component({
-            templateUrl: '../history.template/history-list.component.html'
+            templateUrl: '../history.template/history-list.component.html',
+            styleUrls: ['../../style/app.component.css']
         }),
         __metadata("design:paramtypes", [DataServiceHistory])
     ], HistoryListComponent);
