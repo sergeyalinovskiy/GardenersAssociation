@@ -22,8 +22,18 @@ var UserCreateComponent = /** @class */ (function () {
         this.dataService.createUser(this.user).subscribe(function (data) {
             return _this.router.navigateByUrl("/");
         }, function (error) {
-            var result = error.error.Address[0];
-            _this.user.Address = result;
+            var resultAddress = error.error.Address[0];
+            var resultPhone = error.error.Phone[0];
+            var resultFirstName = error.error.FirstName[0];
+            var resultLastName = error.error.LastName[0];
+            var resultMiddleName = error.error.MiddleName[0];
+            var resultAdditionalInformation = error.error.AdditionalInformation[0];
+            _this.user.Address = resultAddress;
+            _this.user.Phone = resultPhone;
+            _this.user.AdditionalInformation = resultAdditionalInformation;
+            _this.user.FirstName = resultFirstName;
+            _this.user.LastName = resultLastName;
+            _this.user.MiddleName = resultMiddleName;
             console.log(_this.user);
         });
     };

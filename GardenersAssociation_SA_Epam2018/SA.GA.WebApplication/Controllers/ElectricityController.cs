@@ -34,11 +34,11 @@
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]Electricity electricity)
+        public IActionResult Put(int id, [FromBody]ElectricityViewModel electricity)
         {
             if (ModelState.IsValid)
             {
-                _electricityService.UpdateElectricity(electricity);
+                _electricityService.UpdateElectricity(MapElectricityToBusinessModel(electricity));
                 return Ok(electricity);
             }
             return BadRequest(ModelState);

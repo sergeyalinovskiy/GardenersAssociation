@@ -29,4 +29,5 @@ export class ElectricityEditComponent implements OnInit {
     save() {
         this.dataService.updateElectricity(this.electricity).subscribe(data => this.router.navigateByUrl("/"));
     }
+    
 }
