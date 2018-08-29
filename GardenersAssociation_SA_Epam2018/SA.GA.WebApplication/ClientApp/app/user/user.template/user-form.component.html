@@ -17,6 +17,11 @@
                     firstName cannot be more than 30 characters long.
                 </div>
             </div>
+            <span *ngIf="user.FirstName != null" class="alert alert-danger">
+
+                <var>{{user.FirstName}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -36,6 +41,11 @@
                     lastName cannot be more than 30 characters long.
                 </div>
             </div>
+            <span *ngIf="user.LastName != null" class="alert alert-danger">
+
+                <var>{{user.LastName}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -55,6 +65,11 @@
                     middleName cannot be more than 30 characters long.
                 </div>
             </div>
+            <span *ngIf="user.MiddleName != null" class="alert alert-danger">
+
+                <var>{{user.MiddleName}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -69,7 +84,7 @@
             </div>
             <span *ngIf="user.Address != null" class="alert alert-danger">
 
-                {{user.Address}}
+                <var>{{user.Address}}</var> 
 
             </span>
         </div>
@@ -79,12 +94,16 @@
             <input type="text" class="form-control" id="phone"
                    required [(ngModel)]="user.phone"
                    name="phone" #phone="ngModel">
-
             <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
                 <div [hidden]="!phone.errors.required">
                     phone is required!
                 </div>
             </div>
+            <span *ngIf="user.Phone != null" class="alert alert-danger">
+
+                <var>{{user.Phone}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -103,6 +122,11 @@
                     additionalInformation is required!
                 </div>
             </div>
+            <span *ngIf="user.AdditionalInformation != null" class="alert alert-danger">
+
+                <var>{{user.AdditionalInformation}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">

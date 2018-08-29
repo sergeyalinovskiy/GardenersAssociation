@@ -18,9 +18,19 @@ export class UserCreateComponent {
 
             (error) => {
 
-                var result = error.error.Address[0];
+                var resultAddress = error.error.Address[0];
+                var resultPhone = error.error.Phone[0];
+                var resultFirstName = error.error.FirstName[0];
+                var resultLastName = error.error.LastName[0];
+                var resultMiddleName = error.error.MiddleName[0];
+                var resultAdditionalInformation = error.error.AdditionalInformation[0];
 
-                this.user.Address = result;
+                this.user.Address = resultAddress;
+                this.user.Phone = resultPhone;
+                this.user.AdditionalInformation = resultAdditionalInformation;
+                this.user.FirstName = resultFirstName;
+                this.user.LastName = resultLastName;
+                this.user.MiddleName = resultMiddleName;
 
                 console.log(this.user);
 

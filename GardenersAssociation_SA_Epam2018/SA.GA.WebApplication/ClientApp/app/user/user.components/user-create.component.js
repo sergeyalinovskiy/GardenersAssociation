@@ -20,9 +20,12 @@ var UserCreateComponent = /** @class */ (function () {
     UserCreateComponent.prototype.save = function () {
         var _this = this;
         this.dataService.createUser(this.user).subscribe(function (data) {
-            _this.router.navigateByUrl("/");
-            console.log(data);
-        }, function (error) { return console.log(error); });
+            return _this.router.navigateByUrl("/");
+        }, function (error) {
+            var result = error.error.Address[0];
+            _this.user.Address = result;
+            console.log(_this.user);
+        });
     };
     UserCreateComponent = __decorate([
         Component({
