@@ -9,6 +9,8 @@
         public Phone?: string,
         public SuppliedElectricity?: boolean,
         public AdditionalInformation?: string,
-        public Status?: boolean) { }
+        public Status?: boolean,
+        public ViewSuppliedElectricity?: string,
+        public ViewStatus?: string) { }
 }
 

@@ -33,7 +33,6 @@ export class UserCreateComponent {
                 this.user.MiddleName = resultMiddleName;
 
                 console.log(this.user);
-
             }
 
         );
