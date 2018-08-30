@@ -18,7 +18,6 @@ export class UserCreateComponent {
             this.router.navigateByUrl("/"),
 
             (error) => {
-
                 var resultAddress = error.error.Address[0];
                 var resultPhone = error.error.Phone[0];
                 var resultFirstName = error.error.FirstName[0];
@@ -35,7 +34,6 @@ export class UserCreateComponent {
 
                 console.log(this.user);
             }
-
         );
     }
 }

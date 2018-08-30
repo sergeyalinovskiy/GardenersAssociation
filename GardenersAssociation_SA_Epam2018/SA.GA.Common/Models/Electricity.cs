@@ -8,7 +8,6 @@
     [Table("Electricity")]
     public class Electricity : Entity
     {
-        
         [Column("Year", TypeName = "int")]
         public int Year { get; set; }
 

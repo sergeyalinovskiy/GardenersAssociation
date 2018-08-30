@@ -18,9 +18,7 @@
                 </div>
             </div>
             <span *ngIf="user.FirstName != null" class="alert alert-danger">
-
                 <var>{{user.FirstName}}</var>
-
             </span>
         </div>
 
@@ -29,7 +27,6 @@
             <input type="text" class="form-control" id="lastName"
                    required minlength="3" maxlength="30" [(ngModel)]="user.lastName"
                    name="lastName" #lastName="ngModel">
-
             <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="alert alert-danger">
                 <div [hidden]="!lastName.errors.required">
                     lastName is required!
@@ -42,9 +39,7 @@
                 </div>
             </div>
             <span *ngIf="user.LastName != null" class="alert alert-danger">
-
                 <var>{{user.LastName}}</var>
-
             </span>
         </div>
 
@@ -53,7 +48,6 @@
             <input type="text" class="form-control" id="middleName"
                    required minlength="4" maxlength="30" [(ngModel)]="user.middleName"
                    name="middleName" #middleName="ngModel">
-
             <div *ngIf="middleName.errors && (middleName.dirty || middleName.touched)" class="alert alert-danger">
                 <div [hidden]="!middleName.errors.required">
                     middleName is required!
@@ -66,9 +60,7 @@
                 </div>
             </div>
             <span *ngIf="user.MiddleName != null" class="alert alert-danger">
-
                 <var>{{user.MiddleName}}</var>
-
             </span>
         </div>
 
@@ -83,9 +75,7 @@
                 </div>
             </div>
             <span *ngIf="user.Address != null" class="alert alert-danger">
-
                 <var>{{user.Address}}</var> 
-
             </span>
         </div>
 
@@ -100,9 +90,7 @@
                 </div>
             </div>
             <span *ngIf="user.Phone != null" class="alert alert-danger">
-
                 <var>{{user.Phone}}</var>
-
             </span>
         </div>
 
@@ -113,24 +101,18 @@
                    name="suppliedElectricity" #suppliedElectricity="ngModel" />
         </div>
 
-
-
-
         <div class="form-group">
             <label for="additionalInformation">Дополнительная информация</label>
             <input type="text" class="form-control" id="AdditionalInformation"
                    required [(ngModel)]="user.additionalInformation"
                    name="additionalInformation" #additionalInformation="ngModel">
-
             <div *ngIf="additionalInformation.errors && (additionalInformation.dirty || additionalInformation.touched)" class="alert alert-danger">
                 <div [hidden]="!additionalInformation.errors.required">
                     additionalInformation is required!
                 </div>
             </div>
             <span *ngIf="user.AdditionalInformation != null" class="alert alert-danger">
-
                 <var>{{user.AdditionalInformation}}</var>
-
             </span>
         </div>
 
@@ -139,5 +121,6 @@
             <input type="checkbox" [(ngModel)]="user.status" class="form-control" id="status"
                    name="status" #status="ngModel" />
         </div>
+
     </form>
 </div>

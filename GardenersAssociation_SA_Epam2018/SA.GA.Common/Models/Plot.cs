@@ -8,8 +8,7 @@
 
     [Table("Plot")]
     public class Plot : Entity
-    {        
-        
+    { 
         [Required]
         [Column("Area", TypeName = "decimal(10, 2)")]
         public double Area { get; set; }
@@ -18,14 +17,6 @@
         [Column("Privatized", TypeName = "bit")]
         public bool Privatized { get; set; }
 
-        //[Required]
-        //[Column("UserId", TypeName = "int")]
-        //public int UserId { get; set; }
-
-        //[ForeignKey("UserId")]
-        //public User User { get; set; }
-
-     
         [Column("ElectricityId", TypeName = "int")]  
         public int ElectricityId { get; set; }
 

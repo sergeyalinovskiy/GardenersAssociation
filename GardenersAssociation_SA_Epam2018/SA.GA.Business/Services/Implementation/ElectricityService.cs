@@ -54,7 +54,6 @@
             {
                 throw new NullReferenceException();
             }
-           
             _electricityRepository.Create(CalculateNecessaryToPay(model));
         }
 
@@ -79,9 +78,9 @@
         {
             int ElectricityRateId =_electricityRepository.GetById(id).RateId;
             Rate rate = _rateRepository.GetById(ElectricityRateId);
-            List<Rate> rates = new List<Rate>();
-            rates.Add(rate);
-            return rates;
+            List<Rate> resultRates = new List<Rate>();
+            resultRates.Add(rate);
+            return resultRates;
         }
     }
 }

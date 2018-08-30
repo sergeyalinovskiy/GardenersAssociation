@@ -75,7 +75,6 @@
         {
             IEnumerable<Electricity> electricities = _plotService.GetPlotElectricity(id);
             IEnumerable<ElectricityViewModel> plotElectricities = this.MapElectricityListToViewModel(electricities);
-
             return plotElectricities;
         }
 
@@ -142,11 +141,7 @@
                 resultList.Add(MapPlotToViewModel(model));
             }
             return resultList;
-
         }
-
-
-
 
         private string ChoiseChar(bool value)
         {
@@ -161,6 +156,5 @@
             }
             return result;
         }
-
     }
 }

@@ -13,4 +13,3 @@
         public string ViewPrivatized { get; set; }
     }
 }
- 

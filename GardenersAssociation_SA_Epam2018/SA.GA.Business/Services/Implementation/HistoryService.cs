@@ -52,7 +52,7 @@ namespace SA.GA.Business.Services.Implementation
             _historyRepository.Create(model);
         }
 
-        public void UpdateHistoryt(History model)
+        public void UpdateHistory(History model)
         {
             if (model == null)
             {

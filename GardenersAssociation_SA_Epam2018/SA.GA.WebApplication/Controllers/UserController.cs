@@ -168,8 +168,6 @@
                 resultList.Add(MapUserToViewModel(model));
             }
             return resultList;
-
         }
-
     }
 }

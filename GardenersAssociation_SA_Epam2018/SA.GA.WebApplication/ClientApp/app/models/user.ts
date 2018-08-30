@@ -1,6 +1,5 @@
 ﻿export class User {
     constructor(
-        
         public id?: number,
         public FirstName?: string,
         public LastName?: string,
@@ -13,4 +12,3 @@
         public ViewSuppliedElectricity?: string,
         public ViewStatus?: string) { }
 }
-
