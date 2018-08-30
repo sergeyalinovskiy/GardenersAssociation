@@ -84,7 +84,8 @@
                 Id=plot.Id,
                 Area=plot.Area,
                 ElectricityId=plot.ElectricityId,
-                Privatized=plot.Privatized
+                Privatized=plot.Privatized,
+                ViewPrivatized=this.ChoiseChar(plot.Privatized)
             };
         }
 

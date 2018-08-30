@@ -36,22 +36,22 @@
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]Plot plot)
+        public IActionResult Put(int id, [FromBody]PlotViewModel plot)
         {
             if (ModelState.IsValid)
             {
-                _plotService.UpdatePlot(plot);
+                _plotService.UpdatePlot(MapPlotToBusinessModel(plot));
                 return Ok(plot);
             }
             return BadRequest(ModelState);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Plot plot)
+        public IActionResult Post([FromBody]PlotViewModel plot)
         {
             if (ModelState.IsValid)
             {
-                _plotService.SavePlot(plot);
+                _plotService.SavePlot(MapPlotToBusinessModel(plot));
                 return Ok(plot);
             }
             return BadRequest(ModelState);
@@ -65,9 +65,9 @@
         }
 
         [HttpGet]
-        public IEnumerable<Plot> Get()
+        public IEnumerable<PlotViewModel> Get()
         {
-            return _plotService.GetPlotsList();
+            return MapListUserToViewModel(_plotService.GetPlotsList());
         }
 
         [HttpGet("/getPlotElectricity/{id}")]
@@ -97,6 +97,7 @@
                                     .Where(m => m.Id == electricity.RateId)
                                     .Select(m => m.Name)
                                     .FirstOrDefault()
+
             };
         }
 
@@ -109,5 +110,57 @@
             }
             return resultElectricity;
         }
+
+        private PlotViewModel MapPlotToViewModel(Plot plot)
+        {
+            return new PlotViewModel
+            {
+                Area=plot.Area,
+                Id=plot.Id,
+                ElectricityId=plot.ElectricityId,
+                Privatized=plot.Privatized,
+                ViewPrivatized=this.ChoiseChar(plot.Privatized)
+            };
+        }
+
+        private Plot MapPlotToBusinessModel(PlotViewModel plot)
+        {
+            return new Plot
+            {
+                Area = plot.Area,
+                Id = plot.Id,
+                ElectricityId = plot.ElectricityId,
+                Privatized = plot.Privatized
+            };
+        }
+
+        private IEnumerable<PlotViewModel> MapListUserToViewModel(IEnumerable<Plot> plots)
+        {
+            List<PlotViewModel> resultList = new List<PlotViewModel>();
+            foreach (Plot model in plots)
+            {
+                resultList.Add(MapPlotToViewModel(model));
+            }
+            return resultList;
+
+        }
+
+
+
+
+        private string ChoiseChar(bool value)
+        {
+            string result = "❌";
+            if (value)
+            {
+                result = "✅";
+            }
+            else
+            {
+                result = "❌";
+            }
+            return result;
+        }
+
     }
 }
