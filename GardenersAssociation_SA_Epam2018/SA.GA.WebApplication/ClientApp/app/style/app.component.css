@@ -92,17 +92,39 @@ button {
         background-color: #0094ff;
         color: white;
     }
-    #customers thNtp {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: coral;
-        color: white;
+   
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(201, 211, 219, 0.72);
+    overflow: auto;
+}
+
+    .navbar a {
+        float: left;
+        padding: 12px;
+        color: black;
+        text-decoration: none;
+        font-size: 17px;
+        background-color: aliceblue;
     }
-    #customers thPay {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: aquamarine;
-        color: white;
+
+        .navbar a:hover {
+            background-color: #4CAF50;
+        }
+
+.active {
+    background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
     }
+}

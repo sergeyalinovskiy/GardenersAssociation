@@ -96,7 +96,6 @@
                                     .Where(m => m.Id == electricity.RateId)
                                     .Select(m => m.Name)
                                     .FirstOrDefault()
-
             };
         }
 

@@ -1,6 +1,6 @@
 ﻿<link href='../../style/app.component.css' type='text/css' rel='stylesheet' />
-
-<div>
+<div class="navbar">
+    <!--<a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>-->
     <a routerLink="/create" class="btn sa-ga-btn--green">Добавить</a>
     <a routerLink="/summary" class="btn sa-ga-btn--green">Сумма</a>
     <a routerLink="/plot" class="btn sa-ga-btn--lightslategray">Участки</a>
@@ -8,11 +8,48 @@
     <a routerLink="/electricitys" class="btn sa-ga-btn--lightslategray">Электроэнергия</a>
     <a routerLink="/history" class="btn sa-ga-btn--darkgray">История</a>
 </div>
+<!--<div>
+    <a routerLink="/create" class="btn sa-ga-btn--green">Добавить</a>
+    <a routerLink="/summary" class="btn sa-ga-btn--green">Сумма</a>
+    <a routerLink="/plot" class="btn sa-ga-btn--lightslategray">Участки</a>
+    <a routerLink="/rates" class="btn sa-ga-btn--darkgray">Тарифы</a>
+    <a routerLink="/electricitys" class="btn sa-ga-btn--lightslategray">Электроэнергия</a>
+    <a routerLink="/history" class="btn sa-ga-btn--darkgray">История</a>
+</div>-->
 <div>
     <a routerLink="" class="btn sa-ga-btn--darkgray">Все члены</a>
     <a routerLink="/getActiveUsers" class="btn sa-ga-btn--darkgray">Активные члены</a>
     <a routerLink="/getNotActiveUsers" class="btn sa-ga-btn--darkgray">Бывшие члены</a>
 </div>
+
+<!--<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<select id="Select1" class="aqua-select">
+    <option selected="selected">Select a Page</option>
+    <option class="btn sa-ga-btn--green"  routerLink="/summary" >Сумма</option>
+    <a routerLink="/summary" class="btn sa-ga-btn--green">Сумма</a>
+    <option class="yellow-option" value="/summary">Tips</option>
+</select>-->
+
+<!--<div class="row">
+    &nbsp;
+    &nbsp;
+    <select id="Select2" style="background-color: aqua;">
+        <option selected="selected">Select a Page</option>
+        <option class="btn sa-ga-btn--green" routerLink="/summary">Сумма</option>
+        <option style="background-color: yellow;" value="https://www.kodfor.com/Windows.aspx">Windows</option>
+        <option style="background-color: yellow;" value="https://www.kodfor.com/Tips.aspx">Tips</option>
+    </select>
+    <input id="btnGo" type="button" value="Go Page" />
+</div>-->
+
 <table class="table" id="customers">
     <thead>
         <tr>
