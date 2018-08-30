@@ -1,4 +1,5 @@
 ﻿<div class="container">
+
     <form>
         <div class="form-group">
             <label for="firstName">Имя</label>
@@ -16,6 +17,11 @@
                     firstName cannot be more than 30 characters long.
                 </div>
             </div>
+            <span *ngIf="user.FirstName != null" class="alert alert-danger">
+
+                <var>{{user.FirstName}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -35,6 +41,11 @@
                     lastName cannot be more than 30 characters long.
                 </div>
             </div>
+            <span *ngIf="user.LastName != null" class="alert alert-danger">
+
+                <var>{{user.LastName}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -54,6 +65,11 @@
                     middleName cannot be more than 30 characters long.
                 </div>
             </div>
+            <span *ngIf="user.MiddleName != null" class="alert alert-danger">
+
+                <var>{{user.MiddleName}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -66,6 +82,11 @@
                     address is required!
                 </div>
             </div>
+            <span *ngIf="user.Address != null" class="alert alert-danger">
+
+                <var>{{user.Address}}</var> 
+
+            </span>
         </div>
 
         <div class="form-group">
@@ -73,22 +94,31 @@
             <input type="text" class="form-control" id="phone"
                    required [(ngModel)]="user.phone"
                    name="phone" #phone="ngModel">
-
             <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
                 <div [hidden]="!phone.errors.required">
                     phone is required!
                 </div>
             </div>
+            <span *ngIf="user.Phone != null" class="alert alert-danger">
+
+                <var>{{user.Phone}}</var>
+
+            </span>
         </div>
 
         <div class="form-group">
-            <label>Подведено электричество</label>
-            <input type="checkbox" [(ngModel)]="user.suppliedElectricity" class="form-control" />
+            <label for="suppliedElectricity">Подведено электричество</label>
+
+            <input type="checkbox" [(ngModel)]="user.suppliedElectricity" class="form-control" id="supp liedElectricity"
+                   name="suppliedElectricity" #suppliedElectricity="ngModel" />
         </div>
+
+
+
 
         <div class="form-group">
             <label for="additionalInformation">Дополнительная информация</label>
-            <input type="text" class="form-control" id="additionalInformation"
+            <input type="text" class="form-control" id="AdditionalInformation"
                    required [(ngModel)]="user.additionalInformation"
                    name="additionalInformation" #additionalInformation="ngModel">
 
@@ -97,11 +127,17 @@
                     additionalInformation is required!
                 </div>
             </div>
+            <span *ngIf="user.AdditionalInformation != null" class="alert alert-danger">
+
+                <var>{{user.AdditionalInformation}}</var>
+
+            </span>
         </div>
-        
+
         <div class="form-group">
-            <label>Статус владения</label>
-            <input type="checkbox" [(ngModel)]="user.status" class="form-control" />
+            <label  for="status">Статус владения</label>
+            <input type="checkbox" [(ngModel)]="user.status" class="form-control" id="status"
+                   name="status" #status="ngModel" />
         </div>
     </form>
 </div>

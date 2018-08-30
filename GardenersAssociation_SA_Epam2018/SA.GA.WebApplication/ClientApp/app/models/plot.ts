@@ -3,7 +3,8 @@
         public id?: number,
         public Area?: number,
         public Privatized?: boolean,
-        public ElectricityId?: number) { }
+        public ElectricityId?: number,
+        public ViewPrivatized?: string) { }
 }
 
 

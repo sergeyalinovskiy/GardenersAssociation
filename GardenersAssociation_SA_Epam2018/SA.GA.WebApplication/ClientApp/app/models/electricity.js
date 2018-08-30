@@ -1,5 +1,5 @@
 var Electricity = /** @class */ (function () {
-    function Electricity(id, Year, Mounth, PreviousTestimony, RecentTestimony, Losses, BankCollections, NecessaryToPlay, Paid, RateId) {
+    function Electricity(id, Year, Mounth, PreviousTestimony, RecentTestimony, Losses, BankCollections, NecessaryToPlay, Paid, RateId, rateName) {
         this.id = id;
         this.Year = Year;
         this.Mounth = Mounth;
@@ -10,6 +10,7 @@ var Electricity = /** @class */ (function () {
         this.NecessaryToPlay = NecessaryToPlay;
         this.Paid = Paid;
         this.RateId = RateId;
+        this.rateName = rateName;
     }
     return Electricity;
 }());

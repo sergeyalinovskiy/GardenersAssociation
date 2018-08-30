@@ -36,8 +36,6 @@ import { HistoryFormComponent } from './history/history.components/history-form.
 import { HistoryCreateComponent } from './history/history.components/history-create.component';
 import { HistoryEditComponent } from './history/history.components/history-edit.component';
 
-
-
 import { SummaryListComponent } from './summary/summary.components/summary-list.component';
 import { SummaryCreateComponent } from './summary/summary.components/summary-create.component';
 import { SummaryFormComponent } from './summary/summary.components/summary-form.component';

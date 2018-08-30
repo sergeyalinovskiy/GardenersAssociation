@@ -45,11 +45,11 @@
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]User user)
+        public IActionResult Post([FromBody]UserViewModel user)
         {
             if (ModelState.IsValid)
             {
-                _userService.SaveUser(user);
+                _userService.SaveUser(MapUserToBusinessModel(user));
                 return Ok(user);
             }
             return BadRequest(ModelState);
@@ -63,9 +63,9 @@
         }
 
         [HttpGet]
-        public IEnumerable<User> Get()
+        public IEnumerable<UserViewModel> Get()
         {
-            return _userService.GetUsersList();
+            return MapListUserToViewModel(_userService.GetUsersList());
         }
 
         [HttpGet("/getPlots/{id}")]
@@ -84,7 +84,8 @@
                 Id=plot.Id,
                 Area=plot.Area,
                 ElectricityId=plot.ElectricityId,
-                Privatized=plot.Privatized
+                Privatized=plot.Privatized,
+                ViewPrivatized=this.ChoiseChar(plot.Privatized)
             };
         }
 
@@ -100,15 +101,74 @@
 
 
         [HttpGet("/getNotActiveUsers")]
-        public IEnumerable<User> GetNotActiveUsers()
+        public IEnumerable<UserViewModel> GetNotActiveUsers()
         {
-            return _userService.GetUsersList().Where(m=>m.Status==false);
+            return MapListUserToViewModel(_userService.GetUsersList().Where(m=>m.Status==false));
         }
 
         [HttpGet("/getActiveUsers")]
-        public IEnumerable<User> GetActiveUsers()
+        public IEnumerable<UserViewModel> GetActiveUsers()
         {
-            return _userService.GetUsersList().Where(m=>m.Status==true);
+            return MapListUserToViewModel(_userService.GetUsersList().Where(m=>m.Status==true));
+        }
+
+        private string ChoiseChar(bool value)
+        {
+            string result = "❌";
+            if (value)
+            {
+                result = "✅";
+            }
+            else
+            {
+                result = "❌";
+            }
+            return result;
+        }
+
+        private UserViewModel MapUserToViewModel(User model)
+        {
+            return new UserViewModel
+            {
+                Id = model.Id,
+                FirstName=model.FirstName,
+                LastName=model.LastName,
+                AdditionalInformation=model.AdditionalInformation,
+                Address=model.Address,
+                MiddleName=model.MiddleName,
+                Phone=model.Phone,
+                ViewSuppliedElectricity= ChoiseChar(model.SuppliedElectricity),
+                ViewStatus= ChoiseChar(model.Status),
+                Status = model.Status,
+                SuppliedElectricity = model.SuppliedElectricity
+            };
+        }
+
+        private User MapUserToBusinessModel(UserViewModel model)
+        {
+            return new User
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                AdditionalInformation = model.AdditionalInformation,
+                Address = model.Address,
+                MiddleName = model.MiddleName,
+                Phone = model.Phone,
+                Status=model.Status,
+                SuppliedElectricity=model.SuppliedElectricity
+            };
+        }
+
+        private IEnumerable<UserViewModel> MapListUserToViewModel(IEnumerable<User> users)
+        {
+            List<UserViewModel> resultList = new List<UserViewModel>();
+            foreach(User model in users)
+            {
+                resultList.Add(MapUserToViewModel(model));
+            }
+            return resultList;
+
         }
 
     }

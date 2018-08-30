@@ -1,10 +1,14 @@
-﻿<div>
+﻿<link href='../../style/app.component.css' type='text/css' rel='stylesheet' />
+
+<div>
     <a routerLink="/create" class="btn sa-ga-btn--green">Добавить</a>
     <a routerLink="/summary" class="btn sa-ga-btn--green">Сумма</a>
     <a routerLink="/plot" class="btn sa-ga-btn--lightslategray">Участки</a>
     <a routerLink="/rates" class="btn sa-ga-btn--darkgray">Тарифы</a>
     <a routerLink="/electricitys" class="btn sa-ga-btn--lightslategray">Электроэнергия</a>
     <a routerLink="/history" class="btn sa-ga-btn--darkgray">История</a>
+</div>
+<div>
     <a routerLink="" class="btn sa-ga-btn--darkgray">Все члены</a>
     <a routerLink="/getActiveUsers" class="btn sa-ga-btn--darkgray">Активные члены</a>
     <a routerLink="/getNotActiveUsers" class="btn sa-ga-btn--darkgray">Бывшие члены</a>
@@ -32,9 +36,12 @@
             <td>{{u?.lastName}}</td>
             <td>{{u?.address}}</td>
             <td>{{u?.phone}}</td>
-            <td>{{u?.suppliedElectricity}}</td>
+            <td> {{u?.viewSuppliedElectricity}}</td>
+
             <td>{{u?.additionalInformation}}</td>
-            <td>{{u?.status}}</td>
+            <td>{{u?.viewStatus}}</td>
+            <!--<td> {{u?.suppliedElectricity}}</td>
+            <td>{{u?.status}}</td>-->
             <td>
                 <button [routerLink]="['/edit', u.id]" class="btn btn-sm btn-primary">Изменить</button>
                 <button [routerLink]="['/getPlots', u.id]" class="btn btn-sm btn-primary">Участки</button>
@@ -43,5 +50,5 @@
             </td>
         </tr>
 
-</tbody>
+    </tbody>
 </table>

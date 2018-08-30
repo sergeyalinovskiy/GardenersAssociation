@@ -5,6 +5,7 @@
     using System.Linq;
     using Microsoft.AspNetCore.Mvc;
     using SA.GA.Business.Services;
+    using SA.GA.Business.Services.Implementation;
     using SA.GA.Common.Models;
     using SA.GA.WebApplication.ViewModels;
     #endregion
@@ -13,10 +14,12 @@
     public class ElectricityController : Controller
     {
         private readonly IElectricityService _electricityService;
+        private readonly IRateService _rateService;
 
-        public ElectricityController(IElectricityService electricityService)
+        public ElectricityController(IElectricityService electricityService, IRateService rateService)
         {
             _electricityService = electricityService;
+            _rateService = rateService;
         }
 
         [HttpDelete("{id}")]
@@ -31,11 +34,11 @@
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]Electricity electricity)
+        public IActionResult Put(int id, [FromBody]ElectricityViewModel electricity)
         {
             if (ModelState.IsValid)
             {
-                _electricityService.UpdateElectricity(electricity);
+                _electricityService.UpdateElectricity(MapElectricityToBusinessModel(electricity));
                 return Ok(electricity);
             }
             return BadRequest(ModelState);
@@ -60,9 +63,9 @@
         }
 
         [HttpGet]
-        public IEnumerable<Electricity> Get()
+        public IEnumerable<ElectricityViewModel> Get()
         {
-            return _electricityService.GetElectricitysList();
+            return MapElectricityListToViewModel(_electricityService.GetElectricitysList());
         }
 
         [HttpGet("GetRateInfo/{id}")]
@@ -80,7 +83,7 @@
                 Name = rate.Name,
                 Value = rate.Value,
                 From = rate.From,
-                To = rate.To
+                To = rate.To,
                 
             };
         }
@@ -94,6 +97,55 @@
             }
             return resultPlots;
         }
+
+        private IEnumerable<ElectricityViewModel> MapElectricityListToViewModel(IEnumerable<Electricity> electricities)
+        {
+            List<ElectricityViewModel> resultElectricities = new List<ElectricityViewModel>();
+            foreach (Electricity e in electricities)
+            {
+                resultElectricities.Add(this.MapElectricityToViewModel(e));
+            }
+            return resultElectricities;
+        }
+
+        private ElectricityViewModel MapElectricityToViewModel(Electricity e)
+        {
+            return new ElectricityViewModel()
+            {
+                Id = e.Id,
+                BankCollections = e.BankCollections,
+                Losses = e.Losses,
+                NecessaryToPlay = e.NecessaryToPlay,
+                Paid = e.Paid,
+                Year = e.Year,
+                Mounth = e.Mounth,
+                PreviousTestimony = e.PreviousTestimony,
+                RecentTestimony = e.RecentTestimony,
+                RateId = e.RateId,
+                RateName = _rateService.GetRatesList()
+                                    .Where(m => m.Id == e.RateId)
+                                    .Select(m => m.Name)
+                                    .FirstOrDefault()
+
+            };
+        }
+        private Electricity MapElectricityToBusinessModel(ElectricityViewModel e)
+        {
+            return new Electricity()
+            {
+                Id = e.Id,
+                BankCollections = e.BankCollections,
+                Losses = e.Losses,
+                NecessaryToPlay = e.NecessaryToPlay,
+                Paid = e.Paid,
+                Year = e.Year,
+                Mounth = e.Mounth,
+                PreviousTestimony = e.PreviousTestimony,
+                RecentTestimony = e.RecentTestimony,
+                RateId = e.RateId
+            };
+        }
+
     }
 
     
