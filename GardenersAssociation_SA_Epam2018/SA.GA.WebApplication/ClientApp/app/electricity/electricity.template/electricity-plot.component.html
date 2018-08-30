@@ -35,9 +35,10 @@
                 <a [routerLink]="['/editElectricity', e.id]" class="btn btn-sm btn-primary">Изменить</a>
                 <a [routerLink]="['/api/electricitys/GetRateInfo', e.id]" class="btn btn-sm btn-primary">Подробнее о тарифе</a>
                 
-                <button (click)="delete(e.id)" class="btn btn-sm btn-danger">Удалить</button>
+                <!--<button (click)="delete(e.id)" class="btn btn-sm btn-danger">Удалить</button>-->
                 <>
             </td>
         </tr>
     </tbody>
 </table>
+<a routerLink="/" class="nav-link">Назад к списку</a>

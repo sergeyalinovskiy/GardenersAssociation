@@ -87,7 +87,7 @@ button {
     width: 100%;
 }
 
-    #customers td, #customers th {
+    #customers td, #customers th, #customers thNtp, #customers thPay {
         border: 1px solid #ddd;
         padding: 8px;
     }
@@ -105,6 +105,20 @@ button {
         padding-bottom: 12px;
         text-align: left;
         background-color: #0094ff;
+        color: white;
+    }
+    #customers thNtp {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: coral;
+        color: white;
+    }
+    #customers thPay {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: aquamarine;
         color: white;
     }
 
