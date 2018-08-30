@@ -40,9 +40,7 @@ import { SummaryListComponent } from './summary/summary.components/summary-list.
 import { SummaryCreateComponent } from './summary/summary.components/summary-create.component';
 import { SummaryFormComponent } from './summary/summary.components/summary-form.component';
 
-
 import { NotFoundComponent } from './not-found.component';
-
 
 import { DataServiceElectricity } from './data-service/data.service.electricity';
 import { DataServiceHistory } from './data-service/data.service.history';
@@ -76,18 +74,23 @@ const appRoutes: Routes = [
     { path: 'history', component: HistoryListComponent },
     { path: 'createHistory', component: HistoryCreateComponent },
     { path: 'editHistory/:id', component: HistoryEditComponent },
-    
     { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
     declarations: [AppComponent, UserListComponent, UserCreateComponent, UserEditComponent,
-        UserFormComponent, NotFoundComponent, PlotListComponent, PlotFormComponent, PlotCreateComponent,
-        PlotEditComponent, ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
-        ElectricityEditComponent, RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
-        HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent, RateComponent,
+        UserFormComponent,
+        NotFoundComponent,
+        PlotListComponent, PlotFormComponent, PlotCreateComponent,
+        PlotEditComponent,
+        ElectricityListComponent, ElectricityFormComponent, ElectricityCreateComponent,
+        ElectricityEditComponent,
+        RateListComponent, RateFormComponent, RateCreateComponent, RateEditComponent,
+        HistoryListComponent, HistoryFormComponent, HistoryCreateComponent, HistoryEditComponent,
+        RateComponent,
         PlotUserComponent, ElectricityPlotComponent, NotActiveUserListComponent, ActiveUserListComponent, SummaryListComponent, SummaryCreateComponent, SummaryFormComponent],
+
     providers: [DataServiceElectricity, DataServiceHistory, DataServicePlot, DataServiceRate, DataServiceUser, DataServiceSummary], // регистрация сервисов
     bootstrap: [AppComponent]
 })

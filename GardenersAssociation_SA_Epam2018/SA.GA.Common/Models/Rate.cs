@@ -13,9 +13,11 @@
         [Required]
         [Column("Name", TypeName = "nvarchar(128)")]
         public string Name{ get; set; }
+
         [Required]
         [Column("Value", TypeName = "decimal(10, 2)")]
         public double Value { get; set; }
+
         [Required]
         [Column("From", TypeName = "datetime")]
         public DateTime From { get; set; }

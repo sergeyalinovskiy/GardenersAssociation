@@ -34,7 +34,7 @@
         {
             if (ModelState.IsValid)
             {
-                _historyService.UpdateHistoryt(history);
+                _historyService.UpdateHistory(history);
                 return Ok(history);
             }
             return BadRequest(ModelState);

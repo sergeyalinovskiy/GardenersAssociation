@@ -8,7 +8,6 @@ namespace SA.GA.DataAccess.Repository.Implementation
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly DbContext _context;
-
         private DbSet<T> _table;
 
         public Repository(DbContext context)

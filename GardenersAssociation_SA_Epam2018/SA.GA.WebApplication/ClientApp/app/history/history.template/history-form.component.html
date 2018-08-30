@@ -29,7 +29,6 @@
             <input type="text" class="form-control" id="from"
                    required [(ngModel)]="history.from"
                    name="from" #from="ngModel">
-
             <div *ngIf="from.errors && (from.dirty || from.touched)" class="alert alert-danger">
                 <div [hidden]="!from.errors.required">
                     from date is required!
@@ -48,5 +47,6 @@
                 </div>
             </div>
         </div>
+
     </form>
 </div>

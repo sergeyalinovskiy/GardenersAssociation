@@ -22,9 +22,13 @@
         }
 
         public DbSet<User> Users { get; set; }
+
         public DbSet<Plot> Plots { get; set; }
+
         public DbSet<History> Historys { get; set; }
+
         public DbSet<Electricity> Electricitys { get; set; }
+
         public DbSet<Rate> Rates { get; set; }
     }
 }

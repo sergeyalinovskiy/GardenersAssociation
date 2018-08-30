@@ -1,5 +1,6 @@
 ﻿<div class="container">
     <form>
+
         <div class="form-group">
             <label for="year">Год</label>
             <input type="text" class="form-control" id="year"
@@ -11,6 +12,7 @@
                 </div>
             </div>
         </div>
+
         <div class="form-group">
             <label for="mounth">Месяц</label>
             <input type="text" class="form-control" id="mounth"
@@ -22,6 +24,7 @@
                 </div>
             </div>
         </div>
+
         <div class="form-group">
             <label for="previousTestimony">Предыдущие данные</label>
             <input type="text" class="form-control" id="previousTestimony"
@@ -33,6 +36,7 @@
                 </div>
             </div>
         </div>
+
         <div class="form-group">
             <label for="recentTestimony">Новые данные</label>
             <input type="text" class="form-control" id="recentTestimony"
@@ -68,18 +72,6 @@
                 </div>
             </div>
         </div>
-
-        <!--<div class="form-group">
-            <label for="necessaryToPlay">Нужно оплатить</label>
-            <input type="text" class="form-control" id="necessaryToPlay"
-                   required [(ngModel)]="electricity.necessaryToPlay"
-                   name="necessaryToPlay" #necessaryToPlay="ngModel">
-            <div *ngIf="necessaryToPlay.errors && (necessaryToPlay.dirty || necessaryToPlay.touched)" class="alert alert-danger">
-                <div [hidden]="!necessaryToPlay.errors.required">
-                    necessaryToPlay is required!
-                </div>
-            </div>
-        </div>-->
 
         <div class="form-group">
             <label for="paid">Оплачено</label>

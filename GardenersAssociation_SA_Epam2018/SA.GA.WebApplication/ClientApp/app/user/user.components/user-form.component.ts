@@ -8,8 +8,5 @@ import { User } from '../../models/user';
 export class UserFormComponent {
     @Input() user: User;
 
-    //changeStatus() {
-    //    this.user.Status = !this.user.Status;
-    //}
 }
 

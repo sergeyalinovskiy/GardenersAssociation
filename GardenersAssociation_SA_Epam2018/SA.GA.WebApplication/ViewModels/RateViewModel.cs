@@ -1,7 +1,8 @@
-﻿using SA.GA.Common.Models;
-using System;
-namespace SA.GA.WebApplication.ViewModels
+﻿namespace SA.GA.WebApplication.ViewModels
 {
+    #region Usings
+    using System;
+    #endregion
     public class RateViewModel
     {
         public int Id { get; set; }
@@ -13,6 +14,5 @@ namespace SA.GA.WebApplication.ViewModels
         public DateTime From { get; set; }
 
         public DateTime To { get; set; }
-
     }
 }

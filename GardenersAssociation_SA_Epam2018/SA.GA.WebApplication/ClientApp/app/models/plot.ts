@@ -6,13 +6,3 @@
         public ElectricityId?: number,
         public ViewPrivatized?: string) { }
 }
-
-
-
-
-
-
-
-
-
-      

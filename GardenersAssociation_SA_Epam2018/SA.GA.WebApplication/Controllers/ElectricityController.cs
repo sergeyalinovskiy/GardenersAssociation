@@ -83,8 +83,7 @@
                 Name = rate.Name,
                 Value = rate.Value,
                 From = rate.From,
-                To = rate.To,
-                
+                To = rate.To
             };
         }
 
@@ -126,9 +125,9 @@
                                     .Where(m => m.Id == e.RateId)
                                     .Select(m => m.Name)
                                     .FirstOrDefault()
-
             };
         }
+
         private Electricity MapElectricityToBusinessModel(ElectricityViewModel e)
         {
             return new Electricity()
@@ -145,8 +144,5 @@
                 RateId = e.RateId
             };
         }
-
     }
-
-    
 }

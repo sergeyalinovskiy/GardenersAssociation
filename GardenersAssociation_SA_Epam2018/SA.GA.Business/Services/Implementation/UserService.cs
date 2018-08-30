@@ -11,9 +11,7 @@
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-
         private readonly IHistoryRepository _historyRepository;
-
         private readonly IPlotRepository _plotRepository;
 
         public UserService(IUserRepository userRepository, IHistoryRepository historyRepository, IPlotRepository plotRepository)
@@ -82,14 +80,14 @@
         {
             IEnumerable<History> historys;
             historys = _historyRepository.GetAll();
-            int [] plotsId =historys.Where(m => m.UserId == id).Select(m => m.PlotId).ToArray();
-            List<Plot> plots = new List<Plot>();
+            int [] arrayPlotsId =historys.Where(m => m.UserId == id).Select(m => m.PlotId).ToArray();
+            List<Plot> resultPlots = new List<Plot>();
 
-            foreach(int i in plotsId)
+            foreach(int plotId in arrayPlotsId)
             {
-                plots.Add(_plotRepository.GetById(i));
+                resultPlots.Add(_plotRepository.GetById(plotId));
             }
-            return plots;
+            return resultPlots;
         } 
     }
 }

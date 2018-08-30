@@ -38,16 +38,8 @@ namespace SA.GA.Business.Services.Implementation
             _electricityRepository = electricityRepository;
             _userRepository = userRepository;
         }
+
         List<Summary> sammaryResult = new List<Summary>();
-        //public void AddCounterValues(Summary counter)
-        //{
-        //    if (counter == null)
-        //    {
-        //        throw new NullReferenceException();
-        //    }
-        //    counter.Name = "Счетчик";
-        //    sammaryResult.Add(counter);
-        //}
        
         public IEnumerable<Summary> GetSummaryList()
         {
@@ -87,8 +79,6 @@ namespace SA.GA.Business.Services.Implementation
                     total.Consumption = s.Consumption - fullSummory.Consumption;
                 }
             }
-
-            //fullSummory.UserId = 10000;
             fullSummory.Name = "Итого";
             models.Add(fullSummory);
             models.Add(total);

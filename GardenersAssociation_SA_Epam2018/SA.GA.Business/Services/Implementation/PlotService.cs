@@ -10,7 +10,6 @@
     public class PlotService : IPlotService
     {
         private readonly IPlotRepository _plotRepository;
-
         private readonly IElectricityRepository _electricityRepository;
 
         public PlotService(IPlotRepository plotRepository, IElectricityRepository electricityRepository)
@@ -71,11 +70,10 @@
         public IEnumerable<Electricity> GetPlotElectricity(int id)
         {
             int electricityId = _plotRepository.GetAll().Where(m => m.Id == id).Select(m => m.ElectricityId).Single();
-            List<Electricity> electricities= new List<Electricity>();
+            List<Electricity> resultElectricities= new List<Electricity>();
             Electricity electricity = _electricityRepository.GetById(electricityId);
-            electricities.Add(electricity);
-            return electricities;
+            resultElectricities.Add(electricity);
+            return resultElectricities;
         }
-
     }
 }

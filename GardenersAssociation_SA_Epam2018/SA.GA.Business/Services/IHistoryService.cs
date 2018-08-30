@@ -14,6 +14,6 @@
 
         void SaveHistory(History model);
 
-        void UpdateHistoryt(History model);
+        void UpdateHistory(History model);
     }
 }

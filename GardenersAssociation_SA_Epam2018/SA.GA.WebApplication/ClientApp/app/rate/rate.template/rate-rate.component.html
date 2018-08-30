@@ -1,6 +1,5 @@
 ﻿<div>
     <a routerLink="/createRate" class="nav-link">Добавить</a>
-
 </div>
 <table class="table" id="customers">
     <thead>
@@ -10,7 +9,6 @@
             <th>Значение</th>
             <th>Дествует с</th>
             <th>По</th>
-           
         </tr>
     </thead>
     <tbody>
@@ -20,10 +18,6 @@
             <td>{{r?.value}}</td>
             <td>{{r?.from}}</td>
             <td>{{r?.to}}</td>
-            <!--<td>
-                <a [routerLink]="['/editRate', r.id]" class="btn btn-sm btn-primary">Изменить</a>
-                <button (click)="delete(r.id)" class="btn btn-sm btn-danger">Удалить</button>
-            </td>-->
         </tr>
     </tbody>
 </table>
