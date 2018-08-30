@@ -12,6 +12,7 @@ export class UserCreateComponent {
     user: User = new User();    // добавляемый объект
     constructor(private dataService: DataServiceUser, private router: Router) { }
     save() {
+        console.log(this.user);
         this.dataService.createUser(this.user).subscribe((data) =>
 
             this.router.navigateByUrl("/"),
